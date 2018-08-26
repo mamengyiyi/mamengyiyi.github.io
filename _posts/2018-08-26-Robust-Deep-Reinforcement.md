@@ -1,9 +1,7 @@
 ---
 layout:     post
 title:      论文阅读
-subtitle:   Robust Deep Reinforcement Learning 
-with Adversarial Attacks
-
+subtitle:   Robust Deep Reinforcement
 date:       2018-08-26
 author:     MY
 header-img: img/post-bg-ios9-web.jpg
@@ -13,6 +11,8 @@ tags:
     - DRL
     - Adversarial Attack
 ---
+---
+
 
 # 概要
 本文提出了针对强化学习的对抗性攻击，然后借助这些攻击提高深度强化学习算法对参数不确定性的鲁棒性。 这种针对DRL算法的对抗性训练，如Deep Double Q学习和Deep Deterministic Policy Gradients，可以显著提高RL基准的参数变化的稳健性。
