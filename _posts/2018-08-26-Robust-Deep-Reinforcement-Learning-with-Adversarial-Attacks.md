@@ -4,8 +4,8 @@ title:      论文阅读
 subtitle:   Robust Deep Reinforcement Learning 
 with Adversarial Attacks
 
-date:       2017-01-06
-author:     BY
+date:       2018-08-26
+author:     MY
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
