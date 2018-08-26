@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      论文阅读
-subtitle:   Robust Deep Reinforcement
+subtitle:   Robust Deep Reinforcement Learning with Adversarial Attacks
 date:       2018-08-26
 author:     MY
 header-img: img/post-bg-ios9-web.jpg
