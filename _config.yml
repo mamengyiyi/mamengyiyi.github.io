@@ -25,7 +25,8 @@ RSS: false
 #jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 
-
+#markdown
+markdown: kramdown
 
 
 # Build settings
