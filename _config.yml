@@ -27,7 +27,9 @@ RSS: false
 
 #markdown
 markdown: kramdown
-
+mathjax:
+  enable: true
+  per_page: true
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
