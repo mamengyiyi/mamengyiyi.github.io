@@ -1,3 +1,17 @@
+---
+layout:     post
+title:      Policy Iteration收敛性及最优性证明
+subtitle:   简介
+date:       2019-08-02
+author:     MY
+header-img: img/post-bg-hacker.jpg
+catalog: true
+tags:
+    - 强化学习
+
+---
+---
+
 # 一、经典Policy Iteration证明方法
 ##1. Policy Evaluation收敛性证明
 ### 1.1 压缩映射
@@ -11,7 +25,6 @@
 
 ### 1.3 贝尔曼期望方程及其向量形式
 贝尔曼期望方程为：&v_{\pi}(s)=\sum_{a \in A} \pi(a | s)\left(R_{s}^{a}+\gamma \sum_{s^{\prime} \in S} P_{s s^{\prime}}^{a} v_{\pi}\left(s^{\prime}\right)\right)
-
 \tag1&
 可进一步拆解为
 如图所示：
