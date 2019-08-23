@@ -60,7 +60,7 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）true
-disqus_username: mamengyiyi
+# disqus_username: mamengyiyi
 
 # Gitalk
 gitalk:
