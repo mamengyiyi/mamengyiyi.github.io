@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Machine Learning: A probabilistic perspective学习笔记
+title:      Machine Learning A probabilistic perspective学习笔记
 subtitle:   Introduction
 date:       2019-08-25
 author:     MY
