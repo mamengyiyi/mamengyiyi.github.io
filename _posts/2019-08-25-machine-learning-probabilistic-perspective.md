@@ -8,7 +8,8 @@ header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
     - DL
-    - Machine Learning: A probabilistic perspective
+    - Machine Learning from probabilistic perspective
+    
 ---
 
 # 1.1 Machine Learning: what and why?
