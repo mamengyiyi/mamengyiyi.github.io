@@ -60,7 +60,7 @@ tags:
 目标是发现数据中的内在结构，也叫作是知识发现（knowledge discovery）。无监督学习可以形式化定义为密度估计（density estimation）问题，即建立形式为$p\left(\mathbf{x}\_{i} | \boldsymbol{\theta}\right)$的模型。
 
 无监督学习和监督学习不同的包括：
-* 非监督学习的模型为$p\left(\mathbf{x}\_{i} | \boldsymbol{\theta}\right)$，是unconditional density estimation；而监督学习的模型为$p\left(y_{i} | \mathbf{x}\_{i}, \boldsymbol{\theta}\right)$，是conditional density estimation
+* 非监督学习的模型为$p\left(\mathbf{x}\_{i} | \boldsymbol{\theta}\right)$，是unconditional density estimation。而监督学习的模型为$p\left(y_{i} | \mathbf{x}\_{i}, \boldsymbol{\theta}\right)$，是conditional density estimation
 * 监督学习预测的是n-class问题，用单元概率模型（univariate probability models ）即可；而无监督学习则要从$n$维输入中建立多元概率模型（multivariate probability models）
 * 无监督学习比监督学习更符合人类和动物的学习方式，应用更广泛。
 
