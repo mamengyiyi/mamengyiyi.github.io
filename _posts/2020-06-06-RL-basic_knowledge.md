@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      强化学习基础知识
-subtitle:   
+subtitle:   简介
 date:       2019-06-07
 author:     MY
 header-img: img/post-bg-hacker.jpg
