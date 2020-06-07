@@ -32,7 +32,7 @@ tags:
   * 奖励可能而且通常是延迟的
   * 有时候宁愿牺牲即时（短期）的奖励以获取更多的长期奖励
 
-## 个体和环境 Agent & Environment =====
+## 个体和环境 Agent & Environment
 可以从个体和环境两方面来描述强化学习问题。
 ![1](https://s1.ax1x.com/2020/06/07/t2al0x.png)
 
@@ -59,7 +59,7 @@ Environment 可以：
   * 通常对Agent并不完全可见，也就是Agent有时候并不知道环境状态的所有细节
   * 即使有时候环境状态对Agent可以是完全可见的，这些信息也可能包含着一些无关信息
 ### 个体状态 Agent State
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-082445.png}}
+![1](https://s1.ax1x.com/2020/06/07/t2ay4S.png)
   * 是Agent的内部representation
   * 包括Agent可以使用的、决定未来动作的所有信息
   * **Agent State是强化学习算法可以利用的信息**
@@ -67,8 +67,7 @@ Environment 可以：
   
 ### 信息状态 Information State
 包括历史上所有有用的信息，又称Markov状态。
-
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-082712.png}}
+![1](https://s1.ax1x.com/2020/06/07/t2a4H0.png)
 
   * **如果信息状态是可知的，那么历史可以丢弃，仅需要$t$时刻的信息状态就可以了。例如：环境状态是Markov的，因为环境状态是环境包含了环境决定下一个观测/奖励的所有信息。**
   * 同样，（完整的）历史$H_{t}$也是Markov的。
@@ -119,7 +118,8 @@ $$R^a_{s} = E[R_{t+1}|S_t=s,A_t=a]$$
 此外，根据Agent在解决强化学习问题时是否建立一个对环境动力学的模型，将其分为两大类：
   * Model Free:这类Agent并不视图了解环境如何工作，而仅聚焦于价值和/或策略函数。
   * Model Based：Agent尝试建立一个描述环境运作过程的模型，以此来指导价值或策略函数的更新。
-{{:research:reinforcement_learning:single_agent:basic_knowledge:p_6.png?direct&400 |}}
+
+![1](https://s1.ax1x.com/2020/06/07/t2ab34.png)
 
 ## 学习和规划 Learning & Planning
 ### 学习
@@ -132,7 +132,7 @@ $$R^a_{s} = E[R_{t+1}|S_t=s,A_t=a]$$
   * 在此基础上改善其行为策略。
 一个常用的强化学习问题解决思路是，先学习环境如何工作，也就是了解环境工作的方式，即学习得到一个模型，然后利用这个模型进行规划。
 
-===== 探索和利用 Exploration & Exploitation =====
+## 探索和利用 Exploration & Exploitation
 强化学习是一种试错(trial-and-error)的学习方式，一开始不清楚environment的工作方式，不清楚执行什么样的行为是对的，什么样是错的。因而agent需要从不断尝试的经验中发现一个好的policy，从而在这个过程中获取更多的reward。
 
 在这样的学习过程中，就会有一个在Exploration和Exploitation之间的权衡，前者是说会放弃一些已知的reward信息，而去尝试一些新的选择，即在某种状态下，算法也许已经学习到选择什么action让reward比较大，但是并不能每次都做出同样的选择，也许另外一个没有尝试过的选择会让reward更大，即Exploration希望能够探索更多关于environment的信息。而后者是指根据已知的信息最大化reward。例如，在选择一个餐馆时，Exploitation会选择你最喜欢的餐馆，而Exploration会尝试选择一个新的餐馆。
