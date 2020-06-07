@@ -25,7 +25,7 @@ tags:
   * Agent的工作就是最大化累计奖励
 强化学习主要基于这样的”奖励假设”：所有问题解决的目标都可以被描述成**最大化累积奖励**。
 
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-081809.png}}
+![1](https://s1.ax1x.com/2020/06/07/t2UWTK.png)
 ## 序列决策 Sequential Decision Making
   * 目标：选择一系列的 Action 以最大化未来的总体奖励
   * 这些 Action 可能是一个长期的序列
@@ -34,8 +34,8 @@ tags:
 
 ## 个体和环境 Agent & Environment =====
 可以从个体和环境两方面来描述强化学习问题。
+![1](https://s1.ax1x.com/2020/06/07/t2al0x.png)
 
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-081904.png}}
 
 在$t$时刻，Agent可以：
   * 做出一个行为$A_{t}$
@@ -52,7 +52,8 @@ Environment 可以：
 ### 状态
 状态是所有能够决定将来的已有的信息，是关于历史的一个函数$S_{t} = f(H_{t})$
 ### 环境状态
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-082409.png}}
+![1](https://s1.ax1x.com/2020/06/07/t2a8AK.png)
+
   * 是环境的私有 representation
   * 包括环境用来决定下一个观测/奖励的所有数据
   * 通常对Agent并不完全可见，也就是Agent有时候并不知道环境状态的所有细节
