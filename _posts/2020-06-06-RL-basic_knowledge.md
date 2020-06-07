@@ -85,7 +85,8 @@ Agent间接观测环境。举几个例子：
   * 一个扑克牌玩家只能看到自己的牌和其他已经出过的牌，而不知道整个环境（包括对手的牌）状态。
 在这种条件下：个体状态 ≠ 环境状态。
 
-**正式地说，这种问题是一个部分可观测马尔可夫决策过程 (POMDP)。Agent 必须构建它自己的状态representation $S^{a}_{t}$ **，比如：
+**正式地说，这种问题是一个部分可观测马尔可夫决策过程 (POMDP)。Agent 必须构建它自己的状态representation $S^{a}\_{t}$ **，比如：
+
   * 记住完整的历史： $S^{a}_{t} = H_{t}$。这种方法比较原始。
   * Beliefs of environment state：此时虽然 Agent 不知道环境状态到底是什么样，但Agent可以利用已有经验（数据），用各种 Agent 已知状态的概率分布作为当前时刻的 Agent 状态的呈现：$S^{a}\_{t} = (P[S^e_t=s^1],…,P[S^e_t=s^n])$
   * Recurrent neural network：不需要知道概率，只根据当前的Agent状态以及当前时刻Agent的观测，送入循环神经网络(RNN)中得到一个当前Agent状态的呈现：$S^{a}\_{t} = \sigma(S^e\_{t-1}W_s + O_tW_o)$
