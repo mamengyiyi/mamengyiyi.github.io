@@ -63,7 +63,7 @@ Environment 可以：
   * 是Agent的内部representation
   * 包括Agent可以使用的、决定未来动作的所有信息
   * **Agent State是强化学习算法可以利用的信息**
-  * 它可以是历史的一个函数： $S^{a}_{t} = f(H_{t})$
+  * 它可以是历史的一个函数： $S^{a}\_{t} = f(H\_{t})$
   
 ### 信息状态 Information State
 包括历史上所有有用的信息，又称Markov状态。
@@ -73,7 +73,7 @@ Environment 可以：
   * 同样，（完整的）历史$H_{t}$也是Markov的。
 
 ### 完全可观测的环境 Fully Observable Environments
-Agent能够直接观测到环境状态: $O_{t} = S^{a}_{t} = S^{e}_{t}$。
+Agent能够直接观测到环境状态: $O_{t} = S^{a}\_{t} = S^{e}\_{t}$。
 
 正式地说，这种问题是一个马尔可夫决策过程（Markov Decision Process， MDP）
 
@@ -86,8 +86,8 @@ Agent间接观测环境。举几个例子：
 
 **正式地说，这种问题是一个部分可观测马尔可夫决策过程 (POMDP)。Agent 必须构建它自己的状态representation $S^{a}_{t}$ **，比如：
   * 记住完整的历史： $S^{a}_{t} = H_{t}$。这种方法比较原始。
-  * Beliefs of environment state：此时虽然 Agent 不知道环境状态到底是什么样，但Agent可以利用已有经验（数据），用各种 Agent 已知状态的概率分布作为当前时刻的 Agent 状态的呈现：$S^{a}_{t} = (P[S^e_t=s^1],…,P[S^e_t=s^n])$
-  * Recurrent neural network：不需要知道概率，只根据当前的Agent状态以及当前时刻Agent的观测，送入循环神经网络(RNN)中得到一个当前Agent状态的呈现：$S^{a}_{t} = \sigma(S^e_{t-1}W_s + O_tW_o)$
+  * Beliefs of environment state：此时虽然 Agent 不知道环境状态到底是什么样，但Agent可以利用已有经验（数据），用各种 Agent 已知状态的概率分布作为当前时刻的 Agent 状态的呈现：$S^{a}\_{t} = (P[S^e_t=s^1],…,P[S^e_t=s^n])$
+  * Recurrent neural network：不需要知道概率，只根据当前的Agent状态以及当前时刻Agent的观测，送入循环神经网络(RNN)中得到一个当前Agent状态的呈现：$S^{a}\_{t} = \sigma(S^e\_{t-1}W_s + O_tW_o)$
 
 ## Agent的主要组成部分
 强化学习中的Agent可以由以下三个组成部分中的一个或多个组成。
