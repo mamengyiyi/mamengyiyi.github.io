@@ -97,7 +97,7 @@ Agent间接观测环境。举几个例子：
 ### 策略 Policy
 策略是决定Agent行为的机制。是从状态到行为的一个映射，可以是确定性的，也可以是不确定性的。
   * 确定的 Policy : $a=\pi(s)$
-  * 随机 Policy : $\pi(a|s) = P[A_{t}=a|S_{t}=s]$
+  * 随机 Policy : $\pi(a|s) = P[A_{t}=a\|S_{t}=s]$
   
 ### 价值函数 VALUE FUNCTION
   * 是一个对未来奖励的预测
