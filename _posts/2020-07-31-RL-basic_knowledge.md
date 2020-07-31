@@ -47,8 +47,7 @@ tags:
 其中衰减系数体现了未来的奖励在当前时刻的价值比例，在$k+1$时刻获得的奖励R在t时刻的体现出的价值是$\gamma^k R$ ，$\gamma$接近0，则表明趋向于“近视”性评估；$\gamma$接近1则表明偏重考虑远期的利益。
 
 #### 价值函数 Value Function
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-092828.png?600}}
-
+![1](https://s1.ax1x.com/2020/07/31/aQVlgU.png)
 状态值函数给出了某一状态或某一动作的长期价值。
 
 定义：一个马尔可夫奖励过程中的状态值函数为从该状态开始的马尔可夫链回报的期望：$v(s) = E [ G_{t} | S_{t} = s ]$
@@ -65,14 +64,16 @@ $$v(s) = E[G_t|S_t=s]= E[R_{t+1} + \gamma (R_{t+2}+\gamma R_{t+3}+…) | S_t=s]=
 
 下图已经给出了$\gamma=1$时各状态的价值（该图没有文字说明$\gamma=1$，根据视频讲解和前面图示以及状态方程的要求，$\gamma$必须要确定才能计算），状态$C_{3}$的价值可以通过状态Pub和Pass的价值以及他们之间的状态转移概率来计算：$4.3 = -2 + 1.0 ( 0.6 * 10 + 0.4 * 0.8 )$
 
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-095149.png?400}}
+![1](https://s1.ax1x.com/2020/07/31/aQVgUI.png)
+
 
 ##### Bellman方程的矩阵形式和求解
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-094330.png?500}}
+![1](https://s1.ax1x.com/2020/07/31/aQVban.png)
 
 实际上，计算复杂度是$O(n^{3})$，$n$是状态数量。因此直接求解仅适用于小规模的MRPs。大规模MRP的求解通常使用迭代法。常用的迭代方法有：动态规划Dynamic Programming、蒙特卡洛评估Monte-Carlo evaluation、时序差分学习Temporal-Difference，后文会逐步讲解这些方法。
+
 ### 马尔可夫决策过程 Markov Decision Process
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-094509.png?600}}
+![1](https://s1.ax1x.com/2020/07/31/aQZMdA.png)
 
 相较于马尔可夫奖励过程，马尔可夫决策过程多了一个动作（动作）集合$A$。看起来很类似马尔可夫奖励过程，但这里的$P$和$R$都与具体的动作$a$对应，而不像马尔可夫奖励过程那样仅对应于某个状态，$A$表示的是有限的动作的集合。具体的数学表达式如下：
 $$P^a_{ss’} = P[S_{t+1}=s’|S_t=s,A_t=a]$$
@@ -80,7 +81,7 @@ $$R^a_{s} = E[R_{t+1} | S_{t} = s,A_t=a ]$$
 
 下图给出了一个可能的MDP的状态转化图。图中红色的文字表示的是采取的动作，而不是先前的状态名。对比之前的学生MRP示例可以发现，即时奖励与动作对应了，同一个状态下采取不同的动作得到的即时奖励是不一样的。由于引入了Action，容易与状态名混淆，因此此图没有给出各状态的名称；此图还把Pass和Sleep状态合并成一个终止状态；另外当选择”去查阅文献”这个动作时，主动进入了一个临时状态（图中用黑色小实点表示），随后被动的被环境按照其动力学分配到另外三个状态，也就是说此时Agent没有选择权决定去哪一个状态。
 
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-095050.png?400}}
+![1](https://s1.ax1x.com/2020/07/31/aQZdds.png)
 
 #### 策略 Policy $\pi$
 策略$\pi$是概率的集合或分布，其元素$\pi(a|s)$为对过程中的某一状态$s$采取可能的动作$a$的概率。用$\pi(a|s)$表示。
@@ -104,18 +105,18 @@ $$q_{\pi}(s,a)= E_{\pi}[G_t|S_t=s, A_t=a]$$
 由于策略$\pi(a|s)$是可以改变的，因此两个值函数的取值不像MRP一样是固定的，那么就能从不同的取值中找到一个最大值即最优值函数。MDP需要解决的问题并不是每一步到底会获得多少累积reward，而是找到一个最优的解决方案。
 
 #### Bellman期望方程 Bellman Expectation Equation
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-100416.png?600}}
+![1](https://s1.ax1x.com/2020/07/31/aQZgL4.png)
 
 根据这两个值函数的定义，它们之间的关系表示为:
   * $v_{\pi}(s) = \sum_{a\in A}\pi(a|s)q_{\pi}(s,a)$
   * $q_{\pi}(s,a) = R_s^a + \gamma \sum_{s’\in S}P_{ss’}^a\sum_{a’\in A}\pi(a’|s’)q_{\pi}(s’,a’)$
 下图解释了红色空心圆圈状态的状态价值是如何计算的，遵循的策略随机策略，即所有可能的动作有相同的几率被选择执行。
 
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-100518.png?400}}
+![1](https://s1.ax1x.com/2020/07/31/aQZbOe.png)
 
 和MRP类似的,我们也可以得到矩阵形式和求解。
 
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-100542.png?500}}
+![1](https://s1.ax1x.com/2020/07/31/aQeC6S.png)
 
 #### 最优价值函数
 最优状态值函数$v_{* }$指的是在从所有策略产生的状态值函数中，选取使状态$s$值最大的函数：
