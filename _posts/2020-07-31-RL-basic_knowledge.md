@@ -25,18 +25,18 @@ tags:
 下面的状态转移矩阵定义了所有状态的转移概率：$$\mathcal{P}=\left[\begin{array}{ccc}{P_{11}} & {\cdots} & {P_{1 n}} \\ {\vdots} & {} & {} \\ {P_{n 1}} & {\cdots} & {P_{n n}}\end{array}\right]$$
 式中$n$为状态数量，矩阵中每一行元素之和为1。
 #### 马尔可夫过程 Markov Process
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-094115.png?600}}
-
+![1](https://s1.ax1x.com/2020/07/31/aQkHV1.png)
 
 马尔可夫过程又叫马尔可夫链(Markov Chain)，它是一个无记忆的随机过程，可以用一个元组表示，其中$S$是有限数量的状态集，$P$是状态转移概率矩阵。
 
 如下图圆圈内是状态，箭头上的值是状态之间的转移概率。class是指上第几堂课，facebook指看facebook网页，pub指去酒吧，pass指通过考试，sleep指睡觉。例如处于class1有0.5的概率转移到class2，或者0.5的概率转移到facebook。
 
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-092110.png?direct600}}
+![1](https://s1.ax1x.com/2020/07/31/aQAWdI.png)
 
 从而可以产生非常多的随机序列，例如C1 C2 C3 Pass Sleep或者C1 FB FB C1 C2 C3 Pub C1 FB FB FB C1 C2 C3 Pub C2 Sleep等。这些随机状态的序列就是马尔可夫过程。
 ### 马尔可夫奖励过程 Markov Reward Process
-{{:research:reinforcement_learning:single_agent:basic_knowledge:pasted:20191225-094208.png?600}}
+
+![1](https://s1.ax1x.com/2020/07/31/aQATSS.png)
 
 **马尔可夫奖励过程在马尔可夫过程的基础上增加了奖励$R$和衰减系数$\gamma$。**
   * $R$是一个奖励函数。$S$状态下的奖励是某一时刻$t$处在状态$s$下在下一个时刻$t+1$能获得的奖励期望$R_{s} = E[R_{t+1} | S_{t} = s ]$
