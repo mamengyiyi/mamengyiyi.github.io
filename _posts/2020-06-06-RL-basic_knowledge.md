@@ -108,9 +108,13 @@ Agent间接观测环境。举几个例子：
 Agent对环境的一个建模，它体现了Agent是如何思考环境运行机制的（how the agent think what the environment was.），Agent希望模型能模拟环境与Agent的交互机制。
 
 模型至少要解决两个问题：一是状态转化概率，即预测下一个可能状态发生的概率：
+
 $$P^a_{s s^{‘}} = P[S_{t+1}=s^{‘}|S_t=s,A_t=a]$$
+
 另一项是预测可能获得的即时奖励：
+
 $$R^a_{s} = E[R_{t+1}|S_t=s,A_t=a]$$
+
 注：
   * 模型并不是构建一个Agent所必需的，很多强化学习算法中Agent并不试图（依赖）构建一个模型。
   * 模型仅针对Agent而言，环境实际运行机制不称为模型，而称为环境动力学(dynamics of environment)，它能够明确确定Agent下一个状态和所得的即时奖励。
