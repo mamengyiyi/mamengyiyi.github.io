@@ -89,7 +89,7 @@ Agent间接观测环境。举几个例子：
 
   * 记住完整的历史： $S^a_{t} = H_{t}$。这种方法比较原始。
   * Beliefs of environment state：此时虽然 Agent 不知道环境状态到底是什么样，但Agent可以利用已有经验（数据），用各种 Agent 已知状态的概率分布作为当前时刻的 Agent 状态的呈现：$S^{a}\_{t} = (P[S^e_t=s^1],…,P[S^e_t=s^n])$
-  * Recurrent neural network：不需要知道概率，只根据当前的Agent状态以及当前时刻Agent的观测，送入循环神经网络(RNN)中得到一个当前Agent状态的呈现：$S^{a}\_{t} = \sigma(S^e\_{t-1}W_s + O_tW_o)$
+  * Recurrent neural network：不需要知道概率，只根据当前的Agent状态以及当前时刻Agent的观测，送入循环神经网络(RNN)中得到一个当前Agent状态的呈现：$S^{a}\_{t} = \sigma(S^a\_{t-1}W_s + O_tW_o)$
 
 ## Agent的主要组成部分
 强化学习中的Agent可以由以下三个组成部分中的一个或多个组成。
