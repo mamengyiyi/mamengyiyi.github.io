@@ -59,12 +59,12 @@ kramdown:
 
 
 # 评论系统
-# Disqus（https://disqus.com/）true
-# disqus_username: mamengyiyi
+Disqus（https://disqus.com/）true
+disqus_username: mamengyiyi
 
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
+  enable: false   #是否开启Gitalk评论
   clientID: 0a4a68678aea5a2cdf4b                            #生成的clientID
   clientSecret: 77293034de9a3fc8741ed512dcb3c4f5b572854b    #生成的clientSecret
   repo: mamengyiyi.github.io    #仓库名称
