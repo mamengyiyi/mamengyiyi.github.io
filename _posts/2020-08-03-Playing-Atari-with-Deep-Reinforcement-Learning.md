@@ -8,7 +8,7 @@ header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
     - RL
-    - 强化学习高级算法
+    - RL advanced algorithms
     - Model-Free RL
     - Deep Q-Learning
 ---
