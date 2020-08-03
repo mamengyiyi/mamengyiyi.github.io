@@ -8,7 +8,7 @@ header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
     - RL
-    - 强化学习高级算法
+    - RL advanced algorithms
 ---
 ---
 以下是基于<a href="https://spinningup.openai.com/en/latest/index.html">OpenAI Spinning Up</a>整理并扩充的单智能体深度强化学习中值得阅读的论文列表以及我的阅读总结与思考。该列表并不全面，但建议对强化学习感兴趣的同学朋友们进行阅读~
