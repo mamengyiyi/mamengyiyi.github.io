@@ -70,7 +70,8 @@ $$\begin{aligned}
 Q^{*}\left(s_{t}, a_{t}\right) &=r_{t}+\gamma *\left(r_{t+1}+\gamma * r_{(t+1)+1}+\ldots+\gamma^{T-(t+1)} * r_{T}\right) \\
 &=r_{t}+\gamma * \max _{a^{\prime}} Q\left(s_{t+1}, a^{\prime}\right)
 \end{aligned}$$
-$\max _{a^{\prime}} Q\left(s_{t+1}, a^{\prime}\right)$表示状态$s_{t+1}$下所有动作中最大的Q值。
+
+其中$\max _{a^{\prime}} Q\left(s_{t+1}, a^{\prime}\right)$表示状态$s_{t+1}$下所有动作中最大的Q值。
 
 至此我们就可以根据下一个状态推导出现有状态理想情况下的Q值了。现在我们来整理一下模型参数的迭代过程：目前我们有一个状态$s_{t}$，将这个状态喂给模型得到了每个动作下对应的 Qt 值，我们选取了Q值最大的动作得到了reward和下一个状态$s_{t+1}$。有了下一个state我们又可以通过模型得到所有动作对应的$Q_{t+1}$值。由上面公式可以得到$Q^{*}_{t}=r_t+\gamma*Q_{t+1}$ ，理论上$Q^{*}_{t}=Q_{t}$，但是由于模型一开始并不是完美的，得到的Q值也会跟理想情况有差距，所以才需要不停的迭代。我们可以用实际值和理想值之间的差值作为loss function，并通过大量样本最小化这个loss function来完善模型。
 
