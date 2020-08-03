@@ -60,7 +60,11 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-disqus_username: mamengyiyi
+# disqus_username: mamengyiyi
+
+# Livere评论系统
+Livere:
+livere_uid: MTAyMC81MTIxOC8yNzY5OQ
 
 # Gitalk
 gitalk:
