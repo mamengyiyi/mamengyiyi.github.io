@@ -2,7 +2,7 @@
 layout:     post
 title:      单智能体强化学习算法
 subtitle:   提纲
-date:       2020-08-01
+date:       2020-12-01
 author:     MY
 header-img: img/post-bg-hacker.jpg
 catalog: true
