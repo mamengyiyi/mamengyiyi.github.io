@@ -63,8 +63,8 @@ kramdown:
 # disqus_username: mamengyiyi
 
 # Livere评论系统
-Livere:
-livere_uid: MTAyMC81MTIxOC8yNzY5OQ
+
+livere_uid: MTAyMC81MTIxOC8yNzY5OQ==
 
 # Gitalk
 gitalk:
