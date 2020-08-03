@@ -8,7 +8,7 @@ header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
     - RL
-    - 强化学习基础知识
+    - RL basic knowledge
 ---
 ---
 
