@@ -11,7 +11,7 @@ tags:
     - 强化学习高级算法
 ---
 ---
-以下是基于<a href="https://spinningup.openai.com/en/latest/index.html">OpenAI Spinning Up</a>整理并扩充的单智能体深度强化学习中值得阅读的论文列表。该列表并不全面，但建议对强化学习感兴趣的同学朋友们进行阅读~
+以下是基于<a href="https://spinningup.openai.com/en/latest/index.html">OpenAI Spinning Up</a>整理并扩充的单智能体深度强化学习中值得阅读的论文列表以及我的阅读总结与思考。该列表并不全面，但建议对强化学习感兴趣的同学朋友们进行阅读~
   * Model-Free RL
     * Deep Q-Learning
       * <a href="https://mayi1996.top/2020/08/03/Playing-Atari-with-Deep-Reinforcement-Learning/">DQN: Playing Atari with Deep Reinforcement Learning</a>
