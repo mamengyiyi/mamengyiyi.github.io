@@ -16,7 +16,7 @@ tags:
     * Deep Q-Learning
       * <a href="https://mayi1996.top/2020/08/03/Playing-Atari-with-Deep-Reinforcement-Learning/">DQN: Playing Atari with Deep Reinforcement Learning</a>
       * <a href="https://mayi1996.top/2020/08/03/Deep-Recurrent-Q-Learning-for-Partially-Observable-MDPs/">DRQN：Deep Recurrent Q-Learning for Partially Observable MDPs</a>
-      * <a href="https://mayi1996.top/2020/08/03/Dueling-Network-Architectures-for-Deep-Reinforcement-Learning">Dueling DQN：Dueling Network Architectures for Deep Reinforcement Learning</a>
+      * <a href="https://mayi1996.top/2020/08/03/Dueling-Network-Architectures-for-Deep-Reinforcement-Learning/">Dueling DQN：Dueling Network Architectures for Deep Reinforcement Learning</a>
       * <a href="">Double DQN：Deep Reinforcement Learning with Double Q-learning</a>
       * <a href="">Prioritized Experience Replay (PER)：Prioritized Experience Replay</a>
       * <a href="">Rainbow DQN：Rainbow Combining Improvements in Deep Reinforcement Learning</a>
