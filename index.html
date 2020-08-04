@@ -10,7 +10,7 @@ description: "Welcome to my world."
             {% if (post.top) %}
                 <i class="fa fa-thumb-tack"></i>
 <!--                 <font color=0A2466>置顶</font> -->
-                <span class="post-meta-divider">|</span>
+<!--                 <span class="post-meta-divider">|</span> -->
             {% endif %}
             {{ post.title }}
         </h2>
@@ -35,12 +35,12 @@ description: "Welcome to my world."
 <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; 下一页</a>
     </li>
     {% endif %}
     {% if paginator.next_page %}
     <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">上一页 &rarr;</a>
     </li>
     {% endif %}
 </ul>
