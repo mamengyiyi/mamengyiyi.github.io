@@ -6,6 +6,7 @@ date:       2020-12-01
 author:     MY
 header-img: img/post-bg-hacker.jpg
 catalog: true
+top: true
 tags:
     - RL
     - RL advanced algorithms
