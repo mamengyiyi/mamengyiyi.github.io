@@ -90,13 +90,16 @@
                     </li>
                     {% endif %}
                 </ul>
-                <span id="busuanzi_container_site_pv" style="margin-left: 2px; margin-bottom:-5px;">
-                    <i class="fa fa-spinner"></i>
-                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>
-                <span id="busuanzi_container_site_uv" style="margin-left: 2px; margin-bottom:-5px;">
-                    人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-                </span>
+                <div align="center">
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">
+                        <i class="fa fa-spinner"></i>
+                        本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    </span>
+                    <span id="busuanzi_container_site_uv" style="font-size: 12px;">
+                        人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                    </span>
+                </div>
+                
                 <p class="copyright text-muted">
                     Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
                     <br>
