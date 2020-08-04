@@ -2,7 +2,7 @@
 layout:     post
 title:      单智能体强化学习算法
 subtitle:   Double DQN: Deep Reinforcement Learning with Double Q-learning
-date:       2020-08-04
+date:       2020-08-03
 author:     MY
 header-img: img/post-bg-hacker.jpg
 catalog: true
@@ -13,7 +13,6 @@ tags:
     - Deep Q-Learning
 ---
 ---
-
 
 论文链接：<a href="https://arxiv.org/pdf/1509.06461.pdf">Deep Reinforcement Learning with Double Q-learning, AAAI 2016</a>
 
