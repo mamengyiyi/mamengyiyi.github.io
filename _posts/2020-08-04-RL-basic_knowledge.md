@@ -31,7 +31,7 @@ tags:
   * Policy Evaluation:基于当前的Policy计算出每个状态的value function $V$（迭代计算直到收敛）。
   * Policy Improvment:基于当前的value function，采用贪心算法来找到当前最优的Policy $\pi$。
   
-如此反复多次，最终得到最优策略$\pi^*$ 和最优状态价值函数$V^*$:
+如此反复多次，最终得到最优策略$\pi^{\*}$ 和最优状态价值函数$V^{\*}$:
 
 ![1](https://s1.ax1x.com/2020/08/04/aBFGF0.png)
 
