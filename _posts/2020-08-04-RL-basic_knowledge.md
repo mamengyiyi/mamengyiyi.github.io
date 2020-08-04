@@ -49,8 +49,8 @@ tags:
 
 对于完备的度量空间$\langle M, d\rangle$，如果$f : M \mapsto M$是它的一个压缩映射，那么
 
-  * 在该度量空间中，存在唯一的点$x_{*}$满足$f\left(x_{*}\right)=x_{*}$。
-  * 并且，对于任意的$x \in M$, 定义序列$f^{2}(x)=f(f(x)), f^{3}(x)=f\left(f^{2}(x)\right) |, \cdots,f^{n}(x)=f\left(f^{n-1}(x)\right)$，该序列会收敛于$x_{*}$，即$\lim_{n \rightarrow \infty} f^{n}(x)=x_{*}$ 
+  * 在该度量空间中，存在唯一的点$x_{\*}$满足$f\left(x_{\*}\right)=x_{\*}$。
+  * 并且，对于任意的$x \in M$, 定义序列$f^{2}(x)=f(f(x)), f^{3}(x)=f\left(f^{2}(x)\right) \|, \cdots,f^{n}(x)=f\left(f^{n-1}(x)\right)$，该序列会收敛于$x_{\*}$，即$\lim_{n \rightarrow \infty} f^{n}(x)=x_{*}$ 
 
 结论：完备度量空间上的压缩映射具有唯一的不动点。从度量空间任何一点出发，只要满足压缩映射，压缩映射的序列必定会收敛到唯一的不动点。因此证明一个迭代序列是不是收敛，只要证明该序列所对应的映射是不是压缩映射。
 
@@ -59,7 +59,7 @@ tags:
 贝尔曼期望方程为：$$v_{\pi}(s)=\sum_{a \in A} \pi(a | s)\left(R_{s}^{a}+\gamma \sum_{s^{\prime} \in S} P_{s s^{\prime}}^{a} v_{\pi}\left(s^{\prime}\right)\right)
 \tag1$$
 
-可进一步拆解为$$v_{\pi}(s)=\sum_{a \in A} \pi(a | s)R_{s}^{a}+\sum_{a \in A} \pi(a | s)\gamma \sum_{s^{\prime} \in S} P_{s s^{\prime}}^{a} v_{\pi}\left(s^{\prime}\right) \tag2$$
+可进一步拆解为$$v_{\pi}(s)=\sum_{a \in A} \pi(a \| s)R_{s}^{a}+\sum_{a \in A} \pi(a \| s)\gamma \sum_{s^{\prime} \in S} P_{s s^{\prime}}^{a} v_{\pi}\left(s^{\prime}\right) \tag2$$
 
 如图所示：
 
@@ -95,7 +95,7 @@ $$
 V_{\pi}=R_{\pi}+\gamma P_{\pi} V_{\pi} \tag3
 $$
 
-== 2.2.1.3 收敛性证明 ==
+##### 2.2.1.4 收敛性证明
 从当前值函数到下一个迭代值函数的映射可表示为：
 
 $$
