@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      单智能体强化学习算法
-subtitle:   Double DQN: Deep Reinforcement Learning with Double Q-learning
-date:       2020-08-03
+subtitle:   Double DQN：Deep Reinforcement Learning with Double Q-learning
+date:       2020-08-04
 author:     MY
 header-img: img/post-bg-hacker.jpg
 catalog: true
