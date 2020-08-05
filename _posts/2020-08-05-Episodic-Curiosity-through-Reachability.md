@@ -32,7 +32,7 @@ tags:
 
 ![1](https://s1.ax1x.com/2020/08/05/arBuj0.png)
 
-首先，当前的observation $\mathbf{o}$经过embedding网络产生一个embedding向量$\mathbf{e}=E(\mathbf{o})$，该observation的embedding则会与存在memory buffer中的所有embedding向量$\mathbf{M}=\left\langle\mathbf{e}_{1}, \ldots,\mathbf{e}_{\|\mathbf{M}\|}\right\rangle$进行比较，比较的方式是通过一个通过逻辑回归loss训练得到的comparator network $C$：如下图所示，如果两个observation在$k$步内可达的概率很低，则输出接近0，否则输出接近1。针对每个memory中observation比较得到的分数，存到reachability buffer中。
+首先，当前的observation $\mathbf{o}$经过embedding网络产生一个embedding向量$\mathbf{e}=E(\mathbf{o})$，该observation的embedding则会与存在memory buffer中的所有embedding向量$\mathbf{M}=\left\langle\mathbf{e}\_{1}, \ldots,\mathbf{e}\_{\|\mathbf{M}\|}\right\rangle$进行比较，比较的方式是通过一个通过逻辑回归loss训练得到的comparator network $C$：如下图所示，如果两个observation在$k$步内可达的概率很低，则输出接近0，否则输出接近1。针对每个memory中observation比较得到的分数，存到reachability buffer中。
 
 ![1](https://s1.ax1x.com/2020/08/05/arBlHU.png)
 
