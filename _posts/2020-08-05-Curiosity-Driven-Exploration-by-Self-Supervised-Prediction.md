@@ -9,8 +9,7 @@ catalog: true
 tags:
     - RL
     - RL advanced algorithms
-    - Model-Free RL
-    - Deep Q-Learning
+    - Exploration in RL
 ---
 ---
 
