@@ -44,7 +44,8 @@ tags:
     * Count based Exploration
       * <a href="">RND: Exploration by random network distillation</a>
     * Curiosity based Exploration
-      * <a href="">EC: Episodic Curiosity through Reachability</a>
+      * <a href="https://mayi1996.top/2020/08/05/Curiosity-Driven-Exploration-by-Self-Supervised-Prediction/">ICM: Curiosity-Driven Exploration by Self-Supervised Prediction</a>
+      * <a href="https://mayi1996.top/2020/08/05/Episodic-Curiosity-through-Reachability/">EC: Episodic Curiosity through Reachability</a>
     * Information Gain    
   * Transfer and Multitask RL
     * <a href="">Dynamic Weights in Multi-Objective Deep Reinforcement Learning</a>
