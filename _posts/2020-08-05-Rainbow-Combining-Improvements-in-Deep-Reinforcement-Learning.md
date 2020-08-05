@@ -138,6 +138,7 @@ $$Q(s, a ; \theta, \alpha, \beta)=V(s ; \theta, \beta)+A(s, a ; \theta, \alpha)$
 $$Q(s, a ; \theta, \alpha, \beta)=V(s ; \theta, \beta)+\left(A(s, a ; \theta, \alpha)-\max _{a^{\prime} \in[.4]} A(s, a \prime ; \theta, \alpha)\right)$$
 
 但是可以看出，上面的式子中Advantage函数需要拟合当任意的最优动作改变时对应的Advantage值，这会造成训练过程的不稳定，因此，改进方法是利用$A(s,a)$的平均值代替求最大值的操作，该方法的潜在意思是：相比于一直学习拟合最大的动作值对应的Advantage值，只需要拟合平均的动作值对应的Advantage值就好，公式如下：
+
 $$Q(s, a ; \theta, \alpha, \beta)=V(s ; \theta, \beta)+\left(A(s, a ; \theta, \alpha)-\frac{1}{\|\mathcal{A}\|} \sum_{a^{\prime}} A(s, a \prime ; \theta, \alpha)\right)$$
 
 #### 2.4.2 代码实现
@@ -184,7 +185,7 @@ $$d_{t^{\prime}}=\left(R_{t+1}+\gamma_{t+1} z, p_{h} a t \theta\left(S_{t+1}, \h
 
 $$D_{K L}\left(\phi_{z} d_{t^{\prime}} | d_{t}\right)$$
 
-其中$\phi_z$是一个目标分布在固定向量空间$z$上的一个L2投影, $\hat{a}^{\*}_{t+1} = \arg\max_{a} q_{\hat{\theta}} (S_{t+1}, a)$是在状态$S_{t+1}$下对应平均动作值函数$q_{\hat{\theta}} (S_{t+1}, a) = z^{T}p_{\theta}(S_{t+1}, a)$的最优动作。
+其中$\phi_z$是一个目标分布在固定向量空间$z$上的一个L2投影, $\hat{a}\_{t+1}^{\*} = \arg\max_{a} q_{\hat{\theta}} (S_{t+1}, a)$是在状态$S_{t+1}$下对应平均动作值函数$q_{\hat{\theta}} (S_{t+1}, a) = z^{T}p_{\theta}(S_{t+1}, a)$的最优动作。
 
 #### 2.6.2 代码实现
 通过神经网络来表示一个参数化的分布，在DQN中，输出的大小变成了atom_size * out_dim，然后对每一个输出的动作值都进行softmax操作，这样确保了标准化不同动作值之间的差异。
