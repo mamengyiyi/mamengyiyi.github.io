@@ -43,7 +43,7 @@ $$\operatorname{Loss}_{i}\left(\theta_{i}\right)=\mathbb{E}_{\left(s, a, r, s^{\
   * $\theta_{i}^{-}$代表目标值函数的神经网络参数
   * 目标值函数的网络参数是每隔$C$次训练才更新，$C$次训练期间保持目标值函数的网络参数固定不变
 
-为了增加训练的稳定性，作者还提出了梯度裁剪(Gradient Clipping)的方法，将$\left(r+\gamma \max_{a^{\prime}} Q\left(s^{\prime}, a^{\prime} ; \theta_{i}^{-}\right)-Q\left(s, a ; \theta_{i}\right)\right)$差值限定在了[-1,1]之间。
+为了增加训练的稳定性，作者还提出了梯度裁剪(Gradient Clipping)的方法，将$\left(r+\gamma \max_{a^{\prime}} Q\left(s^{\prime}, a^{\prime} ; \theta_{i}^{-}\right)-Q\left(s, a ; \theta_{i}\right)\right)$差值限定在了-1和1之间。
 
 #### 2.1.2 代码实现
 通常Python实现经验回放池会用到三种数据结构：
