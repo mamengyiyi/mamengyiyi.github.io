@@ -169,7 +169,7 @@ f(x)=\operatorname{sgn}(x) \sqrt{|x|}
 #### 2.5.2 代码实现
 NoisyNet可以看做是$\epsilon$-greedy的一种，因此与$\epsilon$有关的代码都可以省去。
 
-![1](https://s1.ax1x.com/2020/08/05/asa181.png)
+![1](https://s1.ax1x.com/2020/08/05/asdgQx.png)
 
 ### 2.6 Categorical DQN
 #### 2.6.1 算法简介
@@ -212,7 +212,7 @@ $$\left(R_{t}^{(n)}+\gamma_{t}^{(n)} \max _{a^{\prime}} q_{\theta}^{-}\left(S_{t
 #### 2.7.2 代码实现
 这里和DQN不同的一点是利用deque来实现经验回放池：
 
-![1](https://s1.ax1x.com/2020/08/05/asaLa4.png)
+![1](https://s1.ax1x.com/2020/08/05/asdusf.png)
 
 ## 三、实验内容
 
