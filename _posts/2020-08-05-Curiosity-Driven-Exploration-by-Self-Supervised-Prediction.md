@@ -34,7 +34,9 @@ ICM框架如下图所示：
 
 ![1](https://s1.ax1x.com/2020/08/05/arNGhq.png)
 
-将intrinsic reward作为总的reward的一部分$r_{t}^{e}+r_{t}^{i}$，在RL训练中一起进行最大化$$\max _{\theta_{P}} \mathbb{E}_{\pi\left(s_{t} ; \theta_{P}\right)}\left[\Sigma_{t} r_{t}\right]$$
+将intrinsic reward作为总的reward的一部分$r_{t}^{e}+r_{t}^{i}$，在RL训练中一起进行最大化：
+
+$$\max _{\theta_{P}} \mathbb{E}_{\pi\left(s_{t} ; \theta_{P}\right)}\left[\Sigma_{t} r_{t}\right]$$
 
 ### 预测误差作为intrinsic reward
 设计intrinsic reward很大程度上与你想要解决的任务相关，这里想要解决的问题是video game，那么就要立足在video game获得state就是一张图片。一种很直接的想法就是：在状态$s$下，采用动作$a$，通过卷积与反卷积等结构来预测下一状态$s'$，通过预测出来的$s'$与实际的$s_{r}^{'}$的误差作为agent的reward。然而，直接预测下一个状态$s'$其实存在一系列问题，比如预测每个pixel的颜色是一件很困难的事，稍微有些差别，prediction error就会变化的比较大，所以agent很容易被这样的信息误导，并没有达到探索的目的。此外图片中的信息其实非常丰富，比如在不同关卡的背景，亮度不同，但是本质的内含相近，关注这些额外的信息反而会影响在不同关卡中的泛化。总结来看，在state space中可以分成三种信息：
@@ -50,8 +52,8 @@ ICM框架如下图所示：
 
 那么如何提取state的有效信息呢？作者构造了一个Inverse Model,训练目标是根据当前state和下一个state估计中间采取的action。和前面预测state正好反过来。这种方法可以利用现有数据进行监督学习。为了争取估计action，CNN就需要能够提取图像中的有用信息，比如自身的位置变化，周围物体的变化，而对于图像中无关的信息则能自动忽略。所以作者用这种简单的方法就能训练出自动提取有效信息的model。具体来说，Inverse Model的训练方式如下：
  
-  - 建立模型根据当前state $s_{t}$和下一个state $s_{t+1}$预测中间采取的动作：$\hat{a}_{t}=g\left(s_{t}, s_{t+1} ; \theta_{I}\right)$
-  - 最小化预测动作与真实动作的loss：$\min _{\theta_{I}} L_{I}\left(\hat{a}_{t}, a_{t}\right)$
+  - 建立模型根据当前state $s_{t}$和下一个state $s_{t+1}$预测中间采取的动作：$\hat{a}\_{t}=g\left(s_{t}, s_{t+1} ; \theta_{I}\right)$
+  - 最小化预测动作与真实动作的loss：$\min_{\theta_{I}} L_{I}\left(\hat{a}\_{t}, a_{t}\right)$
   
 #### Forward Model预测下一时刻state表征
 通过Inverse Model得到了对state space进行表征的方法，再根据Forward Model进行预测下一时刻state的预测，预测值与真实值得error就是intrinsic reward。具体来说，Forward Model的训练方式如下：
