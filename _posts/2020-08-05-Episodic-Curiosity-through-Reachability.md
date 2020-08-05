@@ -50,7 +50,7 @@ $$b=B(\mathbf{M}, \mathbf{e})=\alpha(\beta-C(\mathbf{M}, \mathbf{e}))$$
 
 最后，若当前bonus值大于bonus阈值大于$b_{\text {novelty}}$，则将当前obderavtion的embedding加入到memory buffer中（若每个observation embedding都被加到Buffer中，那么当前observation必然是reachable的，则bonus永远不会被计算）。若buffer满了，则随机替换其中的一条，以保证新旧memory都有，以保持buffer中样本的丰富性。
 
-===== 网络训练 =====
+### 网络训练
 
 预测网络的训练使用逻辑回归loss，使用到的正负样本如下图所示：
 
