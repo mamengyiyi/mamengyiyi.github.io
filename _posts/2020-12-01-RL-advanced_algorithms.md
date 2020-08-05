@@ -20,7 +20,7 @@ tags:
       * <a href="https://mayi1996.top/2020/08/03/Dueling-Network-Architectures-for-Deep-Reinforcement-Learning/">Dueling DQN：Dueling Network Architectures for Deep Reinforcement Learning</a>
       * <a href="https://mayi1996.top/2020/08/04/Deep-Reinforcement-Learning-with-Double-Q-learning/">Double DQN：Deep Reinforcement Learning with Double Q-learning</a>
       * <a href="">Prioritized Experience Replay (PER)：Prioritized Experience Replay</a>
-      * <a href="">Rainbow DQN：Rainbow Combining Improvements in Deep Reinforcement Learning</a>
+      * <a href="https://mayi1996.top/2020/08/05/Rainbow-Combining-Improvements-in-Deep-Reinforcement-Learning">Rainbow DQN：Rainbow Combining Improvements in Deep Reinforcement Learning</a>
     * Policy Gradients
       * <a href="">A3C: Asynchronous Methods for Deep Reinforcement Learning</a>
       * <a href="">TRPO: Trust Region Policy Optimization</a>
