@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      单智能体强化学习算法
-subtitle:   ICM: Curiosity-Driven Exploration by Self-Supervised Prediction
+subtitle:   ICM：Curiosity-Driven Exploration by Self-Supervised Prediction
 date:       2020-08-05
 author:     MY
 header-img: img/post-bg-hacker.jpg
