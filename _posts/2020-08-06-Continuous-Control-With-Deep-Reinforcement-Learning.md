@@ -1,3 +1,4 @@
+---
 layout:     post
 title:      单智能体强化学习算法
 subtitle:   DDPG：Continuous Control With Deep Reinforcement Learning
@@ -11,7 +12,7 @@ tags:
     - RL advanced algorithms
     - Model-Free RL
     - Deterministic Policy Gradients
-
+---
 ---
 
 论文链接：<a href="https://arxiv.org/pdf/1509.02971.pdf">Continuous Control With Deep Reinforcement Learning, ICLR 2016</a>
@@ -20,7 +21,8 @@ tags:
 
   - DQN只能处理离散的、低维的动作空间。DQN不能直接处理连续的原因是它依赖于在每一次最优迭代中寻找 动作值函数的最大值(表现为在Q神经网络中输出每个动作的值函数)，针对连续动作空间DQN没有办法输出每个动作的动作值函数。
   - 解决上述连续动作空间问题的一个简单方法是将动作空间离散化，但是动作空间是随着动作的自由度呈指数增长的（论文中举了一个机械臂的例子，自由度是指机械臂的关节，即使将每个关节的动作离散化{-k,0,k}、自由度为7, 3^7这个数字也是很大的）。所以针对大部分任务来说这个方法是不现实的。
-  因此，本文基于David Sliver在2014年提出的DPG（Deterministic Policy Gradient），设计了DDPG算法，将深度Q学习（DQN）的成功引入到连续动作空间中。DDPG使用确定性策略之后，**值函数期望与当前策略无关，只与环境有关**，因此DDPG算法是off-policy的，即$Q$值由$$Q^{\pi}\left(s_{t}, a_{t}\right)=\mathbb{E}_{r_{t}, s_{t+1} \sim E}\left[r\left(s_{t}, a_{t}\right)+\gamma \mathbb{E}_{a_{t+1} \sim \pi}\left[Q^{\pi}\left(s_{t+1}, a_{t+1}\right)\right]\right]$$变为了$$Q^{\mu}\left(s_{t}, a_{t}\right)=\mathbb{E}_{r_{t}, s_{t+1} \sim E}\left[r\left(s_{t}, a_{t}\right)+\gamma Q^{\mu}\left(s_{t+1}, \mu\left(s_{t+1}\right)\right)\right]$$
+  
+因此，本文基于David Sliver在2014年提出的DPG（Deterministic Policy Gradient），设计了DDPG算法，将深度Q学习（DQN）的成功引入到连续动作空间中。DDPG使用确定性策略之后，**值函数期望与当前策略无关，只与环境有关**，因此DDPG算法是off-policy的，即$Q$值由$$Q^{\pi}\left(s_{t}, a_{t}\right)=\mathbb{E}_{r_{t}, s_{t+1} \sim E}\left[r\left(s_{t}, a_{t}\right)+\gamma \mathbb{E}_{a_{t+1} \sim \pi}\left[Q^{\pi}\left(s_{t+1}, a_{t+1}\right)\right]\right]$$变为了$$Q^{\mu}\left(s_{t}, a_{t}\right)=\mathbb{E}_{r_{t}, s_{t+1} \sim E}\left[r\left(s_{t}, a_{t}\right)+\gamma Q^{\mu}\left(s_{t+1}, \mu\left(s_{t+1}\right)\right)\right]$$
 
 ## 二、解法
 
