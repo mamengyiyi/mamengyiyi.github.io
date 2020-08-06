@@ -15,7 +15,7 @@ tags:
 ---
 以下是我整理的多智能体深度强化学习中值得阅读的论文列表以及阅读总结与思考。该列表并不全面，但建议对多智能体强化学习感兴趣的同学朋友们进行阅读~
   * Analysis of Emergent Behaviors
-    * <a href="">Can Deep Reinforcement Learning solve Erdos-Selfridge-Spencer Games?</a>
+    * <a href="https://mayi1996.top/2020/08/06/Can-Deep-Reinforcement-Learning-solve-Erdos-Selfridge-Spencer-Games/">Can Deep Reinforcement Learning solve Erdos-Selfridge-Spencer Games?</a>
     * <a href="">Emergent Complexity via Multi-Agent Competition</a>
     * <a href="">Malthusian Reinforcement Learning</a>
     * <a href="">Multiagent cooperation and competition with deep reinforcement learning</a>
