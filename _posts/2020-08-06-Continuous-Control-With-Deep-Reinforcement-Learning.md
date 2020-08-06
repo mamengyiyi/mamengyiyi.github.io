@@ -26,7 +26,7 @@ tags:
 
 ## 二、解法
 
-### 2.1 actor-critic架构 & DPG for actor & TD error for critic
+### 2.1 actor-critic架构 \& DPG for actor \& TD error for critic
 
 虽然DDPG借鉴了DQN的思想（memory replay 和 target netwotrk），但是却不能直接使用Q-learning算法框架，因为在连续动作空间无法简单、快速地实现Q-learning的贪婪策略。所以使用的是基于确定动作策略的actor-critic算法框架。并且在actor部分采用DPG的确定性策略方式。
 
