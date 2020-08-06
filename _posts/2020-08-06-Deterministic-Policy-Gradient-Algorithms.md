@@ -75,7 +75,7 @@ J_{\beta}\left(\pi_{\theta}\right) &=\int_{\mathcal{S}} \rho^{\beta} V^{\pi}(s) 
 
 $$\begin{aligned}
 \nabla_{\theta} J_{\beta}\left(\pi_{\theta}\right) & \approx \int_{\mathcal{S}} \int_{\mathcal{A}} \rho^{\beta} \nabla_{\theta} \pi_{\theta}(a \| s) Q^{\pi}(s, a) \mathrm{d} a d s \\
-&=\mathbb{E}\_{s \sim \rho^{\beta}, a \sim \beta}\left[\frac{\pi_{\theta}(a \| s)}{\beta_{\theta}(a \| s)} \nabla_{\theta} \log \pi_{\theta}(a \| s) Q^{\pi}(s, a)\right]
+&=\mathbb{E}_{s \sim \rho^{\beta}, a \sim \beta}\left[\frac{\pi_{\theta}(a \| s)}{\beta_{\theta}(a \| s)} \nabla_{\theta} \log \pi_{\theta}(a \| s) Q^{\pi}(s, a)\right]
 \end{aligned}$$
 
 这个近似式去掉了一个依赖动作价值梯度的项$\nabla_{\theta} Q^{\pi}(s, a)$，这是一个很好的近似，因为它可以保留梯度上升收敛到的局部最优集。
@@ -86,11 +86,11 @@ $$\begin{aligned}
 
 **大部分的model-free的RL算法本质上是基于generalised policy iteration的。**在policy evaluation阶段评估动作值函数$Q^{\pi}(s, a)$或者$Q^{\mu}(s, a)$，在policy improvement阶段根据动作值函数更新策略。通常，policy improvement使用的方法是贪心选择全局最大化动作值函数的动作。但是在连续动作空间里这样做并不可行。一种替代的方法是将策略朝$Q$的梯度方向移动，而不是使$Q$全局最大化。对于每一个state策略参数$\theta^{k+1}$都按照梯度$\nabla_{\theta} Q^{\mu^{k}}\left(s, \mu_{\theta}(s)\right)$正比例更新，因此对于整个state的分布可以用均值来进行参数的更新：
 
-$$\theta^{k+1}=\theta^{k}+\alpha \mathbb{E}\_{s \sim \rho^{\mu} k}\left[\nabla_{\theta} Q^{\mu^{k}}\left(s, \mu_{\theta}(s)\right)\right]$$
+$$\theta^{k+1}=\theta^{k}+\alpha \mathbb{E}_{s \sim \rho^{\mu} k}\left[\nabla_{\theta} Q^{\mu^{k}}\left(s, \mu_{\theta}(s)\right)\right]$$
 
 使用链式法则，可以进一步得到：
 
-$$\theta^{k+1}=\theta^{k}+\alpha \mathbb{E}\_{s \sim \rho^{\mu}}^{k}\left[\left.\nabla_{\theta} \mu_{\theta}(s) \nabla_{a} Q^{\mu^{k}}(s, a)\right|_{a=\mu \theta(s)}\right]$$
+$$\theta^{k+1}=\theta^{k}+\alpha \mathbb{E}_{s \sim \rho^{\mu}}^{k}\left[\left.\nabla_{\theta} \mu_{\theta}(s) \nabla_{a} Q^{\mu^{k}}(s, a)\right|_{a=\mu \theta(s)}\right]$$
 
 这样的梯度存在的问题是，随着策略的变化，状态分布也会变，按照这种方法进行policy improvement并不能看出来是否有效。
 
@@ -103,14 +103,14 @@ Deterministic policy $\mu_{\theta}: \mathcal{S} \rightarrow \mathcal{A}, \theta 
 $$\begin{aligned}
 J\left(\mu_{\theta}\right) &=\mathbb{E}\left[r_{1}^{\gamma} | \mu\right] \\
 &=\int_{\mathcal{S}} \rho^{\mu} r\left(s, \mu_{\theta}(s)\right) \mathrm{d} s \\
-&=\mathbb{E}\_{s \sim \rho^{\mu}}\left[r\left(s, \mu_{\theta}(s)\right)\right]
+&=\mathbb{E}_{s \sim \rho^{\mu}}\left[r\left(s, \mu_{\theta}(s)\right)\right]
 \end{aligned}$$
 
 那么deterministic policy gradient也可由此推出：
 
 $$\begin{aligned}
 \nabla_{\theta} J\left(\mu^{\theta}\right) &=\left.\int_{\mathcal{S}} \rho^{\mu}(s) \nabla_{\theta} \mu_{\theta}(s) \nabla_{\theta} Q^{\mu}(s, a)\right|_{a=\mu_{\theta}(s)} \mathrm{d} s \\
-&=\mathbb{E}\_{s \sim \rho^{\mu}}\left[\left.\nabla_{\theta} \mu_{\theta}(s) \nabla_{a} Q^{\mu}(s, a)\right|_{a=\mu_{\theta}}\right]
+&=\mathbb{E}_{s \sim \rho^{\mu}}\left[\left.\nabla_{\theta} \mu_{\theta}(s) \nabla_{a} Q^{\mu}(s, a)\right|_{a=\mu_{\theta}}\right]
 \end{aligned}$$
 
 
@@ -195,7 +195,7 @@ J_{\beta}\left(\mu_{\theta}\right) &=\int_{\mathcal{S}} \rho^{\beta}(s) V^{\mu}(
 
 $$\begin{aligned}
 \nabla_{\theta} J_{\beta}\left(\mu_{\theta}\right) & \approx \int_{\mathcal{S}} \rho^{\beta}(s) \nabla_{\theta} \mu_{\theta}(a | s) Q^{\mu}(s, a) \mathrm{d} s \\
-&=\mathbb{E}\_{s \sim \rho^{\beta}}\left[\left.\nabla_{\theta} \mu_{\theta}(s) \nabla_{a} Q^{\mu}(s, a)\right|_{a=\mu_{\theta}(s)}\right]
+&=\mathbb{E}_{s \sim \rho^{\beta}}\left[\left.\nabla_{\theta} \mu_{\theta}(s) \nabla_{a} Q^{\mu}(s, a)\right|_{a=\mu_{\theta}(s)}\right]
 \end{aligned}$$
 
 与off policy的SPG进行对比，可以发现少了重要性权重，即$\frac{\pi \theta(a \| s)}{\beta \theta(a \| s)}$。因为重要性采样是用简单的概率分布估计复杂的概率分布，而确定性策略的动作是确定值；critic采用Q-learing的学习策略来估计动作-值函数，也就是用TD(0)估计动作值函数，并且忽略重要性权重：
