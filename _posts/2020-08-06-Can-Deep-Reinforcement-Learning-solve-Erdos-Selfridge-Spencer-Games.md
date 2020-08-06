@@ -7,10 +7,9 @@ header-img: img/post-bg-hacker.jpg
 catalog: true
 top: true
 tags:
-
     - RL
-        - MARL
-        - RL advanced algorithms
+    - MARL
+    - RL advanced algorithms
 
 
 
