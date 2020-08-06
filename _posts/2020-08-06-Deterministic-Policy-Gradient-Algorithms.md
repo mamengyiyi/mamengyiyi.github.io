@@ -176,11 +176,11 @@ $$\nabla_{\theta} J\left(\mu_{\theta}\right)=E_{s \sim \rho^{\mu_{\theta}}}\left
 
 与SPG相比，区别如下：
   * $\pi_{\theta}$变成了$\mu_{\theta}$
-  * 原来的$Q^{\pi}(s, a)$改成了$\left.Q^{\mu}(s, a)\right\|_{a=\mu_{\theta}(s)}$
+  * 原来的$Q^{\pi}(s, a)$改成了$\left.Q^{\mu}(s, a)\right\|\_{a=\mu_{\theta}(s)}$
   * 原来的$s \sim \rho^{\pi}$变成了$s \sim \rho^{\mu}$
   * 去掉了对于动作的采样$a \sim \pi_{\theta}$，而改成确定性的动作$a=\mu_{\theta}(s)$
   * 原来对$\pi$的梯度，即$\nabla_{\theta} \log \pi_{\theta}(a \| s)$改成了对$\mu$的梯度$\nabla_{\theta} \mu_{\theta}(s)$
-  * 对于$Q$也要求一次关于$a$的梯度，即：$\left.\nabla_{a} Q^{\mu}(s, a)\right\|_{a=\mu_{\theta}(s)}$，即回报函数对动作的导数
+  * 对于$Q$也要求一次关于$a$的梯度，即：$\left.\nabla_{a} Q^{\mu}(s, a)\right\|\_{a=\mu_{\theta}(s)}$，即回报函数对动作的导数
 
 #### 2.3.2 Off-Policy 确定性AC
 
@@ -214,8 +214,8 @@ w_{t+1} &=w_{t}+\alpha_{w} \delta_{t} \nabla_{w} Q^{w}\left(s_{t}, a_{t}\right) 
 
 这部分重点关于为什么可以用一个可微的函数近似器$Q^{w}(s, a)$来代替真实的动作价值函数$Q^{\mu}(s, a)$。和前面“Stochastic Actor-Critic 算法”部分类似，如果近似器$Q^{w}(s, a)$与$\mu_{\theta}(s)$和是兼容的，应满足如下两个条件：
 
-  - $\left.\nabla_{a} Q^{w}(s, a)\right\|_{q=\mu_{\theta}(s)}=\nabla_{\theta} \mu_{\theta}(s)^{\top} w$
-  - $w$最小化均方误差$\operatorname{MSE}(\theta, w)=\mathbb{E}\left[\epsilon(s ; \theta, w)^{\top} \epsilon(s ; \theta, w)\right]$，其中$\epsilon(s ; \theta, w)=\left.\nabla_{a} Q^{w}(s, a)\right\|_{a=\mu_{\theta}(s)}-\left.\nabla_{a} Q^{\mu}(s, a)\right\|_{a=\mu_{\theta}(s)}$
+  - $\left.\nabla_{a} Q^{w}(s, a)\right\|\_{q=\mu_{\theta}(s)}=\nabla_{\theta} \mu_{\theta}(s)^{\top} w$
+  - $w$最小化均方误差$\operatorname{MSE}(\theta, w)=\mathbb{E}\left[\epsilon(s ; \theta, w)^{\top} \epsilon(s ; \theta, w)\right]$，其中$\epsilon(s ; \theta, w)=\left.\nabla_{a} Q^{w}(s, a)\right\|\_{a=\mu_{\theta}(s)}-\left.\nabla_{a} Q^{\mu}(s, a)\right\|\_{a=\mu_{\theta}(s)}$
 
 一个 compatible off-policy deterministic actor-critic (COPDAC) 算法有两部分组成：Critic是一个线性函数近似器，通过特征$\phi(s, a)=a^{\top} \nabla_{\theta} \mu_{\theta}(s)$来评估动作价值函数。这个可以通过离线地学习已知策略的样本得到，比如用Q-learning 或者 gradient Q-learning。Actor则朝着 critic 的动作价值函数的梯度方向更新参数。例如，下列COPDAC-Q 算法中 critic 使用了简单Q-learning：
 
