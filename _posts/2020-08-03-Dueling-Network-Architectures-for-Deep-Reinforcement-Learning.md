@@ -19,12 +19,12 @@ tags:
 ## 一、问题 
 智能体在与环境做互动的过程中，有些状态对应的动作对环境没任何影响。即在某些状态$s_t$下，无论做什么动作$a_t$，对下一个状态$s_{t+1}$都没多大影响，当前状态动作函数也与当前动作选择不太相关。如下图所示：从第一行的红光区域可以看出，state function专注于路面情况，特别是水平面方向，因为水平面方向极可能会出现汽车，而advantage function未专注于路面情况，因为当路面没有汽车时，它选的任何动作所获得的reward都差不多；从第二行的红光区域可以看出，advantage function专注于前方的小车，此时它所选的动作非常重要。
 
-![1](https://s1.ax1x.com/2020/08/03/aa16JA.png)
+<img src="https://s1.ax1x.com/2020/08/03/aa16JA.png" alt="1" style="zoom: 40%;" />
 
 ## 二、解法
 Dueling DQN网络结构与DQN相似，如下图所示，它有2个分支，1个用于预测state value，它是一个标量；另1个用于预测与状态相关的action advantage value，它是1个矢量，矢量的每个值对应着1个动作。这2个分支最后输出了每个动作的Q值。
 
-![1](https://s1.ax1x.com/2020/08/03/aa1Tij.png)
+<img src="https://s1.ax1x.com/2020/08/03/aa1Tij.png" alt="1" style="zoom:67%;" />
 
 Dueling DQN可直接学习哪些状态是有价值的。Dueling DQN从Q function中剥离出state function和advantage function，state function只用于预测state的好坏，而advantage function只用于预测在该state下每个action的重要性，这样一来，各个分支各司其职，预测效果更好。
 

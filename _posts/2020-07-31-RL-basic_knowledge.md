@@ -21,7 +21,7 @@ tags:
   * 某一状态信息包含了所有相关的历史。
   * 只要当前状态可知，历史信息history就可以被丢弃。
   * 当前状态就可以决定未来。The future is independent of the past given the present
-  
+
 可以用下面的状态转移概率公式来描述马尔可夫性：
 
 $$P_{ss’} = P[S_{t+1}=s’|S_t=s]$$
@@ -49,7 +49,7 @@ $$\mathcal{P}=\left[\begin{array}{ccc}{P_{11}} & {\cdots} & {P_{1 n}} \\ {\vdots
 **马尔可夫奖励过程在马尔可夫过程的基础上增加了奖励$R$和衰减系数$\gamma$。**
   * $R$是一个奖励函数。$S$状态下的奖励是某一时刻$t$处在状态$s$下在下一个时刻$t+1$能获得的奖励期望$R_{s} = E\[R_{t+1} \| S_{t} = s\]$
   * 衰减系数Discount Factor: $\gamma \in [0, 1]$，其远期利益具有一定的不确定性，符合人类对于眼前利益的追求等。
-  
+
 #### 回报 Return
 定义：回报$G_{t}$为在一个马尔可夫奖励链上从$t$时刻开始往后所有的奖励的有衰减的总和。公式如下：
 
@@ -82,12 +82,12 @@ $$\begin{aligned} v(s) &= E[G_t|S_t=s]= E[R_{t+1} + \gamma (R_{t+2}+\gamma R_{t+
 
 
 ##### Bellman方程的矩阵形式和求解
-![1](https://s1.ax1x.com/2020/07/31/aQVban.png)
+<img src="https://s1.ax1x.com/2020/07/31/aQVban.png" alt="1" style="zoom:67%;" />
 
 实际上，计算复杂度是$O(n^{3})$，$n$是状态数量。因此直接求解仅适用于小规模的MRPs。大规模MRP的求解通常使用迭代法。常用的迭代方法有：动态规划Dynamic Programming、蒙特卡洛评估Monte-Carlo evaluation、时序差分学习Temporal-Difference，后文会逐步讲解这些方法。
 
 ### 马尔可夫决策过程 Markov Decision Process
-![1](https://s1.ax1x.com/2020/07/31/aQZMdA.png)
+<img src="https://s1.ax1x.com/2020/07/31/aQZMdA.png" alt="1" style="zoom: 67%;" />
 
 相较于马尔可夫奖励过程，马尔可夫决策过程多了一个动作（动作）集合$A$。看起来很类似马尔可夫奖励过程，但这里的$P$和$R$都与具体的动作$a$对应，而不像马尔可夫奖励过程那样仅对应于某个状态，$A$表示的是有限的动作的集合。具体的数学表达式如下：
 
@@ -124,19 +124,19 @@ $$q_{\pi}(s,a)= E_{\pi}[G_t|S_t=s, A_t=a]$$
 由于策略$\pi(a\|s)$是可以改变的，因此两个值函数的取值不像MRP一样是固定的，那么就能从不同的取值中找到一个最大值即最优值函数。MDP需要解决的问题并不是每一步到底会获得多少累积reward，而是找到一个最优的解决方案。
 
 #### Bellman期望方程 Bellman Expectation Equation
-![1](https://s1.ax1x.com/2020/07/31/aQZgL4.png)
+<img src="https://s1.ax1x.com/2020/07/31/aQZgL4.png" alt="1" style="zoom: 67%;" />
 
 根据这两个值函数的定义，它们之间的关系表示为:
   * $v_{\pi}(s) = \sum_{a\in A}\pi(a\|s)q_{\pi}(s,a)$
   * $q_{\pi}(s,a) = R_{s}^{a} + \gamma \sum_{s’\in S}P_{ss’}^a\sum_{a’\in A}\pi(a’\|s’)q_{\pi}(s’,a’)$
-  
+
 下图解释了红色空心圆圈状态的状态价值是如何计算的，遵循的策略随机策略，即所有可能的动作有相同的几率被选择执行。
 
 ![1](https://s1.ax1x.com/2020/07/31/aQZbOe.png)
 
 和MRP类似的,我们也可以得到矩阵形式和求解。
 
-![1](https://s1.ax1x.com/2020/07/31/aQeC6S.png)
+<img src="https://s1.ax1x.com/2020/07/31/aQeC6S.png" alt="1" style="zoom:67%;" />
 
 #### 最优价值函数
 最优状态值函数$v_{* }$指的是在从所有策略产生的状态值函数中，选取使状态$s$值最大的函数：
@@ -158,7 +158,7 @@ $$\pi \geq \pi' \quad if \quad  v_{\pi}(s)\geq v_{\pi'}(s)  ,\forall s$$
   * 存在一个最优策略，比任何其他策略更好或至少相等。
   * 所有的最优策略有相同的最优价值函数。
   * 所有的最优策略具有相同的动作值函数。
-  
+
 #### 寻找最优策略
 可以通过最大化最优动作值函数来找到最优策略：
 

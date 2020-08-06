@@ -54,7 +54,7 @@ $$b=B(\mathbf{M}, \mathbf{e})=\alpha(\beta-C(\mathbf{M}, \mathbf{e}))$$
 
 预测网络的训练使用逻辑回归loss，使用到的正负样本如下图所示：
 
-![1](https://s1.ax1x.com/2020/08/05/ar0bnK.png)
+<img src="https://s1.ax1x.com/2020/08/05/ar0bnK.png" alt="1" style="zoom:67%;" />
 
 样本的采样则通过离线的随机采样或者online采样定时更新的方法进行。
 
@@ -69,6 +69,6 @@ $$b=B(\mathbf{M}, \mathbf{e})=\alpha(\beta-C(\mathbf{M}, \mathbf{e}))$$
 
 ## 四、缺点
 暂无评价。 
-  
+
 ## 五、优点
 这种通过定义难以到达的state的想法很直观，对于传统基于预测误差的方法陷入局部解走不出来的情况提出了一种解决方案。
