@@ -46,7 +46,7 @@ Stochastic Policy Gradient (SPG) 是通过参数化的概率分布$\pi_{\theta}(
 
 $$\begin{aligned}
 \nabla J\left(\pi_{\theta}\right) &=\int_{\mathcal{S}} \rho^{\pi}(s) \int_{\mathcal{A}} \nabla \pi_{\theta}(s, a) Q^{\pi}(s, a) \mathrm{d} a \mathrm{d} s \\
-&=\mathbb{E}\_{s \sim \rho^{\pi}, a \sim \pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(a | s) Q^{\pi}(s, a)\right]
+&=\mathbb{E}_{s \sim \rho^{\pi}, a \sim \pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(a | s) Q^{\pi}(s, a)\right]
 \end{aligned}$$
 
 该定理将梯度转换为了期望的形式，使得求解变得简单。该变化成立的原因是$E_{x \sim P}[f(x)]=\int p(x) f(x) d x$利用这个方程，可以通过调整参数$\theta$来调整策略以优化表现。但是问题在于还需要估计$Q^{\pi}(s, a)$的值。
