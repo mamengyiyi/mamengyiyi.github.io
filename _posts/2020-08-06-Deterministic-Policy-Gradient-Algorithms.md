@@ -1,3 +1,4 @@
+---
 layout:     post
 title:      单智能体强化学习算法
 subtitle:   Double DQN：Deep Reinforcement Learning with Double Q-learning
@@ -7,10 +8,10 @@ header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
     - RL
-        - RL advanced algorithms
-        - Model-Free RL
-        - Deterministic Policy Gradients
-
+    - RL advanced algorithms
+    - Model-Free RL
+    - Deterministic Policy Gradients
+---
 ---
 
 论文链接：<a href="http://proceedings.mlr.press/v32/silver14.pdf">Deterministic Policy Gradient Algorithms, ICML 2014</a>
