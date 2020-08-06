@@ -8,7 +8,7 @@ header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
 
-- RL
+    - RL
     - RL advanced algorithms
     - Model-Free RL
     - Deterministic Policy Gradients
