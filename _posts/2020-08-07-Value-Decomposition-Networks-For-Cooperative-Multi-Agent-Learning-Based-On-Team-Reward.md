@@ -68,7 +68,7 @@ $$\begin{array}{c}{\max_{a} Q=\max_{a} \sum_{i=1}^{d} \tilde{Q}_{i}=\sum_{i=1}^{
 ## 四、缺点
 
 * 多智能体实验环境简单
-* VDN可行的原因可以总结为一个公式：$\operatorname{argmax}_{a} Q=\left(\operatorname{argmax}_{a_{i}} \tilde{Q}_{i}\right)$。VDN中联合函数的表达形式（求和）满足这个条件，但求和这种方式表现力有限，并不能涵盖更加复杂的组合情况，比如非线性组合。
+* VDN可行的原因可以总结为一个公式：$\operatorname{argmax}\_{a} Q=\left(\operatorname{argmax}_{a_{i}} \tilde{Q}_{i}\right)$。VDN中联合函数的表达形式（求和）满足这个条件，但求和这种方式表现力有限，并不能涵盖更加复杂的组合情况，比如非线性组合。
 
 ## 五、优点
 
