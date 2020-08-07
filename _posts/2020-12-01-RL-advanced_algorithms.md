@@ -34,7 +34,7 @@ tags:
     * Deterministic Policy Gradients
       * <a href="https://mayi1996.top/2020/08/06/Deterministic-Policy-Gradient-Algorithms/">DPG: Deterministic Policy Gradient Algorithms</a>
       * <a href="https://mayi1996.top/2020/08/06/Continuous-Control-With-Deep-Reinforcement-Learning/">DDPG: Continuous Control With Deep Reinforcement Learning</a>
-      * <a href="">TD3: Addressing Function Approximation Error in Actor-Critic Methods</a>
+      * <a href="https://mayi1996.top/2020/08/07/Addressing-Function-Approximation-Error-in-Actor-Critic-Methods/">TD3: Addressing Function Approximation Error in Actor-Critic Methods</a>
     * Distributional RL
     * Policy Gradients with Action-Dependent Baselines
     * Path-Consistency Learning
