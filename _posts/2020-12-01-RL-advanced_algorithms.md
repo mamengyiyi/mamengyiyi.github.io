@@ -42,7 +42,7 @@ tags:
     * Evolutionary Algorithms
   * Exploration
     * Count based Exploration
-      * <a href="">RND: Exploration by random network distillation</a>
+      * <a href="https://mayi1996.top/2020/08/07/Exploration-by-random-network-distillation/">RND: Exploration by random network distillation</a>
     * Curiosity based Exploration
       * <a href="https://mayi1996.top/2020/08/05/Curiosity-Driven-Exploration-by-Self-Supervised-Prediction/">ICM: Curiosity-Driven Exploration by Self-Supervised Prediction</a>
       * <a href="https://mayi1996.top/2020/08/05/Episodic-Curiosity-through-Reachability/">EC: Episodic Curiosity through Reachability</a>
