@@ -30,7 +30,7 @@ Dueling DQN可直接学习哪些状态是有价值的。Dueling DQN从Q function
 
 Dueling DQN把Q function拆分为state function和advantage function，所以有：
 
-$$Q(s, a ; \theta, \alpha, \beta)=V(s ; \theta, \beta)+A(s, a ; \theta, \alpha)$$
+\[Q(s, a ; \theta, \alpha, \beta)=V(s ; \theta, \beta)+A(s, a ; \theta, \alpha)\]
 
 其中$V(s ; \theta, \beta)$是state function，输出一个标量， $A(s, a ; \theta, \alpha)$是advantage function，输出一个矢量，矢量长度等于动作空间大小； $\theta$指网络卷积层的参数； $\alpha$和$\beta$分别是2个分支的全连接层的参数。
 
@@ -38,13 +38,13 @@ $$Q(s, a ; \theta, \alpha, \beta)=V(s ; \theta, \beta)+A(s, a ; \theta, \alpha)$
 
 如何使V反映state值，以解决unidentifiable问题呢？文中的方法是强制把advantage function的输出矢量的和设置为0。那么Q function将改写为：
 
-$$Q(s, a ; \theta, \alpha, \beta)=V(s ; \theta, \beta)+\left(A(s, a ; \theta, \alpha)-\max _{a} A\left(s, a^{\prime} ; \theta, \alpha\right)\right)$$
+\[Q(s, a ; \theta, \alpha, \beta)=V(s ; \theta, \beta)+\left(A(s, a ; \theta, \alpha)-\max _{a} A\left(s, a^{\prime} ; \theta, \alpha\right)\right)\]
 
 由于$a^{*}=\arg \max _{a^{\prime} \in \mathcal{A}} Q\left(s, a^{\prime} ; \theta, \alpha, \beta\right)=\arg \max _{a^{\prime} \in \mathcal{A}} A\left(s, a^{\prime} ; \theta, \alpha\right)$，由此可得$V(s ; \theta, \beta)=Q(s, a * ; \theta, \alpha, \beta)$，即上述公式使V反映了state值。
 
 实际中为了训练的稳定性，使用如下公式作为替代：
 
-$$Q(s, a ; \theta, \alpha, \beta)=V(s ; \theta, \beta)+\left(A(s, a ; \theta, \alpha)-\sum_{a^{\prime}} A\left(s, a^{\prime} ; \theta, \alpha\right) /|A|\right)$$
+\[Q(s, a ; \theta, \alpha, \beta)=V(s ; \theta, \beta)+\left(A(s, a ; \theta, \alpha)-\sum_{a^{\prime}} A\left(s, a^{\prime} ; \theta, \alpha\right) /|A|\right)\]
 
 ## 三、实验内容
 在多个Atari游戏上效果优于DQN。
