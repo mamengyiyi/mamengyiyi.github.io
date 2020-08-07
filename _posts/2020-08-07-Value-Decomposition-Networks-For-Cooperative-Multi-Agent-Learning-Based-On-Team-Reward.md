@@ -40,7 +40,7 @@ tags:
 Value-Decomposition Networks（VDN）的基本假设是，系统的联合$Q$函数可以近似为多个单智能体的Q函数的和：$$
 Q\left(\left(h^{1}, h^{2}, \ldots, h^{d}\right),\left(a^{1}, a^{2}, \ldots, a^{d}\right)\right) \approx \sum_{i=1}^{d} \tilde{Q}_{i}\left(h^{i}, a^{i}\right)$$
 
-其中$Q_i$之间是独立的，只取决于局部观策和动作$h_i$,$a_i$。这样可以保证，最大化每个单智能体的$\tilde{Q}_{i}$函数得到动作，与通过最大化联合$Q$函数得到的结果是一样的，即
+其中$Q_i$之间是独立的，只取决于局部观策和动作$h_i$,$a_i$。这样可以保证，最大化每个单智能体的$\tilde{Q}\_{i}$函数得到动作，与通过最大化联合$Q$函数得到的结果是一样的，即
 
 $$\begin{array}{c}{\max_{a} Q=\max_{a} \sum_{i=1}^{d} \tilde{Q}_{i}=\sum_{i=1}^{d} \max_{a_{i}} \tilde{Q}_{i}} \\ {\operatorname{argmax}_{a} Q=\left(\operatorname{argmax}_{a_{i}} \tilde{Q}_{i}\right)}\end{array}$$
 
