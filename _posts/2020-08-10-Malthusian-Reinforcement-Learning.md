@@ -50,8 +50,9 @@ $$
 \phi_{i, e}^{l}=\left(\sum_{k^{l} \in \Psi_{i, e}^{l}} \phi_{k^{l}, e}\right) /\left|\Psi_{i, e}^{l}\right| \text { and } 0 \text { if } \Psi_{i, e}^{l}=\emptyset
 $$
 
-
 每种物种在岛上的分布$\mu^{l}(i)=e^{w_{i}^{l}} / \sum_{j} e^{w_{j}^{l}}$根据带有熵正则化的策略梯度进行更新。根据策略梯度更新，物种$l$在所有岛屿上的分布权重发生如下变化：
+
+
 $$
 w_{e+1}^{l}=w_{e}^{l}+\alpha\left[\sum_{i \in\left\{1, \ldots, N_{I}\right\}} \nabla_{w^{l}} \mu^{l}(i)\left(\phi_{i, e}^{l}-\eta \log \mu^{l}(i)\right)\right]
 $$
