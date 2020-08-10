@@ -39,7 +39,11 @@ tags:
 
 本文的目标是在给定的action set $\mathbb{A}=\left\{a_{1}, \ldots, a_{N}\right\}$上训练，在一个训练中未见过的action set $\mathbb{A}^{\prime}$中采样的动作子集$\mathcal{A} \subset \mathbb{A}^{\prime}$上进行测试，以最大化该动作子集$\mathcal{A}$上的累积收益：
 
+
+
 $$R=\mathbb{E}_{\mathcal{A} \subset \mathbb{A}^{\prime}, a \sim \pi(a \mid s, \mathcal{A})}\left[\sum_{t=1}^{T} \gamma^{t-1} \mathcal{R}\left(s_{t}\right)\right]$$
+
+
 
 ### 2.2 无监督动作表征 
 
@@ -52,7 +56,9 @@ $$\begin{aligned}
 ### 2.3 自适应策略网络
 
 给定动作集$\mathcal{A}=\left\{a_{1}, \ldots, a_{k}\right\}$与对应的动作表征$\left\{c_{1}, \ldots, c_{k}\right\}$作为策略网络的输入，计算每个动作在当前状态下的得分，再经过softmax得到动作的概率分布：
+
 $$\pi\left(a_{i} \mid s, \mathcal{A}\right)=\frac{e^{f_{\nu}\left[c_{i}, f_{\omega}(s)\right]}}{\sum_{j=1}^{k} e^{f_{\nu}\left[c_{j}, f_{\omega}(s)\right]}}$$
+
 其中$f_{\omega}(s)$是state encoder，$f_{\nu}$是用以计算得分的效用函数。整个网络使用policy gradient类的方法进行端到端的训练。
 
 ### 2.4 泛化目标与训练流程
@@ -66,6 +72,8 @@ $$\pi\left(a_{i} \mid s, \mathcal{A}\right)=\frac{e^{f_{\nu}\left[c_{i}, f_{\ome
 经过上述调整，最终的训练目标为：
 
 $$\max _{\theta} \mathbb{E}_{\mathcal{A} \subset \mathbb{A}, a \sim \pi_{\theta}(. \mid s, \mathcal{A})}\left[R(s)+\beta \mathcal{H}\left[\pi_{\theta}(a \mid s, \mathcal{A})\right]\right]$$
+
+
 
 训练流程如下图所示；
 
