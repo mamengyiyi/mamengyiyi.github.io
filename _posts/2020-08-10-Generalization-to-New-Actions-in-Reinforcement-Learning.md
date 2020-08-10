@@ -48,10 +48,13 @@ $$R=\mathbb{E}_{\mathcal{A} \subset \mathbb{A}^{\prime}, a \sim \pi(a \mid s, \m
 ### 2.2 无监督动作表征 
 
 本文使用一个hierarchical variational autoencoder (HVAE)来表征action observations。给定一个训练动作$a_{i} \in \mathbb{A}$，HVAE将该action关联的observation进行编码得到$c_{i}$，$c_{i}$则用于决定encoder $q_{\psi}\left(z_{i, j} \mid o_{i, j}, c_{i}\right)$和decoder $p\left(o_{i, j} \mid z_{i, j}, c_{i}\right)$。HVAE使用重建的loss加KL散度正则化来训练：
+
 $$\begin{aligned}
 \mathcal{L}=& \sum_{\mathcal{O} \in \mathbb{O}}\left[\mathbb{E}_{q_{\phi}(c \mid \mathcal{O})}\left[\sum_{o \in \mathcal{O}} \mathbb{E}_{q_{\psi}(z \mid o, c)} \log p(o \mid z, c)\right.\right.\\
 &\left.\left.-D_{K L}\left(q_{\psi} \| p(z \mid c)\right)\right]-D_{K L}\left(q_{\phi} \| p(c)\right)\right]
-\end{aligned}$$
+\end{aligned}
+$$
+
 
 ### 2.3 自适应策略网络
 
