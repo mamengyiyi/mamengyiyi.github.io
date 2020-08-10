@@ -36,7 +36,7 @@ tags:
 
 ### 2.1 问题定义
 
-本文的目标是在给定的动作集$\mathbb{A}=\left\{a_{1}, ..., a_{N}\right\}$上训练，在一个训练中未见过的动作集$\mathbb{A}^{\prime}$中采样的动作子集$\mathcal{A} \subset \mathbb{A}^{\prime}$上进行测试，以最大化该动作子集$\mathcal{A}$上的累积收益：
+本文的目标是在给定的动作集$\mathbb{A}=\left\{a_{1}, \dots, a_{N}\right\}$上训练，在一个训练中未见过的动作集$\mathbb{A}^{\prime}$中采样的动作子集$\mathcal{A} \subset \mathbb{A}^{\prime}$上进行测试，以最大化该动作子集$\mathcal{A}$上的累积收益：
 
 
 
@@ -57,7 +57,7 @@ $$
 
 ### 2.3 自适应策略网络
 
-给定动作集$\mathcal{A}=\left\{a_{1}, ..., a_{k}\right\}$与对应的动作表征$\left\{c_{1}, ..., c_{k}\right\}$作为策略网络的输入，计算每个动作在当前状态下的得分，再经过softmax得到动作的概率分布：
+给定动作集$\mathcal{A}=\left\{a_{1}, \ldots, a_{k} \right\}$与对应的动作表征$\left\{c_{1}, \ldots, c_{k} \right\}$作为策略网络的输入，计算每个动作在当前状态下的得分，再经过softmax得到动作的概率分布：
 
 $$\pi\left(a_{i} \mid s, \mathcal{A}\right)=\frac{e^{f_{\nu}\left[c_{i}, f_{\omega}(s)\right]}}{\sum_{j=1}^{k} e^{f_{\nu}\left[c_{j}, f_{\omega}(s)\right]}}$$
 
