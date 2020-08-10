@@ -55,7 +55,7 @@ tags:
   * Meta-RL
   * Scaling RL
   * Generalized RL
-    * <a href="">Generalization to New Actions in Reinforcement Learning</a>
+    * <a href="https://mayi1996.top/2020/08/10/Generalization-to-New-Actions-in-Reinforcement-Learning/">Generalization to New Actions in Reinforcement Learning</a>
   * RL in the Real World
     * <a href="">Suphx Mastering Mahjong with Deep Reinforcement Learning</a>
   * Safety
