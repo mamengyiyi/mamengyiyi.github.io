@@ -36,7 +36,7 @@ tags:
 
 ### 2.1 问题定义
 
-本文的目标是在给定的动作集$\mathbb{A}=\left\{a_{1}, \ldots, a_{N}\right\}$上训练，在一个训练中未见过的动作集$\mathbb{A}^{\prime}$中采样的动作子集$\mathcal{A} \subset \mathbb{A}^{\prime}$上进行测试，以最大化该动作子集$\mathcal{A}$上的累积收益：
+本文的目标是在给定的动作集$\mathbb{A}=\left\{a_{1}, \dots, a_{N}\right\}$上训练，在一个训练中未见过的动作集$\mathbb{A}^{\prime}$中采样的动作子集$\mathcal{A} \subset \mathbb{A}^{\prime}$上进行测试，以最大化该动作子集$\mathcal{A}$上的累积收益：
 
 
 
