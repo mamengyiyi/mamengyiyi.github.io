@@ -48,7 +48,7 @@ tags:
       * <a href="https://mayi1996.top/2020/08/05/Episodic-Curiosity-through-Reachability/">EC: Episodic Curiosity through Reachability</a>
     * Information Gain    
   * Transfer and Multitask RL
-    * <a href="">Dynamic Weights in Multi-Objective Deep Reinforcement Learning</a>
+    * <a href="https://mayi1996.top/2020/08/10/Dynamic-Weights-in-Multi-Objective-Deep-Reinforcement-Learning/">Dynamic Weights in Multi-Objective Deep Reinforcement Learning</a>
   * Hierarchy
   * Memory
   * Model-Based RL
