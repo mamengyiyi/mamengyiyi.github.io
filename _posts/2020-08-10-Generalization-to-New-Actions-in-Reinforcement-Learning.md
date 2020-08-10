@@ -79,13 +79,13 @@ $$\max _{\theta} \mathbb{E}_{\mathcal{A} \subset \mathbb{A}, a \sim \pi_{\theta}
 
 训练流程如下图所示；
 
-<img src="https://s1.ax1x.com/2020/08/10/aH8iuD.png" alt="aH8iuD.png" style="zoom:50%;" />
+<img src="https://s1.ax1x.com/2020/08/10/aH8iuD.png" alt="aH8iuD.png" style="zoom: 67%;" />
 
 
 
 测试时方法如下：
 
-<img src="https://s1.ax1x.com/2020/08/10/aH89gK.png" alt="aH89gK.png" style="zoom:50%;" />
+<img src="https://s1.ax1x.com/2020/08/10/aH89gK.png" alt="aH89gK.png" style="zoom: 67%;" />
 
 ## 三、实验内容
 本文在如下环境上进行测试：
