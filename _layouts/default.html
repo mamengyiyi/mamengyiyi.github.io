@@ -6,6 +6,12 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    {% include nav.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
     <!-- 展示广告 -->
     <ins class="adsbygoogle"
          style="display:block"
@@ -16,12 +22,6 @@
     <script>
          (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-    {% include nav.html %}
-
-    {{ content }}
-
-    {% include footer.html %}
-
 
 <!-- Image to hack wechat -->
 <img src="/img/apple-touch-icon.png" width="0" height="0" />
