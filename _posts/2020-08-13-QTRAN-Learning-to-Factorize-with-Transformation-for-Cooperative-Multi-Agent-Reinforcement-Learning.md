@@ -100,7 +100,7 @@ Q_{\mathrm{jt}}(\tau, \bar{u}) &=\sum_{i=1}^{N} Q_{i}\left(\tau_{i}, \bar{u}_{i}
 & \geq Q_{\mathrm{jt}}(\tau, u) \quad(\text { From }(4 \mathrm{b}))
 \end{aligned}$$
 
-注意，对于映射变化$\phi(\boldsymbol{Q})=A \cdot \boldsymbol{Q}+B$来说，如果$A=\left[a_{ii}\right] \in \mathbb{R}_{+}^{N \times N}$是对称的对角矩阵且$a_{i i}>0, \forall i$，$B=\left[b_{i}\right] \in \mathbb{R}^{N}$，那么上述定理依旧成立。可以把$A$与$B$看作是缩放与偏差。
+注意，对于映射变化$\phi(\boldsymbol{Q})=A \cdot \boldsymbol{Q}+B$来说，如果$A=\\[a_{ii}\\] \in \mathbb{R}_{+}^{N \times N}$是对称的对角矩阵且$a_{i i}>0, \forall i$，$B=\left[b_{i}\right] \in \mathbb{R}^{N}$，那么上述定理依旧成立。可以把$A$与$B$看作是缩放与偏差。
 
 因此可以找到一个转换联合动作值函数$Q^{'}_{\mathrm{jt}}(\tau, u)$满足上述定理：
 
