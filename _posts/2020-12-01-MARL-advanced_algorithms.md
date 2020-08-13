@@ -27,8 +27,8 @@ tags:
       * <a href="https://mayi1996.top/2020/08/07/Value-Decomposition-Networks-For-Cooperative-Multi-Agent-Learning-Based-On-Team-Reward/">VDN: Value-Decomposition Networks For Cooperative Multi-Agent Learning Based On Team Reward</a>
       * <a href="https://mayi1996.top/2020/08/07/QMIX-Monotonic-Value-Function-Factorisation-for-Deep-Multi-Agent-Reinforcement-Learning/">QMIX: Monotonic Value Function Factorisation for Deep Multi-Agent Reinforcement Learning</a>
       * <a href="https://mayi1996.top/2020/08/13/QTRAN-Learning-to-Factorize-with-Transformation-for-Cooperative-Multi-Agent-Reinforcement-Learning">QTRAN: Learning to Factorize with Transformation for Cooperative Multi-Agent Reinforcement Learning</a>
-      * <a href="">COMA: Counterfactual Multi-Agent Policy Gradients</a>
-      * <a href="">MADDPG: Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments</a>
+      * <a href="https://mayi1996.top/2020/08/13/Counterfactual-Multi-Agent-Policy-Gradients">COMA: Counterfactual Multi-Agent Policy Gradients</a>
+      * <a href="https://mayi1996.top/2020/08/13/Multi-Agent-Actor-Critic-for-Mixed-Cooperative-Competitive-Environments">MADDPG: Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments</a>
     * Independent Learner towards Coordination
       * <a href="">Deep Decentralized Multi-task Multi-Agent Reinforcement Learning under Partial Observability</a>
       * <a href="">Lenient Multi-Agent Deep Reinforcement Learning</a>
