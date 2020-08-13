@@ -81,7 +81,7 @@ QTRAN核心思想是将原有的联合行动价值函数$Q_{\mathrm{jt}}(\tau, u
 
 可分解值函数的特点由如下定理给出：
 
-**Theorem 1**：令$\overline{\boldsymbol{u}}_{i}=\arg \max_{u_{i}} Q_{i}\left(\tau_{i}, u_{i}\right)$为最优的局部动作，$\overline{\boldsymbol{u}}=\left[\bar{u}_{i}\right]_{i=1}^{N}$，当满足以下条件时，一个可分解的联合动作值函数$Q_{\text {jt }}(\tau, \boldsymbol{u})$可分解为$\left[Q_{i}\left(\tau_{i}, u_{i}\right)\right]$：
+**Theorem 1**：令$\overline{\boldsymbol{u}}\_{i}=\arg \max_{u_{i}} Q_{i}\left(\tau_{i}, u_{i}\right)$为最优的局部动作，$\overline{\boldsymbol{u}}=\left[\bar{u}_{i}\right]_{i=1}^{N}$，当满足以下条件时，一个可分解的联合动作值函数$Q_{\text {jt }}(\tau, \boldsymbol{u})$可分解为$\left[Q_{i}\left(\tau_{i}, u_{i}\right)\right]$：
 
 $$\sum_{i=1}^{N} Q_{i}\left(\tau_{i}, u_{i}\right)-Q_{\mathrm{jt}}(\tau, u)+V_{\mathrm{jt}}(\tau)=\left\{\begin{array}{ll}
 0 & u=\bar{u}, \\
@@ -147,12 +147,12 @@ L_{\mathrm{nopt}}(; \boldsymbol{\theta}) &=\left(\min \left[Q_{\mathrm{jt}}^{\pr
 **Theorem 2**：Theorem 1的第二个条件替换为如下条件时，Theorem 1依旧成立。当$u=\bar{u}$时，
 
 $$\begin{aligned}
-\min _{u_{i} \in \mathcal{U}}[& Q_{\mathrm{jt}}^{\prime}\left(\tau, u_{i}, \boldsymbol{u}_{-i}\right)-Q_{\mathrm{jt}}\left(\tau, u_{i}, \boldsymbol{u}_{-i}\right) + \left.V_{\mathrm{jt}}(\tau)\right]=0, \quad \forall i=1, \ldots, N
+\min_{u_{i} \in \mathcal{U}}[& Q_{\mathrm{jt}}^{\prime}\left(\tau, u_{i}, \boldsymbol{u}_{-i}\right)-Q_{\mathrm{jt}}\left(\tau, u_{i}, \boldsymbol{u}_{-i}\right) + \left.V_{\mathrm{jt}}(\tau)\right]=0, \quad \forall i=1, \ldots, N
 \end{aligned}$$
 
-其中$\boldsymbol{u}_{-i}=\left(u_{1}, \ldots, u_{i-1}, u_{i+1}, \ldots, u_{N}\right)$，即除了agent $i$以外的所有动作。
+其中$\boldsymbol{u}\_{-i}=\left(u_{1}, \ldots, u_{i-1}, u_{i+1}, \ldots, u_{N}\right)$，即除了agent $i$以外的所有动作。
 
-为了实现Theorem 2，使用反事实联合网络来替代联合动作值函数网络，即对于每个agent都设置一个反事实网络$Q_{\mathrm{jt}}\left(\tau, \cdot, \boldsymbol{u}_{-i}\right)$。同时将$L_{\text {nopt }}$替换为$L_{\text {nopt-min }}$：
+为了实现Theorem 2，使用反事实联合网络来替代联合动作值函数网络，即对于每个agent都设置一个反事实网络$Q_{\mathrm{jt}}\left(\tau, \cdot, \boldsymbol{u}\_{-i}\right)$。同时将$L_{\text {nopt }}$替换为$L_{\text {nopt-min }}$：
 
 $$L_{\mathrm{nopt}-\min }\left(\tau, u, r, \tau^{\prime} ; \theta\right)=\frac{1}{N} \sum_{i=1}^{N}\left(\min _{u_{i} \in U} D\left(\tau, u_{i}, u_{-i}\right)\right)^{2}$$
 
