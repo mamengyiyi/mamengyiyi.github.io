@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      多智能体强化学习算法
-subtitle:   QTRAN: Learning to Factorize with Transformation for Cooperative Multi-Agent Reinforcement Learning
+subtitle:   QTRAN：Learning to Factorize with Transformation for Cooperative Multi-Agent Reinforcement Learning
 date:       2020-08-13
 author:     MY
 header-img: img/post-bg-hacker.jpg
