@@ -95,9 +95,9 @@ $$
 
 ### 2.3 Efficient critic representation 
 
-考虑到counterfactual baseline的实际实现，存在维度诅咒的问题：它需要所有的joint action的Q-value，如果使用神经网络，假设agent的action数量是$U$，一共有$n$个agent，那么就需要$|U|^{n}$个输出节点，计算消耗太大。
+考虑到counterfactual baseline的实际实现，存在维度诅咒的问题：它需要所有的joint action的Q-value，如果使用神经网络，假设agent的action数量是$U$，一共有$n$个agent，那么就需要$\|U\|^{n}$个输出节点，计算消耗太大。
 
-为了简化计算，Critic不会计算所有智能体动作组合的Q值（输出维度是$|U|^{n}$个），而是针对每一个智能体，将其他智能体的动作结合其他历史信息当作输入，输出该智能体每个动作对应的$Q$值（输出维度降为$|U|$）。
+为了简化计算，Critic不会计算所有智能体动作组合的Q值（输出维度是$\|U\|^{n}$个），而是针对每一个智能体，将其他智能体的动作结合其他历史信息当作输入，输出该智能体每个动作对应的$Q$值（输出维度降为$\|U\|$）。
 
 <img src="https://s1.ax1x.com/2020/08/13/dS2Wbn.png" alt="dS2Wbn.png" style="zoom:67%;" />
 

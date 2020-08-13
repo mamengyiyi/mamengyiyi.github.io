@@ -50,7 +50,7 @@ tags:
 
 
 
-Actor Critic的策略梯度公式为：$$\nabla_{\theta_{i}} J\left(\theta_{i}\right)=E_{s \sim p^{u}, a_{i} \sim \pi_{i}}\left[\nabla_{\theta_{i}} \log \pi_{i}\left(a_{i} | o_{i}\right) Q_{i}^{\pi}\left(o_{i}, a_{i}\right)\right]$$
+Actor Critic的策略梯度公式为：$$\nabla_{\theta_{i}} J\left(\theta_{i}\right)=E_{s \sim p^{u}, a_{i} \sim \pi_{i}}\left[\nabla_{\theta_{i}} \log \pi_{i}\left(a_{i} \| o_{i}\right) Q_{i}^{\pi}\left(o_{i}, a_{i}\right)\right]$$
 
 推广到多智能体设置下，Actor Critic的策略梯度公式则为：
 
