@@ -81,7 +81,7 @@ QTRAN核心思想是将原有的联合行动价值函数$Q_{\mathrm{jt}}(\tau, u
 
 可分解值函数的特点由如下定理给出：
 
-**Theorem 1**：令$\overline{\boldsymbol{u}}\_{i}=\arg \max_{u_{i}} Q_{i}\left(\tau_{i}, u_{i}\right)$为最优的局部动作，$\overline{\boldsymbol{u}}=\left[\bar{u}_{i}\right]_{i=1}^{N}$，当满足以下条件时，一个可分解的联合动作值函数$Q_{\text {jt }}(\tau, \boldsymbol{u})$可分解为$\left[Q_{i}\left(\tau_{i}, u_{i}\right)\right]$：
+**Theorem 1**：令$\overline{\boldsymbol{u}}\_{i}=\arg \max_{u_{i}} Q_{i}\left(\tau_{i}, u_{i}\right)$为最优的局部动作，$\overline{\boldsymbol{u}}=\left[\bar{u}\_{i}\right]\_{i=1}^{N}$，当满足以下条件时，一个可分解的联合动作值函数$Q_{\text {jt }}(\tau, \boldsymbol{u})$可分解为$\left[Q_{i}\left(\tau_{i}, u_{i}\right)\right]$：
 
 $$\sum_{i=1}^{N} Q_{i}\left(\tau_{i}, u_{i}\right)-Q_{\mathrm{jt}}(\tau, u)+V_{\mathrm{jt}}(\tau)=\left\{\begin{array}{ll}
 0 & u=\bar{u}, \\
@@ -130,7 +130,7 @@ QTRAN中的loss函数由三部分组成：
 
 $$L\left(\boldsymbol{\tau}, \boldsymbol{u}, \boldsymbol{r}, \boldsymbol{\tau}^{\prime} ; \boldsymbol{\theta}\right)=L_{\mathrm{td}}+\lambda_{\mathrm{opt}} L_{\mathrm{opt}}+\lambda_{\mathrm{nopt}} L_{\mathrm{nopt}}$$
 
-其中：$L_{\mathrm{td}}$用于评估真实的动作值，$ L_{\mathrm{opt}}$和$L_{\mathrm{nopt}}$用于评估分解$Q_{jt}$为$\left[Q_{i}\right]$时是否满足Theorem 1。由于Theorem 1的条件需要在训练中采样大量样本才能满足，这里做了简化，即在训练$ L_{\mathrm{opt}}$和$L_{\mathrm{nopt}}$时固定$Q_{jt}$，并使用$\hat{Q}_{\mathrm{jt}}$来表示这个固定的$Q_{jt}$。具体每个损失函数的定义如下：
+其中：$L_{\mathrm{td}}$用于评估真实的动作值，$ L_{\mathrm{opt}}$和$L_{\mathrm{nopt}}$用于评估分解$Q_{jt}$为$\left[Q_{i}\right]$时是否满足Theorem 1。由于Theorem 1的条件需要在训练中采样大量样本才能满足，这里做了简化，即在训练$ L_{\mathrm{opt}}$和$L_{\mathrm{nopt}}$时固定$Q_{jt}$，并使用$\hat{Q}\_{\mathrm{jt}}$来表示这个固定的$Q_{jt}$。具体每个损失函数的定义如下：
 
 $$\begin{aligned}
 L_{\mathrm{td}}(; \boldsymbol{\theta}) &=\left(Q_{\mathrm{jt}}(\tau, \boldsymbol{u})-y^{\mathrm{d} \mathrm{q} \mathrm{n}}\left(r, \boldsymbol{\tau}^{\prime} ; \boldsymbol{\theta}^{-}\right)\right)^{2} \\
@@ -156,7 +156,7 @@ $$\begin{aligned}
 
 $$L_{\mathrm{nopt}-\min }\left(\tau, u, r, \tau^{\prime} ; \theta\right)=\frac{1}{N} \sum_{i=1}^{N}\left(\min _{u_{i} \in U} D\left(\tau, u_{i}, u_{-i}\right)\right)^{2}$$
 
-其中$D\left(\tau, u_{i}, u_{-i}\right)=Q_{\mathrm{jt}}^{\prime}\left(\tau, u_{i}, u_{-i}\right)-\hat{Q}_{\mathrm{jt}}\left(\tau, u_{i}, u_{-i}\right)+V_{\mathrm{jt}}(\tau)$
+其中$D\left(\tau, u_{i}, u_{-i}\right)=Q_{\mathrm{jt}}^{\prime}\left(\tau, u_{i}, u_{-i}\right)-\hat{Q}\_{\mathrm{jt}}\left(\tau, u_{i}, u_{-i}\right)+V_{\mathrm{jt}}(\tau)$
 
 ## 三、实验内容 
 
