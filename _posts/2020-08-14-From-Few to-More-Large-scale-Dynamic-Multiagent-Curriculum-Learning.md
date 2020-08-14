@@ -39,7 +39,7 @@ Partially Observable Stochastic Games（POSG）是MDP在多智能体设置下的
   * $\mathcal{A}^{i}$：智能体$i$的动作集合，$\mathcal{A}=\mathcal{A}^{1} \times \mathcal{A}^{2} \times \cdots \times \mathcal{A}^{n}$是联合动作空间。
   * $T$：转移函数
   * $\mathcal{R}^{i}$：智能体$i$的奖励
-  * $\mathcal{O}^{1}$：智能体$i$的观察，$\left\{o_{t}^{i, e n v}, m_{t}^{i}, o_{t}^{i, 1}, \cdots, o_{t}^{i, i-1}, o_{t}^{i, i+1}, \cdots, o_{t}^{i, n}\right\}$是智能体$i$在时间$t$的观察，其中$o_{t}^{i, e n v}$是对周围环境的描述；$ m_{t}^{i}$是智能体的私有性质，如位置、健康状态等；$o_{t}^{i, i-1}$是智能体$i$对智能体$i-1$的观察，如两个智能体之间的相对位置等。
+  * $\mathcal{O}^{1}$：智能体$i$的观察，$\\{o_{t}^{i, e n v}, m_{t}^{i}, o_{t}^{i, 1}, \cdots, o_{t}^{i, i-1}, o_{t}^{i, i+1}, \cdots, o_{t}^{i, n}\\}$是智能体$i$在时间$t$的观察，其中$o_{t}^{i, e n v}$是对周围环境的描述；$ m_{t}^{i}$是智能体的私有性质，如位置、健康状态等；$o_{t}^{i, i-1}$是智能体$i$对智能体$i-1$的观察，如两个智能体之间的相对位置等。
 
 ### 2.2 大规模多智能体系统的性质
 
