@@ -30,9 +30,9 @@ tags:
 
 ![dCTiFg.png](https://s1.ax1x.com/2020/08/14/dCTiFg.png)
 
-对于value-based方法来说，左侧棕色部分的网络输入全部的$o^{i}_{t}$，输出$Q\left(o_{t}^{i}, a_{t}^{i}\right)=f a\left(e_{t}^{i}, a_{t}^{i}\right)$；右侧蓝色部分，每个部分输入agent对其他一个agent的观察，输出棕色部分得到的embeddinh与自身embedding的内积$Q\left(o_{t}^{i}, a_{t}^{i, j}\right)=\mathcal{M}\left(e_{t}^{i}, e_{t}^{i, j}\right)$。
+对于value-based方法来说，左侧棕色部分的网络输入全部的$o^{i}_{t}$，输出$Q\left(o_{t}^{i}, a_{t}^{i}\right)=f a\left(e_{t}^{i}, a_{t}^{i}\right)$；右侧蓝色部分，每个部分输入agent对其他一个agent的观察，输出棕色部分得到的embedding与自身embedding的内积$Q\left(o_{t}^{i}, a_{t}^{i, j}\right)=\mathcal{M}\left(e_{t}^{i}, e_{t}^{i, j}\right)$。
 
-对于policy-based方法来说，输出则为$\pi\left(a_{t}^{i} | o_{t}^{i}\right)=\frac{\exp \left(f a\left(e_{t}^{i}, a_{t}^{i}\right)\right)}{Z^{\pi_{i}}\left(o_{t}^{i}\right)}, \pi\left(a_{t}^{i, j} | o_{t}^{i}\right)=\frac{\exp \left(\mathcal{M}\left(e_{t}^{i}, e_{t}^{i, j}\right)\right)}{Z^{\pi_{i}}\left(o_{t}^{i}\right)}$，其中$Z^{\pi_{i}}\left(o_{t}^{i}\right)$是用于正则化分布的函数。
+对于policy-based方法来说，输出则为$\pi\left(a_{t}^{i} \| o_{t}^{i}\right)=\frac{\exp \left(f a\left(e_{t}^{i}, a_{t}^{i}\right)\right)}{Z^{\pi_{i}}\left(o_{t}^{i}\right)}, \pi\left(a_{t}^{i, j} \| o_{t}^{i}\right)=\frac{\exp \left(\mathcal{M}\left(e_{t}^{i}, e_{t}^{i, j}\right)\right)}{Z^{\pi_{i}}\left(o_{t}^{i}\right)}$，其中$Z^{\pi_{i}}\left(o_{t}^{i}\right)$是用于正则化分布的函数。
 
 最终组合每部分输出得到最终的Q值或者概率分布。
 
