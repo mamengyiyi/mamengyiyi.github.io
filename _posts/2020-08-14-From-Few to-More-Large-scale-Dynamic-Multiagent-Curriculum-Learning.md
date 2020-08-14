@@ -65,7 +65,7 @@ Partially Observable Stochastic Games（POSG）是MDP在多智能体设置下的
 
 #### 2.3.1 Buffer Reuse
 
-借鉴DQN from demonstration的思想，设计了针对于off-policy的RL算法的迁移机制Buffer Reuse。假设智能体按照$\tau_{1}, \tau_{2}, \cdots, \tau_{k}$的顺序学任务，每个任务$\tau_{i}$有一个replay buffer $\mathcal{D}_{i}$。保留replay buffer序列$\mathcal{D}_{1}, \mathcal{D}_{2}, \cdots, \mathcal{D}_{k-1}$并从每个buffer中采样$b$条经验作为expert demonstration，而当前任务的buffer为 $\mathcal{D}_{k}$。在训练中最小化如下Loss：
+借鉴DQN from demonstration的思想，设计了针对于off-policy的RL算法的迁移机制Buffer Reuse。假设智能体按照$\tau_{1}, \tau_{2}, \cdots, \tau_{k}$的顺序学任务，每个任务$\tau_{i}$有一个replay buffer $\mathcal{D}\_{i}$。保留replay buffer序列$\mathcal{D}\_{1}, \mathcal{D}\_{2}, \cdots, \mathcal{D}\_{k-1}$并从每个buffer中采样$b$条经验作为expert demonstration，而当前任务的buffer为 $\mathcal{D}\_{k}$。在训练中最小化如下Loss：
 
 $$\text { Loss }=\sum_{i=1}^{k} \sum_{j=1}^{b}\left[\left(r_{i}^{j}+\gamma \max _{a_{i}^{\prime} j} q_{\tau_{i}}\left(s_{i}^{\prime}, a_{i}^{\prime}\right)-q_{\tau_{i}}\left(s_{i}^{j}, a_{i}^{j}\right)\right)^{2}\right]$$
 
