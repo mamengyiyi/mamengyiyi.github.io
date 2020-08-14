@@ -36,8 +36,8 @@ tags:
       * <a href="">Mean Field Multi-Agent Reinforcement Learning</a> 
       * <a href="">Multi Type Mean Field Reinforcement Learning</a> 
     * Network Design
-      * <a href="">DyAN: From Few to More: Large-scale Dynamic Multiagent Curriculum Learning</a>
-      * <a href="">Action Semantics Network: Considering the Effects of Actions in Multiagent Systems</a> 
+      * <a href="https://mayi1996.top/2020/08/14/From-Few to-More-Large-scale-Dynamic-Multiagent-Curriculum-Learning">DyAN: From Few to More: Large-scale Dynamic Multiagent Curriculum Learning</a>
+      * <a href="https://mayi1996.top/2020/08/14/Action-Semantics-Network-Considering-the-Effects-of-Actions-in-Multiagent-Systems">Action Semantics Network: Considering the Effects of Actions in Multiagent Systems</a> 
       * <a href="">NCC: Neighborhood Cognition Consistent Multi-Agent Reinforcement Learning</a>
       * <a href="">Graph Convolutional Reinforcement Learning</a>
     * Others  
