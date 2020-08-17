@@ -42,7 +42,7 @@ tags:
 如上图所示，NCC-Q的结构分为5个部分：
 
   - 全连接模块：将局部观察$o_i$编码为仅智能体特定认知的信息$h_i$
-  - GCN模块：将邻域中所有的$h_i$进行聚合,得到高维抽象$H_{i}=\sigma\left(W \Sigma_{j \in N(i) \cap\{i\}} \frac{h_{j}}{\sqrt{|N(j)||N(i)|}}\right)$。其中$N(i)$表示智能体$i$的邻居智能体。使用$\sqrt{|N(j)||N(i)|}$对$h_j$做标准化是为了降低出度（入度）高的邻居的影响。同一邻域内的所有智能体都采用同一个$W$以期望更容易达到邻域认知一致性。
+  - GCN模块：将邻域中所有的$h_i$进行聚合,得到高维抽象$H_{i}=\sigma\left(W \Sigma_{j \in N(i) \cap\{i\}} \frac{h_{j}}{\sqrt{\|N(j)\|\|N(i)\|}}\right)$。其中$N(i)$表示智能体$i$的邻居智能体。使用$\sqrt{\|N(j)\|\|N(i)\|}$对$h_j$做标准化是为了降低出度（入度）高的邻居的影响。同一邻域内的所有智能体都采用同一个$W$以期望更容易达到邻域认知一致性。
   - 认知模块：将$H_{i}$分解为两部分，分别是智能体特定认知表征$A_i$和邻域特定认知表征$\widehat{C_{i}}$。
   - Q-value模块：将$A_i$与$\widehat{C_{i}}$求和作为输入得到Q值$Q_{i}\left(o_{i}, a_{i}\right)$
   - 混合模块：使用VDN或QMIX的方式将所有$Q_{i}\left(o_{i}, a_{i}\right)$进行加权求和得到联合值函数$Q_{\text {total}}(\vec{o}, \vec{a})$
@@ -65,7 +65,7 @@ tags:
 
 $$p\left(C | o_{i}\right)=\frac{p\left(o_{i} | C\right) p(C)}{p\left(o_{i}\right)}=\frac{p\left(o_{i} | C\right) p(C)}{\int p(x | C) p(C) d C}$$
 
-但是该真实值很难直接计算，因此用另一个$q\left(C | o_{i}\right)$分布去近似$p\left(C | o_{i}\right)$，即最小化两个分布的KL散度：
+但是该真实值很难直接计算，因此用另一个$q\left(C \| o_{i}\right)$分布去近似$p\left(C \| o_{i}\right)$，即最小化两个分布的KL散度：
 
 $$\min K L\left(q\left(C | o_{i}\right) \| p\left(C | o_{i}\right)\right)$$
 
@@ -75,7 +75,7 @@ $$\max \mathbb{E}_{q\left(C | o_{i}\right)} \log p\left(o_{i} | C\right)-K L\lef
 
 其中第一项代表重建该分布的可能性，第二项保证两个分布之间的相似性。
 
-这个新分布的构建使用VAE来实现，如下图所示，VAE的enccoder学习将$o_i$映射到$\widehat{C_{i}}$的新分布$q\left(\widehat{C}_{i} | o_{i} ; w\right)$。在实际中，参考VAE的经典使用方法，不直接输出$\widehat{C_{i}}$，而是使用reparameterization trick从高斯分布中采样一个$\varepsilon$，并使用隐变量分布的均值和方差来修正该值，即$\widehat{C_{i}}=\widehat{C_{i}^{\mu}}+\widehat{C_{i}^{\sigma}} \odot \varepsilon$。而VAE的decoder部分则学习一个将$\widehat{C_{i}}$映射回$o_i$的分布$p(\widehat{\partial_{i}} | \widehat{C_{i}} ; w)$。
+这个新分布的构建使用VAE来实现，如下图所示，VAE的enccoder学习将$o_i$映射到$\widehat{C_{i}}$的新分布$q\left(\widehat{C}\_{i} \| o_{i} ; w\right)$。在实际中，参考VAE的经典使用方法，不直接输出$\widehat{C_{i}}$，而是使用reparameterization trick从高斯分布中采样一个$\varepsilon$，并使用隐变量分布的均值和方差来修正该值，即$\widehat{C_{i}}=\widehat{C_{i}^{\mu}}+\widehat{C_{i}^{\sigma}} \odot \varepsilon$。而VAE的decoder部分则学习一个将$\widehat{C_{i}}$映射回$o_i$的分布$p(\widehat{\partial_{i}} \| \widehat{C_{i}} ; w)$。
 
 <img src="https://s1.ax1x.com/2020/08/17/dZ4CZR.png" alt="dZ4CZR.png" style="zoom:80%;" />
 
