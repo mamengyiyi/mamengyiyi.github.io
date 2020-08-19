@@ -55,7 +55,7 @@ $$\mathcal{P}=\left[\begin{array}{ccc}{P_{11}} & {\cdots} & {P_{1 n}} \\ {\vdots
 
 $$G_t = R_{t+1}+\gamma R_{t+2}+…=\sum_{k=0}^{\infty}\gamma^kR_{t+k+1}$$
 
-其中衰减系数体现了未来的奖励在当前时刻的价值比例，在$k+1$时刻获得的奖励R在t时刻的体现出的价值是$\gamma^k R$ ，$\gamma$接近0，则表明趋向于“近视”性评估；$\gamma$接近1则表明偏重考虑远期的利益。
+其中衰减系数体现了未来的奖励在当前时刻的价值比例，在$t+k+1$时刻获得的奖励R在t时刻的体现出的价值是$\gamma^k R$ ，$\gamma$接近0，则表明趋向于“近视”性评估；$\gamma$接近1则表明偏重考虑远期的利益。
 
 #### 价值函数 Value Function
 ![1](https://s1.ax1x.com/2020/07/31/aQVlgU.png)
@@ -84,7 +84,7 @@ $$\begin{aligned} v(s) &= E[G_t|S_t=s]= E[R_{t+1} + \gamma (R_{t+2}+\gamma R_{t+
 ##### Bellman方程的矩阵形式和求解
 <img src="https://s1.ax1x.com/2020/07/31/aQVban.png" alt="1" style="zoom:67%;" />
 
-实际上，计算复杂度是$O(n^{3})$，$n$是状态数量。因此直接求解仅适用于小规模的MRPs。大规模MRP的求解通常使用迭代法。常用的迭代方法有：动态规划Dynamic Programming、蒙特卡洛评估Monte-Carlo evaluation、时序差分学习Temporal-Difference，后文会逐步讲解这些方法。
+实际上，计算矩阵的求逆过程复杂度是$O(n^{3})$，$n$是状态数量。因此直接求解仅适用于小规模的MRPs。大规模MRP的求解通常使用迭代法。常用的迭代方法有：动态规划Dynamic Programming、蒙特卡洛评估Monte-Carlo evaluation、时序差分学习Temporal-Difference，后文会逐步讲解这些方法。
 
 ### 马尔可夫决策过程 Markov Decision Process
 <img src="https://s1.ax1x.com/2020/07/31/aQZMdA.png" alt="1" style="zoom: 67%;" />
@@ -117,7 +117,7 @@ $$R^a_{s} = E[R_{t+1} | S_{t} = s,A_t=a ]$$
 注意策略是静态的、关于整体的概念，不随状态改变而改变；变化的是在某一个状态时，依据策略可能产生的具体动作，因为具体的动作是有一定的概率的，策略就是用来描述各个不同状态下执行各个不同动作的概率。
 
 ##### 动作值函数 ACTION-VALUE FUNCTION $Q$
-定义$q_{\pi}(s,a)$为动作值函数，表示在执行策略$\pi$时，对当前状态$s$执行某一具体动作$a$所能的到的收获的期望；或者说在遵循当前策略$\pi$时，衡量对当前状态执行动作$a$的价值大小。动作值函数一般都是与某一特定的状态相对应的。动作值函数的公式描述如下:
+定义$q_{\pi}(s,a)$为动作值函数，表示在执行策略$\pi$时，对当前状态$s$执行某一具体动作$a$所能得到的收获的期望；或者说在遵循当前策略$\pi$时，衡量对当前状态执行动作$a$的价值大小。动作值函数一般都是与某一特定的状态相对应的。动作值函数的公式描述如下:
 
 $$q_{\pi}(s,a)= E_{\pi}[G_t|S_t=s, A_t=a]$$
 
@@ -183,7 +183,7 @@ $$
 \begin{aligned} v_{*}(s) &=\max _{a} \mathcal{R}_{s}^{a}+\gamma \sum_{s^{\prime} \in \mathcal{S}} \mathcal{P}_{s s^{\prime}}^{a} v_{*}\left(s^{\prime}\right) \\ q_{*}(s, a) &=\mathcal{R}_{s}^{a}+\gamma \sum_{s^{\prime} \in S} \mathcal{P}_{s s^{\prime}}^{a} \max _{a^{\prime}} q_{*}\left(s^{\prime}, a^{\prime}\right) \end{aligned}
 $$
 
-满足Bellman最优方程，意味着找到了最优策略。也就是$v_{\pi}(s)=\max_{a} q_{*}(s, a)$，也就是不需要在进行策略改进。
+满足Bellman最优方程，意味着找到了最优策略。也就是$v_{\pi}(s)=\max_{a} q_{*}(s, a)$，也就是不需要再进行策略改进。
 
 #### 求解Bellman最优方程
 Bellman最优方程是非线性的，没有固定的解决方案，通过一些迭代方法来解决：价值迭代、策略迭代、Q-learning、Sarsa等。后续会逐步讲解展开。
