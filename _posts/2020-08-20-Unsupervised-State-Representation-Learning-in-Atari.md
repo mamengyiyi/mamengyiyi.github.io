@@ -44,7 +44,7 @@ RL中通常通过使用来自奖励的信号通过端到端学习来学习状态
 
 ### 2.2 loss函数的选择
 
-相对于DIM的softmax来说，对应到图像样本中卫N-way softmax损失，即InfoNCE loss。同时，考虑到对于信息量大的互信息，互信息的下界可能会比较宽松，在用于学习表征时，无法捕获数据中的所有相关特征。为了缓解这一问题，在global-local objective之外，本文的方法构建了多个较小的互信息目标，即local-local objective。这些目标已经被证明易于通过下限进行估计，也发现了它们在半监督学习的情况下效果很好。因此，本文的loss如下：
+相对于DIM的softmax来说，对应到图像样本中为N-way softmax损失，即InfoNCE loss。同时，考虑到对于信息量大的互信息，互信息的下界可能会比较宽松，在用于学习表征时，无法捕获数据中的所有相关特征。为了缓解这一问题，在global-local objective之外，本文的方法构建了多个较小的互信息目标，即local-local objective。这些目标已经被证明易于通过下限进行估计，也发现了它们在半监督学习的情况下效果很好。因此，本文的loss如下：
 
 #### 2.2.1 global-local objective
 
