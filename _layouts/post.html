@@ -83,6 +83,42 @@ layout: default
                     {% endif %}
                 </ul>
 
+
+                <! -- 添加捐赠图标 -->
+                <div class ="post-donate">
+                  <div id="donate_board" class="donate_bar center">
+                    <a id="btn_donate" class="btn_donate" href="javascript:;" title="Donate 打赏"></a>
+                    <span class="donate_txt">
+                       &uarr;<br>
+                       Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+                       {% endif %}          
+                    </span>
+                    <br>
+                  </div>  
+              
+                <!-- 支付宝打赏图案 -->
+                  <div id="donate_guide" class="donate_bar center hidden">
+                      <a href="https://mayi1996.top/img/alipay.jpg" title="支付宝打赏" class="fancybox" rel="article0"       style="float:left;margin-left:25%;margin-right:2px;">
+                      <img src="https://mayi1996.top/img/alipay.jpg" title="支付宝打赏" height="164px" width="164px">
+                      </a> 
+                  </div>
+
+                <!-- 微信打赏图案 -->
+                  <div id="donate_guide" class="donate_bar center hidden">
+                      <a href="https://mayi1996.top/img/wechatpay.jpg" title="微信打赏" class="fancybox" rel="article0"  >
+                      <img src="https://mayi1996.top/img/wechatpay.jpg" title="微信打赏" height="164px" width="164px">
+                      </a> 
+                  </div>
+              
+                  <script type="text/javascript">
+                    document.getElementById('btn_donate').onclick = function(){
+                      $('#donate_board').addClass('hidden');
+                      $('#donate_guide').removeClass('hidden');
+                    }
+                  </script>
+                </div>
+                <! -- 添加捐赠图标 -->
+
                 <hr style="visibility: hidden;">
                 <h5>Share</h5>
                 <div class="social-share"></div>
