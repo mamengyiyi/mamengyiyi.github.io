@@ -39,7 +39,7 @@ tags:
       * <a href="https://mayi1996.top/2020/08/14/From-Few to-More-Large-scale-Dynamic-Multiagent-Curriculum-Learning">DyAN: From Few to More: Large-scale Dynamic Multiagent Curriculum Learning</a>
       * <a href="https://mayi1996.top/2020/08/14/Action-Semantics-Network-Considering-the-Effects-of-Actions-in-Multiagent-Systems">Action Semantics Network: Considering the Effects of Actions in Multiagent Systems</a> 
       * <a href="https://mayi1996.top/2020/08/17/Neighborhood-Cognition-Consistent-Multi-Agent-Reinforcement-Learning">NCC: Neighborhood Cognition Consistent Multi-Agent Reinforcement Learning</a>
-      * <a href="">Graph Convolutional Reinforcement Learning</a>
+      * <a href="https://mayi1996.top/2020/08/25/Graph-Convolutional-Reinforcement-Learning">Graph Convolutional Reinforcement Learning</a>
     * Others  
       * <a href="">Q-value Path Decomposition for Deep Multiagent Reinforcement Learning</a> 
       * <a href="">Intrinsic Motivation for Encouraging Synergistic Behavior</a> 
