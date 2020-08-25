@@ -32,7 +32,7 @@ tags:
 
 <img src="https://s1.ax1x.com/2020/08/25/dgPFC6.png" alt="dgPFC6.png" style="zoom:67%;" />
 
-由于智能体的位置和数量一直在变化，图卷积不能直接适用，因此本文把所有智能体的特征合并到一个尺寸为$N \times L$的特征矩阵$F^{t}$，其中$N$是智能体数量，$L$是特征向量的长度。同时对每个智能体$i$构造一个尺寸为$\left(\left\|\mathbb{B}_{i}\right\|+1\right) \times N$的邻接矩阵$C^{t}_{i}$，其中第一行是智能体$i$的onehot向量id，第$j$行为第$j-1$个邻居的onehot向量id。通过$C_{i}^{t} \times F^{t}$可以得到智能体$i$的邻域特征。
+由于智能体的位置和数量一直在变化，图卷积不能直接适用，因此本文把所有智能体的特征合并到一个尺寸为$N \times L$的特征矩阵$F^{t}$，其中$N$是智能体数量，$L$是特征向量的长度。同时对每个智能体$i$构造一个尺寸为$\left(\left\|\mathbb{B}\_{i}\right\|+1\right) \times N$的邻接矩阵$C^{t}\_{i}$，其中第一行是智能体$i$的onehot向量id，第$j$行为第$j-1$个邻居的onehot向量id。通过$C_{i}^{t} \times F^{t}$可以得到智能体$i$的邻域特征。
 
 受DenseNet影响，本文将之前每一层的输出都作为Q网络的输入以利用不同感知域的抽象特征。
 
@@ -62,7 +62,7 @@ $$h_{i}^{\prime}=\sigma\left(\text { concatenate }\left[\sum_{j \in \mathbb{B}_{
 
 $$\mathcal{L}(\theta)=\frac{1}{\mathrm{S}} \sum_{\mathrm{S}} \frac{1}{\mathrm{N}} \sum_{i=1}^{N}\left(\left(y_{i}-Q\left(O_{i, \mathcal{C}}, a_{i} ; \theta\right)\right)^{2}+\lambda \frac{1}{\mathrm{M}} \sum_{m=1}^{\mathrm{M}} D_{\mathrm{KL}}\left(\mathcal{G}_{m}^{\kappa}\left(O_{i, \mathcal{C}} ; \theta\right) \| \mathcal{G}_{m}^{\kappa}\left(O_{i, \mathcal{C}}^{\prime} ; \theta\right)\right)\right.$$
 
-其中$\mathcal{G}_{m}^{\kappa}\left(O_{i, \mathcal{C}} ; \theta\right)$是智能体$i$的attention head $m$在第$\kappa$个卷积层的attention权重分布。
+其中$\mathcal{G}\_{m}^{\kappa}\left(O_{i, \mathcal{C}} ; \theta\right)$是智能体$i$的attention head $m$在第$\kappa$个卷积层的attention权重分布。
 
 
 
