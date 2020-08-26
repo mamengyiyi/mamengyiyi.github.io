@@ -49,11 +49,14 @@ tags:
     * Information Gain    
   * Transfer and Multitask RL
     * <a href="https://mayi1996.top/2020/08/10/Dynamic-Weights-in-Multi-Objective-Deep-Reinforcement-Learning/">Dynamic Weights in Multi-Objective Deep Reinforcement Learning</a>
-  * Hierarchy
+  * Hierarchy RL
   * Memory
   * Model-Based RL
   * Meta-RL
   * Scaling RL
+  * Representation Learning in RL
+      * <a href="https://mayi1996.top/2020/08/20/Unsupervised-State-Representation-Learning-in-Atari/">Unsupervised State Representation Learning in Atari</a>
+      * <a href="https://mayi1996.top/2020/08/26/CURL-Contrastive-Unsupervised-Representations-for-Reinforcement-Learning/">CURL: Contrastive Unsupervised Representations for Reinforcement Learning</a>
   * Generalized RL
     * <a href="https://mayi1996.top/2020/08/10/Generalization-to-New-Actions-in-Reinforcement-Learning/">Generalization to New Actions in Reinforcement Learning</a>
   * RL in the Real World

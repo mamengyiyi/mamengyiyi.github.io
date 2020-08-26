@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      单智能体强化学习算法
-subtitle:   CURL: Contrastive Unsupervised Representations for Reinforcement Learning
+subtitle:   CURL：Contrastive Unsupervised Representations for Reinforcement Learning
 date:       2020-08-26
 author:     MY
 header-img: img/post-bg-hacker.jpg
