@@ -30,7 +30,11 @@ tags:
 
 MPR的整体方法框架如下图所示：
 
+
+
 <img src="https://s1.ax1x.com/2020/08/27/d4Y4Xt.png" alt="d4Y4Xt.png" style="zoom:80%;" />
+
+
 
 MPR主要包括四个组件：online and momentum encoder、Transition Model、Projection Heads和Prediction Loss
 
