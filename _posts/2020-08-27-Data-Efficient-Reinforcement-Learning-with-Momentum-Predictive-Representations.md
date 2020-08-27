@@ -30,7 +30,7 @@ tags:
 
 MPR的整体方法框架如下图所示：
 
-<img src="https://s1.ax1x.com/2020/08/27/d4ViMd.png" alt="d4ViMd.png" style="zoom:80%;" />
+<img src="https://s1.ax1x.com/2020/08/27/d4Y4Xt.png" alt="d4Y4Xt.png" style="zoom:80%;" />
 
 MPR主要包括四个组件：online and momentum encoder、Transition Model、Projection Heads和Prediction Loss
 
@@ -80,9 +80,11 @@ $$\mathcal{L}_{\theta}^{\text {total }}=\mathcal{L}_{\theta}^{\mathrm{RL}}+\lamb
 
 ## 四、缺点
 
-思路还是局限于对状态做表征，对于RL本身的结构没有进行改进
+* 思路还是局限于对状态做表征，对于RL本身的结构没有进行改进
+* 严格来说本文不属于Contrastive Learning的范畴
 
 ## 五、优点
 
   * 相比于之前的工作，增强对未来的预测更加提高了数据增强的效果
 * 相比于contrastive learning，本文的方法无需负样本，但可能需要通过设计合适的contrastive task以及使用较大的batch size来弥补无负样本带来的问题
+* 综合几篇论文的结论，Contrastive Learning本身的效果不一定好，起主要作用的可能是数据增强
