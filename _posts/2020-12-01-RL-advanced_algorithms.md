@@ -55,9 +55,11 @@ tags:
   * Meta-RL
   * Scaling RL
   * Representation Learning in RL
-      * <a href="https://mayi1996.top/2020/08/20/Unsupervised-State-Representation-Learning-in-Atari/">Unsupervised State Representation Learning in Atari</a>
-      * <a href="https://mayi1996.top/2020/08/26/CURL-Contrastive-Unsupervised-Representations-for-Reinforcement-Learning/">CURL: Contrastive Unsupervised Representations for Reinforcement Learning</a>
-      * <a href="https://mayi1996.top/2020/08/27/Data-Efficient-Reinforcement-Learning-with-Momentum-Predictive-Representations/">Data-Efficient Reinforcement Learning with Momentum Predictive Representations</a>
+        * Contrastive Learning
+            * <a href="https://mayi1996.top/2020/08/20/Unsupervised-State-Representation-Learning-in-Atari/">Unsupervised State Representation Learning in Atari</a>
+            * <a href="https://mayi1996.top/2020/08/26/CURL-Contrastive-Unsupervised-Representations-for-Reinforcement-Learning/">CURL: Contrastive Unsupervised Representations for Reinforcement Learning</a>
+      * Others
+           * <a href="https://mayi1996.top/2020/08/27/Data-Efficient-Reinforcement-Learning-with-Momentum-Predictive-Representations/">Data-Efficient Reinforcement Learning with Momentum Predictive Representations</a>
   * Generalized RL
     * <a href="https://mayi1996.top/2020/08/10/Generalization-to-New-Actions-in-Reinforcement-Learning/">Generalization to New Actions in Reinforcement Learning</a>
   * RL in the Real World
