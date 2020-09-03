@@ -44,13 +44,13 @@ online and momentum encoder分别用于构造类似于contrastive中的锚定数
 
 #### 2.1.2 Transition Model
 
-给定动作$a_{t+k}$，Transition Model是一个用于迭代地预测未来state的状态表征$\hat{z}_{t+k+1} \triangleq h\left(\hat{z}_{t+k}, a_{t+k}\right)$的CNN模型。Transition Model和预测损失在得到的latent space中运行，可以避免了基于像素进行目标重建
+给定动作$a_{t+k}$，Transition Model是一个用于迭代地预测未来state的状态表征$\hat{z}\_{t+k+1} \triangleq h\left(\hat{z}\_{t+k}, a_{t+k}\right)$的CNN模型。Transition Model和预测损失在得到的latent space中运行，可以避免了基于像素进行目标重建
 
 #### 2.1.3 Projection Heads
 
 本文使用online和momentum映射模块$g_{o}$和$g_{m}$将online表征和momentum表征映射到一个较小的latent space中，并额外使用一个预测模块$q$来通过online映射对momentum映射进行预测：
 
-$$\hat{y}\_{t+k} \triangleq q\left(g_{o}\left(\hat{z}\_{t+k}\right)\right), \forall \hat{z}\_{t+k} \in \hat{z}_{t+1: t+K} ; \quad \tilde{y}_{t+k} \triangleq g_{m}\left(\tilde{z}\_{t+k}\right), \forall \tilde{z}\_{t+k} \in \tilde{z}\_{t+1: t+K}$$
+$$\hat{y}_{t+k} \triangleq q\left(g_{o}\left(\hat{z}_{t+k}\right)\right), \forall \hat{z}_{t+k} \in \hat{z}_{t+1: t+K} ; \quad \tilde{y}_{t+k} \triangleq g_{m}\left(\tilde{z}_{t+k}\right), \forall \tilde{z}_{t+k} \in \tilde{z}_{t+1: t+K}$$
 
 #### 2.1.4 Prediction Loss
 
