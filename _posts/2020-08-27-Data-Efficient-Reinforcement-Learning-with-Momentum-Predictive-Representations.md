@@ -50,7 +50,7 @@ online and momentum encoder分别用于构造类似于contrastive中的锚定数
 
 本文使用online和momentum映射模块$g_{o}$和$g_{m}$将online表征和momentum表征映射到一个较小的latent space中，并额外使用一个预测模块$q$来通过online映射对momentum映射进行预测：
 
-$$\hat{y}_{t+k} \triangleq q\left(g_{o}\left(\hat{z}_{t+k}\right)\right), \forall \hat{z}_{t+k} \in \hat{z}_{t+1: t+K} ; \quad \tilde{y}_{t+k} \triangleq g_{m}\left(\tilde{z}_{t+k}\right), \forall \tilde{z}_{t+k} \in \tilde{z}_{t+1: t+K}$$
+$$\hat{y}\_{t+k} \triangleq q\left(g_{o}\left(\hat{z}\_{t+k}\right)\right), \forall \hat{z}\_{t+k} \in \hat{z}_{t+1: t+K} ; \quad \tilde{y}_{t+k} \triangleq g_{m}\left(\tilde{z}\_{t+k}\right), \forall \tilde{z}\_{t+k} \in \tilde{z}\_{t+1: t+K}$$
 
 #### 2.1.4 Prediction Loss
 
