@@ -82,7 +82,7 @@ $$D_{\mathrm{KL}}\left(\pi_{\theta}(\cdot \mid s), \pi_{b}(\cdot \mid s)\right)=
 
 $$D_{f}(p, q)=\mathbb{E}_{x \sim p}[f(q(x) / p(x))]=\max _{g: \mathcal{X}_{\mapsto} \operatorname{dom}\left(f^{*}\right)} \mathbb{E}_{x \sim q}[g(x)]-\mathbb{E}_{x \sim p}\left[f^{*}(g(x))\right]$$
 
-其中$f^{*}$是$f$的Fenchel对偶。在这种情况下，不再需要估计行为策略，而是需要学习一个鉴别函数$g$。在KL散度中，$f(x)=-\log x$，$f^{*}(t)=-\log (-t)-1$
+其中$f^{\*}$是$f$的Fenchel对偶。在这种情况下，不再需要估计行为策略，而是需要学习一个鉴别函数$g$。在KL散度中，$f(x)=-\log x$，$f^{\*}(t)=-\log (-t)-1$
 
 #### 2.2.3 Wasserstein Distance
 
