@@ -54,6 +54,13 @@ tags:
   * Model-Based RL
   * Meta-RL
   * Scaling RL
+  * Offline RL
+        * <a href="https://mayi1996.top/2020/09/01/%E7%A6%BB%E7%BA%BF%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/#21-off-policy-deep-reinforcement-learning-without-exploration">Off-Policy Deep Reinforcement Learning Without Exploration</a>
+        * <a href="https://mayi1996.top/2020/09/01/%E7%A6%BB%E7%BA%BF%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/#22-benchmarking-batch-deep-reinforcement-learning-algorithms">Benchmarking Batch Deep Reinforcement Learning Algorithms</a>
+        * <a href="https://mayi1996.top/2020/09/01/%E7%A6%BB%E7%BA%BF%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/#23-stabilizing-off-policy-q-learning-via-bootstrapping-error-reduction">Stabilizing Off-Policy Q-Learning via Bootstrapping Error Reduction</a>
+        * <a href="https://mayi1996.top/2020/09/01/%E7%A6%BB%E7%BA%BF%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/#31-an-optimistic-perspective-on-offline-reinforcement-learning">An Optimistic Perspective on Offline Reinforcement Learning</a>
+        * <a href="https://mayi1996.top/2020/09/01/%E7%A6%BB%E7%BA%BF%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/#32-iris-implicit-reinforcement-without-interaction-at-scale-for-learning-control-from-offline-robot-manipulation-data">IRIS: Implicit Reinforcement without Interaction at Scale for Learning Control from Offline Robot Manipulation Data</a>
+        * <a href="https://mayi1996.top/2020/09/15/Behavior-Regularized-Offline-Reinforcement-Learning/">Behavior Regularized Offline Reinforcement Learning</a>
   * Representation Learning in RL
         * Contrastive Learning
             * <a href="https://mayi1996.top/2020/08/20/Unsupervised-State-Representation-Learning-in-Atari/">Unsupervised State Representation Learning in Atari</a>
