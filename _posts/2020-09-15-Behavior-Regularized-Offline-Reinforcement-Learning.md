@@ -68,7 +68,7 @@ BEAR中使用的便是Kernel MMD：
 
 $$\operatorname{MMD}_{k}^{2}\left(\pi(\cdot \mid s), \pi_{b}(\cdot \mid s)\right)=\underset{x, x^{\prime} \sim \pi(\cdot \mid s)}{\mathbb{E}}\left[K\left(x, x^{\prime}\right)\right]-2 \mathbb{E}_{x \sim \pi(\cdot \mid s)}[K(x, y)]+\underset{y \sim \pi_{b}(\cdot \mid s)}{\mathbb{E}}\left[\mathbb{E}_{y, y^{\prime} \sim \pi_{b}(\cdot \mid s)}\left[K\left(y, y^{\prime}\right)\right]\right.$$
 
-其中$K$为核函数。但是由于无法获得产生offline data的行为策略$\pi_{b}$，可以通过offline数据的分布对该行为策略进行近似，并使用该近似行为策略$\hat{\pi}_{b}$来替代行为策略$\pi_{b}$：
+其中$K$为核函数。但是由于无法获得产生offline data的行为策略$\pi_{b}$，可以通过offline数据的分布对该行为策略进行近似，并使用该近似行为策略$\hat{\pi}\_{b}$来替代行为策略$\pi_{b}$：
 
 $$\hat{\pi}_{b}:=\underset{\hat{\pi}}{\operatorname{argmax}} \mathbb{E}_{\left(s, a, r, s^{\prime}\right) \sim \mathcal{D}}[\log \hat{\pi}(a \mid s)]$$
 
