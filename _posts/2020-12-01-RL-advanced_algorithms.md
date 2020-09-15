@@ -61,7 +61,7 @@ tags:
         * <a href="https://mayi1996.top/2020/09/01/%E7%A6%BB%E7%BA%BF%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/#31-an-optimistic-perspective-on-offline-reinforcement-learning">An Optimistic Perspective on Offline Reinforcement Learning</a>
         * <a href="https://mayi1996.top/2020/09/01/%E7%A6%BB%E7%BA%BF%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/#32-iris-implicit-reinforcement-without-interaction-at-scale-for-learning-control-from-offline-robot-manipulation-data">IRIS: Implicit Reinforcement without Interaction at Scale for Learning Control from Offline Robot Manipulation Data</a>
         * <a href="https://mayi1996.top/2020/09/15/Behavior-Regularized-Offline-Reinforcement-Learning/">Behavior Regularized Offline Reinforcement Learning</a>
-  * Representation Learning in RL
+ * Representation Learning in RL
         * Contrastive Learning
             * <a href="https://mayi1996.top/2020/08/20/Unsupervised-State-Representation-Learning-in-Atari/">Unsupervised State Representation Learning in Atari</a>
             * <a href="https://mayi1996.top/2020/08/26/CURL-Contrastive-Unsupervised-Representations-for-Reinforcement-Learning/">CURL: Contrastive Unsupervised Representations for Reinforcement Learning</a>
