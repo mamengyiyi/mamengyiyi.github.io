@@ -83,9 +83,9 @@ $$\pi_{t}^{j}\left(a^{j} | s, \bar{a}_{1}^{j}, \ldots \bar{a}_{M}^{j}\right)=\fr
 
 #### 2.3 算法流程
 
-![wWJ2sH.png](https://s1.ax1x.com/2020/09/17/wWJ2sH.png)
+<img src="https://s1.ax1x.com/2020/09/17/wWJ2sH.png" alt="wWJ2sH.png" style="zoom:80%;" />
 
-![wWJRLd.png](https://s1.ax1x.com/2020/09/17/wWJRLd.png)
+<img src="https://s1.ax1x.com/2020/09/17/wWJRLd.png" alt="wWJRLd.png" style="zoom:95%;" />
 
 
 
@@ -95,7 +95,7 @@ $$\pi_{t}^{j}\left(a^{j} | s, \bar{a}_{1}^{j}, \ldots \bar{a}_{M}^{j}\right)=\fr
 
 在MAgent上实验。效果超过了MFQ与MFAC：
 
-![wWJgQe.png](https://s1.ax1x.com/2020/09/17/wWJgQe.png)
+<img src="https://s1.ax1x.com/2020/09/17/wWJgQe.png" alt="wWJgQe.png" style="zoom: 67%;" />
 
 ## 四、缺点
 
