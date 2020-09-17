@@ -34,7 +34,7 @@ $$Q^{j}(s, a)=\frac{1}{N^{j}} \sum_{k \in \mathcal{N}(j)} Q^{j}\left(s, a^{j}, a
 
 #### 2.1 Mean Field 近似
 
-下面就是将平均场论（Mean Field Theory，MFT）的思想引入上式中。该算法假定所有智能体都是同构的，其动作空间相同，并且动作空间是离散的。每个智能体的动作采用one-hot编码方式， 如智能体$j$的动作$a_{j}=\left[a_{j}^{1}, a_{j}^{2}, \cdots, a_{j}^{D}\right]$表示共有$D$个动作的动作空间每个动作的值，若选取动作$i$，则$a_{j}^{i}=1$，其余为0。定义$\bar{a}_{j}$为智能体$j$邻居$N(j)$的平均动作，其邻居$k$的one-hot编码动作$a_{k}$可以表示为$\bar{a}_{j}$与一个波动$\delta a_{j, k}$的和的形式：
+下面就是将平均场论（Mean Field Theory，MFT）的思想引入上式中。该算法假定所有智能体都是同构的，其动作空间相同，并且动作空间是离散的。每个智能体的动作采用one-hot编码方式， 如智能体$j$的动作$a_{j}=\left[a_{j}^{1}, a_{j}^{2}, \cdots, a_{j}^{D}\right]$表示共有$D$个动作的动作空间每个动作的值，若选取动作$i$，则$a_{j}^{i}=1$，其余为0。定义$\bar{a}\_{j}$为智能体$j$邻居$N(j)$的平均动作，其邻居$k$的one-hot编码动作$a_{k}$可以表示为$\bar{a}\_{j}$与一个波动$\delta a_{j, k}$的和的形式：
 
 $$a_{k}=a_{j}+\delta a_{j, k}, \quad \text { where } \bar{a}_{j}=\frac{1}{N_{j}} \sum_{k} a_{k}$$
 
@@ -52,7 +52,7 @@ Q^{j}(s, a)=\frac{1}{N^{j}} \sum_{k} Q^{j}\left(s, a^{j}, a^{k}\right) \\
 
 其中第二个等号后面的第二项求和为0，第三项为$R_{s, a^{j}}^{j}\left(a^{k}\right) \triangleq \delta a^{j, k} \cdot \nabla_{\tilde{a}^{j, k}}^{2} Q^{j}\left(s, a^{j}, \tilde{a}^{j, k}\right) \cdot \delta a^{j, k}$是泰勒展开的余项，具有如下性质：若值函数$Q_{j}\left(s, a_{j}, a_{k}\right)$是一个$M$阶导数联系函数，则$R_{s, j}\left(a_{k}\right) \in[-2 M,-2 M]$
 
-因此，两两作用求和的形式进一步化简为中心智能体$j$与一个虚拟智能体$\bar{a}_{j}$的相互作用，虚拟智能体是智能体$j$所有邻居作用效果的平均。因此得到MF-Q函数$Q_{j}\left(s, a_{j}, \bar{a}_{j}\right)$。假设有一段经验$\left[s,\left\{a_{j}\right\},\left\{r_{j}\right\}, s^{\prime}\right]$，MF-Q可以通过下式循环更新：
+因此，两两作用求和的形式进一步化简为中心智能体$j$与一个虚拟智能体$\bar{a}\_{j}$的相互作用，虚拟智能体是智能体$j$所有邻居作用效果的平均。因此得到MF-Q函数$Q_{j}\left(s, a_{j}, \bar{a}\_{j}\right)$。假设有一段经验$\left[s,\left\{a_{j}\right\},\left\{r_{j}\right\}, s^{\prime}\right]$，MF-Q可以通过下式循环更新：
 
 $$Q_{j, t+1}\left(s, a_{j}, \bar{a}_{j}\right)=(1-\alpha) Q_{j, t}\left(s, a_{j}, \bar{a}_{j}\right)+\alpha\left[r_{j}+\gamma v_{j, t}\left(s^{\prime}\right)\right]$$
 
@@ -60,15 +60,15 @@ $$Q_{j, t+1}\left(s, a_{j}, \bar{a}_{j}\right)=(1-\alpha) Q_{j, t}\left(s, a_{j}
 
 $$v_{j, t}\left(s^{\prime}\right)=\sum_{a_{j}} \pi_{j, t}\left(a_{j} | s, \bar{a}_{j}\right) E_{\bar{a}_{j}\left(a_{-j} \sim \pi_{-j, t}\right)}\left[Q_{j, t}\left(s^{\prime}, a_{j}, \bar{a}_{j}\right)\right]$$
 
-在每一时刻的阶段博弈中， $\bar{a}_{j}$是通过上一时刻邻居$k$的策略$\pi_{k, t}$得出的，其策略参数中的$\bar{a}_{k-}$也是使用的上一时刻的平均动作，更新过程如下：
+在每一时刻的阶段博弈中， $\bar{a}\_{j}$是通过上一时刻邻居$k$的策略$\pi_{k, t}$得出的，其策略参数中的$\bar{a}\_{k-}$也是使用的上一时刻的平均动作，更新过程如下：
 
 $$\bar{a}_{j}=\frac{1}{N_{j}} \sum_{k} a_{k}, \quad \text { where } a_{k} \sim \pi_{k, t}\left(\cdot | s, \bar{a}_{k-}\right)$$
 
-通过上式可以计算出邻居平均动作$\bar{a}_{j}$，然后通过玻尔兹曼分布得到新的策略如下形式：
+通过上式可以计算出邻居平均动作$\bar{a}\_{j}$，然后通过玻尔兹曼分布得到新的策略如下形式：
 
 $$\pi_{j, t}\left(a_{j} | s, \bar{a}_{j}\right)=\frac{\exp \left(-\beta Q_{j, t}\left(s, a_{j}, \bar{a}_{j}\right)\right)}{\sum_{a j \in A_{j}} \exp \left(-\beta Q_{j, t}\left(s, a_{j^{\prime}}, \bar{a}_{j}\right)\right)}$$
 
-通过上两式不断迭代更新，能够提升策略的效果而获得较大的累积回报值。原文中证明$\bar{a}_{j}$能够收敛到唯一的平衡点，并推得策略$\pi_{j}$收敛到纳什均衡策略。为了与Nash-Q算法对应，MF-Q算法给出下式：
+通过上两式不断迭代更新，能够提升策略的效果而获得较大的累积回报值。原文中证明$\bar{a}\_{j}$能够收敛到唯一的平衡点，并推得策略$\pi_{j}$收敛到纳什均衡策略。为了与Nash-Q算法对应，MF-Q算法给出下式：
 
 $$\mathcal{H}^{M F} Q(s, a)=E_{s^{\prime} \sim p}\left[r(s, a)+\gamma v^{M F}\left(s^{\prime}\right)\right]$$
 
