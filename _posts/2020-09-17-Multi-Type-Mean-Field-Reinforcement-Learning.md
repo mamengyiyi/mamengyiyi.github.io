@@ -35,7 +35,7 @@ $$Q^{j}(s, a)=\frac{1}{X^{j}} \sum_{i=1}^{X^{j}}\left[Q^{j}\left(s, a^{j}, a_{1}
 
 #### 2.1 Mean Field Approximation
 
-在智能体$j$的邻域中属于$m$类型的智能体$k$的one-hot动作可以表示为$a_{m}^{k_{m}}=\bar{a}_{m}^{j}+\hat{\delta}^{j, k_{m}}$，其中$\bar{a}_{m}^{j}$为智能体$j$邻域中的所有属于类型$m$的智能体的平均作用，$\hat{\delta}^{j, k_{m}}$是单个智能体的作用与其所属类型的平均作用之间的偏差。
+在智能体$j$的邻域中属于$m$类型的智能体$k$的one-hot动作可以表示为$a_{m}^{k_{m}}=\bar{a}\_{m}^{j}+\hat{\delta}^{j, k_{m}}$，其中$\bar{a}\_{m}^{j}$为智能体$j$邻域中的所有属于类型$m$的智能体的平均作用，$\hat{\delta}^{j, k_{m}}$是单个智能体的作用与其所属类型的平均作用之间的偏差。
 
 假设$\delta^{j, k_{i}}=\left[\hat{\delta}^{j, k_{1}} ; \hat{\delta}^{j, k_{2}} ; \cdots ; \hat{\delta}^{j, k_{M}}\right]$令为一个向量，该向量是通过将所有$M$类智能体（单个子集中的所有智能体）中智能体$j$的所有此类偏差的串联所获得的。对Q函数使用泰勒展开，可得
 
@@ -54,7 +54,7 @@ Q^{j}(s, \mathbf{a})=\frac{1}{X^{j}} \sum_{i=1}^{X^{j}} Q^{j}\left(s, a^{j}, a_{
 
 $$Q^{j}(s, \mathbf{a}) \approx Q_{M T M F}^{j}\left(s, a^{j}, \bar{a}_{1}^{j}, \ldots, \bar{a}_{M}^{j}\right)$$
 
-我们可以使用平均偏差$\sum_{k}\left\|\hat{\delta}_{k}\right\|_{2} / N$来评估平均场近似的效用。下面的定理证明了平均偏差会随着智能体类型的增加而减少，衡量了平均场近似误差的bound：
+我们可以使用平均偏差$\sum_{k}\left\|\hat{\delta}\_{k}\right\|_{2} / N$来评估平均场近似的效用。下面的定理证明了平均偏差会随着智能体类型的增加而减少，衡量了平均场近似误差的bound：
 
 <img src="https://s1.ax1x.com/2020/09/17/wWJri6.png" alt="wWJri6.png" style="zoom:80%;" />
 
