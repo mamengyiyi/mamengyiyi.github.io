@@ -52,7 +52,7 @@ Q^{j}(s, a)=\frac{1}{N^{j}} \sum_{k} Q^{j}\left(s, a^{j}, a^{k}\right) \\
 
 其中第二个等号后面的第二项求和为0，第三项为$R_{s, a^{j}}^{j}\left(a^{k}\right) \triangleq \delta a^{j, k} \cdot \nabla_{\tilde{a}^{j, k}}^{2} Q^{j}\left(s, a^{j}, \tilde{a}^{j, k}\right) \cdot \delta a^{j, k}$是泰勒展开的余项，具有如下性质：若值函数$Q_{j}\left(s, a_{j}, a_{k}\right)$是一个$M$阶导数联系函数，则$R_{s, j}\left(a_{k}\right) \in[-2 M,-2 M]$
 
-因此，两两作用求和的形式进一步化简为中心智能体$j$与一个虚拟智能体$\bar{a}\_{j}$的相互作用，虚拟智能体是智能体$j$所有邻居作用效果的平均。因此得到MF-Q函数$Q_{j}\left(s, a_{j}, \bar{a}\_{j}\right)$。 假设有一段经验$\left\[s,\left\{a_{j}\right\},\left\{r_{j}\right\}, s^{\prime}\right\]$，MF-Q可以通过下式循环更新：
+因此，两两作用求和的形式进一步化简为中心智能体$j$与一个虚拟智能体$\bar{a}\_{j}$的相互作用，虚拟智能体是智能体$j$所有邻居作用效果的平均。因此得到MF-Q函数$Q_{j}\left(s, a_{j}, \bar{a}\_{j}\right)$。 假设有一段经验$\\\[s,\left\{a_{j}\right\},\left\{r_{j}\right\}, s^{\prime}\\\]$，MF-Q可以通过下式循环更新：
 
 $$Q_{j, t+1}\left(s, a_{j}, \bar{a}_{j}\right)=(1-\alpha) Q_{j, t}\left(s, a_{j}, \bar{a}_{j}\right)+\alpha\left[r_{j}+\gamma v_{j, t}\left(s^{\prime}\right)\right]$$
 
