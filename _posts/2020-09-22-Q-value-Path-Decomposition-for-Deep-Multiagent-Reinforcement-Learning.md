@@ -67,7 +67,7 @@ Q_{t o t}\left(\vec{o}_{t}, \vec{a}_{t}\right)=Q_{t o t}\left(\vec{x}_{t}\right)
 =\sum_{i=1}^{n} \sum_{x_{j} \in \mathrm{X}_{i}} \operatorname{Path} I G_{j}^{\tau_{t}^{T}}(\vec{x})=\sum_{i=1}^{n} \sum_{x_{j} \in \mathrm{X}_{i}} \operatorname{Path} I G_{j}^{\tau_{t}^{T}}(\vec{o}, \vec{a})
 \end{array}$$
 
-由于每两个相邻的联合观察和动作之间的路径是路径中的直线，因此$\sum_{x_{i} \in \mathbb{X}\_{i}} \text{PathIG}\_{j}^{\tau_{t}^{T}}\left(\vec{o}_{t}, \vec{a}_{t}\right)$可以通过如下方式计算：
+由于每两个相邻的联合观察和动作之间的路径是路径中的直线，因此$\sum_{x_{i} \in \mathbb{X}\_{i}} \text{PathIG}\_{j}^{\tau_{t}^{T}}\left(\vec{o}\_{t}, \vec{a}\_{t}\right)$可以通过如下方式计算：
 
 $$\begin{array}{l}
 \sum_{x_{j} \in \mathbb{X}_{i}} \operatorname{Path} I G_{j}^{\tau_{f}^{T}}\left(\vec{o}_{t}, \vec{a}_{t}\right)= \sum_{x_{j} \in \mathbb{X}_{i}} I G_{j}^{\tau_{f}^{t+1}}(\vec{o}, \vec{a})+\sum_{x_{j} \in \mathbb{X}_{i}} I G_{j}^{\tau_{i+1}^{t+2}}(\vec{o}, \vec{a})+\ldots+\sum_{x_{j} \in \mathbb{X}_{i}} I G_{j}^{\tau_{T-1}^{T}}(\vec{o}, \vec{a})
