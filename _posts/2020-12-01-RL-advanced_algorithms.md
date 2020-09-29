@@ -67,6 +67,7 @@ tags:
      * <a href="https://mayi1996.top/2020/08/26/CURL-Contrastive-Unsupervised-Representations-for-Reinforcement-Learning/">CURL: Contrastive Unsupervised Representations for Reinforcement Learning</a>
    * Others
      * <a href="https://mayi1996.top/2020/08/27/Data-Efficient-Reinforcement-Learning-with-Momentum-Predictive-Representations/">Data-Efficient Reinforcement Learning with Momentum Predictive Representations</a>
+     * <a href="https://mayi1996.top/2020/09/29/Diversity-is-All-You-Need-Learning -skills-without-a-Reward-Function/">Diversity is All You Need: Learning Skills without a Reward Function</a>
   * Generalized RL
     * <a href="https://mayi1996.top/2020/08/10/Generalization-to-New-Actions-in-Reinforcement-Learning/">Generalization to New Actions in Reinforcement Learning</a>
   * RL in the Real World
