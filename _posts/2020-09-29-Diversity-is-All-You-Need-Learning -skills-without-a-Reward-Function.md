@@ -102,7 +102,7 @@ DIAYN在mujoco tasks中学习到了多种运动模式，例如向前跑，向后
 
 <img src="https://s1.ax1x.com/2020/09/29/0eZHaT.png" alt="0eZHaT.png" style="zoom:80%;" />
 
-基于learned skills对expert policy进行模仿学习，假如给定一个专家的state trajectory $\tau^{\*}=\left\{\left(s_{i}\right)\right\}\_{1 \leq i \leq N}$，使用训练好的discriminator对最优的可能生成这样的trajectory的skill进行esimate，然后返回control policy进行imitation。这样的imitation成功模仿了4个expert中的3个：
+基于learned skills对expert policy进行模仿学习，假如给定一个专家的state trajectory $\tau^{\*}=\left\{(s_{i})\right\}\_{1 \leq i \leq N}$，使用训练好的discriminator对最优的可能生成这样的trajectory的skill进行esimate，然后返回control policy进行imitation。这样的imitation成功模仿了4个expert中的3个：
 
 <img src="https://s1.ax1x.com/2020/09/29/0eZbIU.png" alt="0eZbIU.png" style="zoom:80%;" />
 
