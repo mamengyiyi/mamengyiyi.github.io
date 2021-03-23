@@ -53,20 +53,25 @@ seq2seq模型通常具有encoder-decoder（编码器-解码器）架构，该架
 <img src="https://lilianweng.github.io/lil-log/assets/images/encoder-decoder-attention.png" alt="1" style="zoom:35%;" />
 
 给定一个长度为$n$的源序列$\mathbf{x}$，并尝试输出一个长度为$m$的目标序列$\mathbf{y}$（粗体表示向量）：
+
 $$
 \begin{aligned}
 \mathbf{x} &= [x_1, x_2, \dots, x_n] \\
 \mathbf{y} &= [y_1, y_2, \dots, y_m]
 \end{aligned}
 $$
+
 encoder是一个双向RNN（也可是其他RNN），该encoder将输入的每个部分$x_{i}$进行编码，使之具有前向隐状态$\overrightarrow{\boldsymbol{h}}\_i$和后向隐状态$\overleftarrow{\boldsymbol{h}}\_i$。直接将这两个隐状态进行拼接来表示$x_{i}$的状态。 这样做的动机是在一个单词的表征中将其前面和后面的单词的含义也包含进来：
+
 $$
 \boldsymbol{h}_i = [\overrightarrow{\boldsymbol{h}}_i^\top; \overleftarrow{\boldsymbol{h}}_i^\top]^\top, i=1,\dots,n
 $$
-decoder网络在位置$t=1,\dots,m$处的输出的词语具有隐状态$\boldsymbol{s}\_t=f(\boldsymbol{s}\_{t-1}, y_{t-1}, \mathbf{c}_t)$，其中上下文向量$c_{t}$是输入序列包含的所有$x_{i}$的隐状态的加权求和，而权重则为：
+
+decoder网络在位置$t=1,\dots,m$处的输出的词语具有隐状态$\boldsymbol{s}\_t=f(\boldsymbol{s}\_{t-1}, y_{t-1}, \mathbf{c}\_t)$，其中上下文向量$c_{t}$是输入序列包含的所有$x_{i}$的隐状态的加权求和，而权重则为：
+
 $$
 \begin{aligned}
-\mathbf{c}_t &= \sum_{i=1}^n \alpha_{t,i} \boldsymbol{h}_i & \small{\text{; 关于}y_t}\text{的上下文向量}\\
+\mathbf{c}_t &= \sum_{i=1}^n \alpha_{t,i} \boldsymbol{h}\_i & \small{\text{; 关于}y_t}\text{的上下文向量}\\
 \alpha_{t,i} &= \text{align}(y_t, x_i) & \small{\text{; }y_t\text{与}x_i\text{匹配的好坏程度}}\\
 &= \frac{\exp(\text{score}(\boldsymbol{s}\_{t-1}, \boldsymbol{h}\_i))}{\sum_{i'=1}^n \exp(\text{score}(\boldsymbol{s}\_{t-1}, \boldsymbol{h}\_{i'}))} & \small{\text{; 对上述好坏程度进行softmax得到概率值}}.
 \end{aligned}
@@ -74,6 +79,7 @@ $$
 
 
 align模型根据匹配程度如何，将分数$\alpha_{t,i}$分配给位置$i$处的输入和位置$t$处的输出$(y_t, x_i) $。$\{\alpha_{t, i}\}$是权重集合，用于定义对于每个输出，应该考虑源输入中的每个隐状态的比重。 在[Bahdanau et al., 2015](https://arxiv.org/pdf/1409.0473.pdf)的论文中，匹配分数$\alpha$由具有单个隐藏层的前馈网络进行参数化，并且该网络与模型的其他部分共同训练。 因此，假定tanh被用作非线性激活函数，则匹配分数函数$\text{score}(\boldsymbol{s}_t, \boldsymbol{h}_i)$为以下形式：
+
 $$
 \text{score}(\boldsymbol{s}_t, \boldsymbol{h}_i) = \mathbf{v}_a^\top \tanh(\mathbf{W}_a[\boldsymbol{s}_t; \boldsymbol{h}_i])
 $$
@@ -127,21 +133,28 @@ Self-Attention（自我注意力），也称为Intra-Attention，是一种与单
 <img src="https://z3.ax1x.com/2021/03/22/6okCB4.png" alt="1" style="zoom:60%;" />
 
 其中，单词节点$i$的Value, Query以及Key都是通过单词节点$i$的embedding $h_{i}$通过映射得到的。给定维度$d_{k}$和$d_{v}$按照如下方式定义：
+
 $$
 \mathbf{q}_{i}=W^{Q} \mathbf{h}_{i}, \quad \mathbf{k}_{i}=W^{K} \mathbf{h}_{i}, \quad \mathbf{v}_{i}=W^{V} \mathbf{h}_{i}
 $$
+
 其中$W^{V}$为$\left(d_{\mathrm{v}} \times d_{\mathrm{h}}\right)$的矩阵，$W^{Q}$与$W^{Q}$为$\left(d_{\mathrm{k}} \times d_{\mathrm{h}}\right)$的矩阵。通过Queries与Keys，我们可以计算节点$i$的Query $\mathbf{q}\_{i}$与节点$j$的Key $\mathbf{k}\_{j}$的关联性$u_{i j} \in \mathbb{R}$：
+
 $$
 u_{i j}=\left\{\begin{array}{ll}
 \frac{\mathbf{q}\_{i}^{T} \mathbf{k}\_{j}}{\sqrt{d_{k}}} & \text { if } i \text { adjacent to } j \\
 -\infty & \text { otherwise }
 \end{array}\right.
 $$
+
 通过节点关联性$u_{i j}$，可以进一步使用sofemax计算Attention Weights $a_{i j} \in[0,1]$：
+
 $$
 a_{i j}=\frac{e^{u_{i j}}}{\sum_{j^{\prime}} e^{u_{i j^{\prime}}}}
 $$
+
 最终，单词节点$i$收到的Attetion信息组合为：
+
 $$
 \mathbf{h}_{i}^{\prime}=\sum_{j} a_{i j} \mathbf{v}_{j}
 $$
