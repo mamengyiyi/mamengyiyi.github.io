@@ -229,13 +229,13 @@ $$
 
 # 四、Attention相关经典模型
 
-4.1 Neural Turing Machines
+## 4.1 Neural Turing Machines
 
-4.2 Pointer Network
+## 4.2 Pointer Network
 
-4.3 Transformer
+## 4.3 Transformer
 
-4.4 SNAIL
+## 4.4 SNAIL
 
 
 
