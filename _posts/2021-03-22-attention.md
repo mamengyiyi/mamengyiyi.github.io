@@ -12,7 +12,10 @@ tags:
 ---
 ---
 
+本文翻译、整理并扩充自[Lil's Log](https://lilianweng.github.io/lil-log/)与[Jay Alammar' Blog](https://jalammar.github.io/)，欢迎大家前往原文学习阅读！
+
 # 一、背景
+
 近年来，Attention（注意力）已经成为深度学习社区中一个相当流行的概念和实用的工具。 在这篇博客中，我将介绍Attention的发明以及各种Attention机制和模型，例如Transformer和SNAIL。
 
 Attention在如下两个例子中有一定程度的体现：
