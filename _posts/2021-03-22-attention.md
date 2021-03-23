@@ -59,16 +59,16 @@ $$
 \mathbf{y} &= [y_1, y_2, \dots, y_m]
 \end{aligned}
 $$
-encoder是一个双向RNN（也可是其他RNN），该encoder将输入的每个部分$x_{i}$进行编码，使之具有前向隐状态$\overrightarrow{\boldsymbol{h}}_i$和后向隐状态$\overleftarrow{\boldsymbol{h}}_i$。直接将这两个隐状态进行拼接来表示$x_{i}$的状态。 这样做的动机是在一个单词的表征中将其前面和后面的单词的含义也包含进来：
+encoder是一个双向RNN（也可是其他RNN），该encoder将输入的每个部分$x_{i}$进行编码，使之具有前向隐状态$\overrightarrow{\boldsymbol{h}}\_i$和后向隐状态$\overleftarrow{\boldsymbol{h}}\_i$。直接将这两个隐状态进行拼接来表示$x_{i}$的状态。 这样做的动机是在一个单词的表征中将其前面和后面的单词的含义也包含进来：
 $$
 \boldsymbol{h}_i = [\overrightarrow{\boldsymbol{h}}_i^\top; \overleftarrow{\boldsymbol{h}}_i^\top]^\top, i=1,\dots,n
 $$
-decoder网络在位置$t=1,\dots,m$处的输出的词语具有隐状态$\boldsymbol{s}_t=f(\boldsymbol{s}_{t-1}, y_{t-1}, \mathbf{c}_t)$，其中上下文向量$c_{t}$是输入序列包含的所有$x_{i}$的隐状态的加权求和，而权重则为：
+decoder网络在位置$t=1,\dots,m$处的输出的词语具有隐状态$\boldsymbol{s}\_t=f(\boldsymbol{s}\_{t-1}, y_{t-1}, \mathbf{c}_t)$，其中上下文向量$c_{t}$是输入序列包含的所有$x_{i}$的隐状态的加权求和，而权重则为：
 $$
 \begin{aligned}
 \mathbf{c}_t &= \sum_{i=1}^n \alpha_{t,i} \boldsymbol{h}_i & \small{\text{; 关于}y_t}\text{的上下文向量}\\
 \alpha_{t,i} &= \text{align}(y_t, x_i) & \small{\text{; }y_t\text{与}x_i\text{匹配的好坏程度}}\\
-&= \frac{\exp(\text{score}(\boldsymbol{s}_{t-1}, \boldsymbol{h}_i))}{\sum_{i'=1}^n \exp(\text{score}(\boldsymbol{s}_{t-1}, \boldsymbol{h}_{i'}))} & \small{\text{; 对上述好坏程度进行softmax得到概率值}}.
+&= \frac{\exp(\text{score}(\boldsymbol{s}\_{t-1}, \boldsymbol{h}\_i))}{\sum_{i'=1}^n \exp(\text{score}(\boldsymbol{s}\_{t-1}, \boldsymbol{h}\_{i'}))} & \small{\text{; 对上述好坏程度进行softmax得到概率值}}.
 \end{aligned}
 $$
 
@@ -130,10 +130,10 @@ Self-Attention（自我注意力），也称为Intra-Attention，是一种与单
 $$
 \mathbf{q}_{i}=W^{Q} \mathbf{h}_{i}, \quad \mathbf{k}_{i}=W^{K} \mathbf{h}_{i}, \quad \mathbf{v}_{i}=W^{V} \mathbf{h}_{i}
 $$
-其中$W^{V}$为$\left(d_{\mathrm{v}} \times d_{\mathrm{h}}\right)$的矩阵，$W^{Q}$与$W^{Q}$为$\left(d_{\mathrm{k}} \times d_{\mathrm{h}}\right)$的矩阵。通过Queries与Keys，我们可以计算节点$i$的Query $\mathbf{q}_{i}$与节点$j$的Key $\mathbf{k}_{j}$的关联性$u_{i j} \in \mathbb{R}$：
+其中$W^{V}$为$\left(d_{\mathrm{v}} \times d_{\mathrm{h}}\right)$的矩阵，$W^{Q}$与$W^{Q}$为$\left(d_{\mathrm{k}} \times d_{\mathrm{h}}\right)$的矩阵。通过Queries与Keys，我们可以计算节点$i$的Query $\mathbf{q}\_{i}$与节点$j$的Key $\mathbf{k}\_{j}$的关联性$u_{i j} \in \mathbb{R}$：
 $$
 u_{i j}=\left\{\begin{array}{ll}
-\frac{\mathbf{q}_{i}^{T} \mathbf{k}_{j}}{\sqrt{d_{k}}} & \text { if } i \text { adjacent to } j \\
+\frac{\mathbf{q}\_{i}^{T} \mathbf{k}\_{j}}{\sqrt{d_{k}}} & \text { if } i \text { adjacent to } j \\
 -\infty & \text { otherwise }
 \end{array}\right.
 $$
