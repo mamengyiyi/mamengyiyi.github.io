@@ -71,9 +71,9 @@ decoder网络在位置$t=1,\dots,m$处的输出的词语具有隐状态$\boldsym
 
 $$
 \begin{aligned}
-\mathbf{c}_t &= \sum_{i=1}^n \alpha_{t,i} \boldsymbol{h}\_i & \small{\text{; 关于}y_t}\text{的上下文向量}\\
+\mathbf{c}_t &= \sum_{i=1}^n \alpha_{t,i} \boldsymbol{h}_i & \small{\text{; 关于}y_t}\text{的上下文向量}\\
 \alpha_{t,i} &= \text{align}(y_t, x_i) & \small{\text{; }y_t\text{与}x_i\text{匹配的好坏程度}}\\
-&= \frac{\exp(\text{score}(\boldsymbol{s}\_{t-1}, \boldsymbol{h}\_i))}{\sum_{i'=1}^n \exp(\text{score}(\boldsymbol{s}\_{t-1}, \boldsymbol{h}\_{i'}))} & \small{\text{; 对上述好坏程度进行softmax得到概率值}}.
+&= \frac{\exp(\text{score}(\boldsymbol{s}_{t-1}, \boldsymbol{h}_i))}{\sum_{i'=1}^n \exp(\text{score}(\boldsymbol{s}_{t-1}, \boldsymbol{h}_{i'}))} & \small{\text{; 对上述好坏程度进行softmax得到概率值}}.
 \end{aligned}
 $$
 
