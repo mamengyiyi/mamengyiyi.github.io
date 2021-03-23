@@ -103,7 +103,7 @@ $$
 | Dot-Product        | $\text{score}(\boldsymbol{s}_t, \boldsymbol{h}_i) = \boldsymbol{s}_t^\top\boldsymbol{h}_i$ | [Luong2015](https://arxiv.org/pdf/1508.04025.pdf)            |
 | Scaled Dot-Product | $\text{score}(\boldsymbol{s}_t, \boldsymbol{h}_i) = \frac{\boldsymbol{s}_t^\top\boldsymbol{h}_i}{\sqrt{n}}$ | [Vaswani2017](http://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf) |
 
-[Bahdanau2015](https://arxiv.org/pdf/1409.0473.pdf)方法在[Luong2015](https://arxiv.org/pdf/1508.04025.pdf)中被称为“ concat”，在[Vaswani2017](http://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf)中被称为“加法注意力”。[Vaswani2017](http://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf)中在Dot-Product的基础上添加$1/\sqrt{n}$，基于的考虑是当输入较大时，softmax函数的梯度可能会非常小，难以进行有效学习，因此要使用该项对输入进行缩放。
+[Bahdanau2015](https://arxiv.org/pdf/1409.0473.pdf)方法在[Luong2015](https://arxiv.org/pdf/1508.04025.pdf)中被称为“ Concat”，在[Vaswani2017](http://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf)中被称为“Additive attention”。[Vaswani2017](http://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf)中在Dot-Product的基础上添加$1/\sqrt{n}$，基于的考虑是当输入较大时，softmax函数的梯度可能会非常小，难以进行有效学习，因此要使用该项对输入进行缩放。
 
 从更广泛的角度，Attention机制可以如下分类：
 
