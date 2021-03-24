@@ -12,7 +12,7 @@ tags:
 ---
 ---
 
-本文翻译、整理并扩充自[Lil's Log](https://lilianweng.github.io/lil-log/)与[Jay Alammar' Blog](https://jalammar.github.io/)，欢迎大家前往原文学习阅读！
+本文翻译、整理并扩充自[Lil's Log](https://lilianweng.github.io/lil-log/)、[Jay Alammar' Blog](https://jalammar.github.io/)与[李宏毅 MACHINE LEARNING 2020 SPRING课程](https://speech.ee.ntu.edu.tw/~hylee/ml/2020-spring.html)，欢迎大家前往原文学习阅读！
 
 # 一、背景
 
@@ -233,7 +233,54 @@ $$
 
 ## 4.2 Pointer Network
 
-## 4.3 Transformer
+在旅行商问题、凸包问题等组合优化问题中，输入和输出都是序列化的数据。 然而，由于输出元素的离散类别不是预先确定的，而是取决于可变的输入大小，即输出严重依赖输入，因此经典的seq-2-seq或NMT模型无法直接应用于解决这些问题。 以下图所示的凸包问题为例，我们希望找到一些点，将其连接形成一个多边形，使这个多边形能把所有的点都“包”起来。
+
+<img src="https://z3.ax1x.com/2021/03/24/6btim8.png" alt="1" style="zoom:40%;" />
+
+seq-2-seq无法应用于求解这个问题的原因为：在encoder阶段，我们可以用encoder解决任意维度的凸包问题的输入，但是在decoder阶段，每个seq-2-seq模型的输出维度都是预设好的固定值。例如，在训练时我们的输入问题包含下图中的$P_{1},P_{2},P_{3},P_{4}$四个点，decoder的输出可以是0-4 (0 表示 END)号点中的任意一个点，这本质上相当于在每个时刻进行一个五分类问题；而当网络训练好后，在测试时，如果我们的输入问题包含100个点，无论如何该模型输出的点都不会超出0-4的范围，即无法输出5-100号的点，而真实的100个点的凸包可能还会包含这$P_{1},P_{2},P_{3},P_{4}$之外的其他点。因此在这类问题上seq-2-seq模型显然是不合理的。
+
+<img src="https://z3.ax1x.com/2021/03/24/6btGtJ.png" alt="1" style="zoom:40%;" />
+
+因此，研究者引入Attention的概念来改进seq-2-seq模型，提出了**Pointer Net** (指针网络，**Ptr-Net**; [Vinyals, et al. 2015](https://arxiv.org/abs/1506.03134)) 来解决这类当输出元素与输入序列中的位置相关联的问题。Pointer Net的设计理念是，在每个时刻并不将其当做一个分类问题进行处理，而是直接选择所有输入中的某个输入的位置（index）。相当于在每个时刻就是挑出所有输入中的某个输入，来作为当前的输出。Pointer Net结构如下图所示：
+
+<img src="https://lilianweng.github.io/lil-log/assets/images/ptr-net.png" alt="1" style="zoom:25%;" />
+
+在Pointer Net 中，给定一系列输入向量$\boldsymbol{x} = (x_1, \dots, x_n)$，Pointer Net 输出整数索引序列$\boldsymbol{c} = (c_1, \dots, c_m)$且$1 \leq c_i \leq n$。 Pointer Net 仍采用encoder-decoder框架。其中，encoder和decoder的隐状态分别表示为$(\boldsymbol{h}_1, \dots, \boldsymbol{h}_n)$和$(\boldsymbol{s}_1, \dots, \boldsymbol{s}_m)$。然而，Pointer Net 与经典的Attention不同之处在于：Attention整合encoder和decoder的隐状态，得到encoder、decoder隐状态与当前输出的权重关系$a$，然后根据权重关系和隐状态$h_{i}$得到上下文向量$c_{t}$用来预测下一个输出:
+
+
+$$
+\begin{aligned} \text{score}(\boldsymbol{s}_t; \boldsymbol{h}_i) &=\mathbf{v}_a^\top \tanh(\mathbf{W}_a[\boldsymbol{s}_t; \boldsymbol{h}_i]) \\ a_{j}^{i} &=\operatorname{softmax}\left(\text{score}(\boldsymbol{s}_t; \boldsymbol{h}_i)\right) \\ \mathbf{c}_t &= \sum_{i=1}^n \alpha_{t,i} \boldsymbol{h}_i \end{aligned}
+$$
+
+
+而Pointer Net 则将Attention做了修改，没有上述公式组的最后一个公式，即取消了将权重关系和隐状态加权整合为上下文向量的部分，而是直接进行softmax，指向输入序列中最有可能是输出的元素：
+
+
+$$
+\begin{aligned}
+y_i &= p(c_i \vert c_1, \dots, c_{i-1}, \boldsymbol{x}) \\
+    &= \text{softmax}(\text{score}(\boldsymbol{s}_t; \boldsymbol{h}_i)) \\ &= \text{softmax}(\mathbf{v}_a^\top \tanh(\mathbf{W}_a[\boldsymbol{s}_t; \boldsymbol{h}_i]))
+\end{aligned}
+$$
+
+
+由于Pointer Net不会将encoder隐状态与Attention权重融合到输出中，因此本质上是对Attention机制进行了简化。 这样，输出仅与输入位置相关联，而不与输入某位置所包含的内容相关。
+
+对于上述的凸包问题，Pointer Net的解决流程如下所示：
+
+-  第一次，encoder将所有输入进行编码。而在decoder部分，刚开始输入一个$z_{0}$作为初始变量，然后$z_{0}$会去跟encoder中所有的隐状态做Attention评分，得到的结果是一个softmax分布，在Attention中我们会对这个隐状态的分数分布做加权求和，但是在这里，Pointer Net对这个分布做一个argmax取出概率最大的点（假设这个点是$(x_{1},y_{1})$）。
+
+  <img src="https://z3.ax1x.com/2021/03/24/6b0N1H.png" alt="1" style="zoom:40%;" />
+
+- 第二次，这个点$(x_{1},y_{1})$和$z_{0}$又会作为新一轮输入，输入decoder里得到$z_{1}$，然后$z_{1}$又会跟encoder中所有的隐状态做一个Attention评分得到另一个新的softmax分布，同样再取出概率最大的点（假设这个点是$(x_{4},y_{4})$）。
+
+  <img src="https://z3.ax1x.com/2021/03/24/6b0t9e.png" alt="1" style="zoom:40%;" />
+
+- 如此反复，直到取到的点是$(x_{0},y_{0})$（$(x_{0},y_{0})$表示END）。
+
+Pointer Network的做法，为我们提供了一种新视角去理解 Attention，将 Attention 作为一种求分布的手段；同时，对于输出字典长度不固定问题，Pointer Network提供了一种新的解决方案。
+
+
 
 ## 4.4 SNAIL
 
@@ -242,6 +289,7 @@ $$
 ## 参考
 1. [Lil's Log](https://lilianweng.github.io/lil-log/)
 2. [Jay Alammar' Blog](https://jalammar.github.io/)
+3. [李宏毅 MACHINE LEARNING 2020 SPRING课程](https://speech.ee.ntu.edu.tw/~hylee/ml/2020-spring.html)
 
 
 
