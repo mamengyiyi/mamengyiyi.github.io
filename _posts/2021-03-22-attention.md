@@ -170,7 +170,7 @@ $$
 
    <img src="https://jalammar.github.io/images/t/transformer_self_attention_vectors.png" alt="1" style="zoom:70%;" />
 
-2. 第二步：计算分数。 假设我们正在计算此例中第一个单词“Thinking”的Self-Attention。 我们需要根据该单词对输入句子的每个单词进行评分。分数决定了当我们在某个位置对单词进行编码时，将注意力集中在输入句子的其他部分上的程度。具体来说，通过计算Query向量与我们需要计算分数的各个单词的Key向量的点积来计算分数。 因此，如果我们正在计算位置#1的Self-Attention，则第一个分数将是$q_{1}$和$k_{1}$的点积。 第二个f分数将是$q_{1}$和$k_{2}$的点积。
+2. 第二步：计算分数。 假设我们正在计算此例中第一个单词“Thinking”的Self-Attention。 我们需要根据该单词对输入句子的每个单词进行评分。分数决定了当我们在某个位置对单词进行编码时，将注意力集中在输入句子的其他部分上的程度。具体来说，通过计算Query向量与我们需要计算分数的各个单词的Key向量的点积来计算分数。 因此，如果我们正在计算位置#1的Self-Attention，则第一个分数将是$q_{1}$和$k_{1}$的点积。 第二个分数将是$q_{1}$和$k_{2}$的点积。
 
    <img src="https://jalammar.github.io/images/t/transformer_self_attention_score.png" alt="1" style="zoom:90%;" />
 
