@@ -143,12 +143,12 @@ $$
 
 $$
 u_{i j}=\left\{\begin{array}{ll}
-\frac{\mathbf{q}\_{i}^{T} \mathbf{k}\_{j}}{\sqrt{d_{k}}} & \text { if } i \text { adjacent to } j \\
+\frac{\mathbf{q}_{i}^{T} \mathbf{k}_{j}}{\sqrt{d_{k}}} & \text { if } i \text { adjacent to } j \\
 -\infty & \text { otherwise }
 \end{array}\right.
 $$
 
-通过节点关联性$u_{i j}$，可以进一步使用sofemax计算Attention Weights $a_{i j} \in[0,1]$：
+通过节点关联性$[Math Processing Error]u_{i j}$，可以进一步使用sofemax计算Attention Weights $[Math Processing Error]a_{i j} \in[0,1]$：
 
 $$
 a_{i j}=\frac{e^{u_{i j}}}{\sum_{j^{\prime}} e^{u_{i j^{\prime}}}}
