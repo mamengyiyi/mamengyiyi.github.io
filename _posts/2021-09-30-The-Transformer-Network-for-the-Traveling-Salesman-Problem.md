@@ -52,7 +52,7 @@ typora-copy-images-to: ..\post_pic
 
 本文的做法也采用了编码-解码的结构。其中编码器采用了标准的Transformer（将原始的layer normalization替换为了batch normalization），解码器是自回归的解码器（每次解码出一个节点），解码时采用了beam search来进行。整个结构如图1所示：
 
-<img src="..\post_pic\image-20210930160457189.png" width="90%" height="60%" align=center />
+<img src="../post_pic/image-20210930160457189.png" width="90%" height="60%" align=center />
 
 <div align = "center">图1 整体框架</div>
 
@@ -125,7 +125,7 @@ $$
 
    整体的四个步骤如图2所示：
 
-   <img src="..\post_pic\image-20210930163814800.png" width="90%" height="60%" align=center />
+   <img src="../post_pic/image-20210930163814800.png" width="90%" height="60%" align=center />
 
    <div align = "center">图2 decoding四个步骤示意图</div>
 
@@ -150,7 +150,7 @@ $$
 
 本文在规模为50和100的TSP问题上进行求解，结果如图3所示。其中带*的结果来自其他论文。 T Time 表示 10k TSP（并行求解）的总时间。 I Time 表示运行单个 TSP（串行求解）的推理时间。可以看到，本文的方法进一步提升了基于学习的启发式方法，在TSP50上与最优解的差距缩小为 0.004%，TSP100上与最优解的差距缩小为0.39%。
 
-![image-20210930163945843](/image-20210930163945843.png)
+![image-20210930163945843](../post_pic/image-20210930163945843.png)
 
 <div align = "center">图3 在规模为50和100的TSP问题上的结果</div>
 
