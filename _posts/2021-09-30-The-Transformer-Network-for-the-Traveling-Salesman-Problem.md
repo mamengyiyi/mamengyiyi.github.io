@@ -148,7 +148,7 @@ $$
 
    <div align = "center">图2 decoding四个步骤示意图</div>
 
-假设TSP的解是一条路径$\operatorname{seq}_{n}=\left\{i_{1}, \ldots, i_{n}\right\}$，那么TSP可以表示为如下的序列优化问题：
+假设TSP的解是一条路径$\operatorname{seq}_{n}=\left\\\{i_{1}, \ldots, i_{n}\right\\\}$，那么TSP可以表示为如下的序列优化问题：
 
 
 $$

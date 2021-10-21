@@ -110,11 +110,11 @@ Fujimoto在Final Buffer/Concurrent/Imitation Learning三种设定下用BCQ进行
 
 <div align = "center">图6 BCQ-Discrete算法流程图</div>
 
-BCQ-Discrete的整体思路和BCQ-Continuous是一致的，主要的区别是BCQ-Discrete在重建行为策略的时候无需训练VAE这种较为复杂的生成模型，只要使用标准的监督学习的方式来训练一个行为克隆（behaviour cloning）网络$G_{\omega}(a \mid s) \approx \pi_{b}(a \mid s)$来作为行为策略即可。同时在进行Q-learning时，对于第$k$轮迭代上的$Q$函数更新，将动作空间中选取最大化$Q$值的动作改为只考虑相对可能性$\frac{G_\omega(a'|s')}{\max \hat{a} \; G_\omega(\hat{a}|s')}$大于阈值的动作：
+BCQ-Discrete的整体思路和BCQ-Continuous是一致的，主要的区别是BCQ-Discrete在重建行为策略的时候无需训练VAE这种较为复杂的生成模型，只要使用标准的监督学习的方式来训练一个行为克隆（behaviour cloning）网络$G_{\omega}(a \mid s) \approx \pi_{b}(a \mid s)$来作为行为策略即可。同时在进行Q-learning时，对于第$k$轮迭代上的$Q$函数更新，将动作空间中选取最大化$Q$值的动作改为只考虑相对可能性$\frac{G_\omega(a'\|s')}{\max \hat{a} \; G_\omega(\hat{a}\|s')}$大于阈值的动作：
 
 
 $$
-\mathcal{L}(\theta) = \ell_k \left(r + \gamma \cdot \Bigg( \max_{a' \; \mbox{s.t.} \; \frac{G_\omega(a'\|s')}{\max \hat{a} \; G_\omega(\hat{a}\|s')} > \tau} Q_{\theta'}(s',a') \Bigg) - Q_\theta(s,a) \right)
+\mathcal{L}(\theta) = \ell_k \left(r + \gamma \cdot \Bigg( \max_{a' \; \mbox{s.t.} \; \frac{G_\omega(a'|s')}{\max \hat{a} \; G_\omega(\hat{a}|s')} > \tau} Q_{\theta'}(s',a') \Bigg) - Q_\theta(s,a) \right)
 $$
 
 
