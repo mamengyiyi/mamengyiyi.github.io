@@ -52,11 +52,13 @@ typora-copy-images-to: ..\post_pic
 
 本文的做法也采用了编码-解码的结构。其中编码器采用了标准的Transformer（将原始的layer normalization替换为了batch normalization），解码器是自回归的解码器（每次解码出一个节点），解码时采用了beam search来进行。整个结构如图1所示：
 
-<img src="post_pic/image-20210930160457189.png" width="90%" height="60%" align=center />
+<img src="https://z3.ax1x.com/2021/10/21/5sdyNj.png" width="90%" height="60%" align=center />
 
 <div align = "center">图1 整体框架</div>
 
-编码器结构用公式表示如下；
+编码器结构用公式表示如下：
+
+
 $$
 H^{\mathrm{enc}}=H^{\ell=L^{\mathrm{nc} c}} \in \mathbb{R}^{(n+1) \times d}
 $$
@@ -70,26 +72,37 @@ V^{\ell} &=H^{\ell} W_{V}^{\ell} \in \mathbb{R}^{(n+1) \times d}, W_{V}^{\ell} \
 \end{aligned}
 $$
 
+
+
 其中$z$是随机初始化的token。编码器一次性将所有的节点都映射到encoding空间中。
 
 解码器一次输出一个节点。假设已经解码了旅程中的前 $t$ 个城市，并且想要预测下一个城市，那么解码器的解码过程则包括四个步骤：
 
 1. 获取上一次选择的节点$i_{t}$的表征：
+   
+   
    $$
    \begin{aligned}
    h_{t}^{\mathrm{dec}} &=h_{i_{t}}^{\mathrm{enc}}+\mathrm{PE}_{t} \in \mathbb{R}^{d} \\
    h_{t=0}^{\mathrm{dec}} &=h_{\mathrm{start}}^{\mathrm{dec}}=z+\mathrm{PE}_{t=0} \in \mathbb{R}^{d}
    \end{aligned}
    $$
+   
+   
    其中PE为Transformer中标记节点顺序的positional embedding：
-   $$
+   
+   
+$$
    \mathrm{PE}_{t, i}=\left\{\begin{array}{l}
    \sin \left(2 \pi f_{i} t\right) \text { if } i \text { is even, } \\
    \cos \left(2 \pi f_{i} t\right) \text { if } i \text { is odd, }
    \end{array} \quad \text { with } f_{i}=\frac{10,000 \frac{d}{[2 i]}}{2 \pi}\right.
    $$
-
+   
+   
 2. 使用self-attention在已构建路径的上准备query：
+
+   
    $$
    \begin{aligned}
    \hat{h}_{t}^{\ell+1} &=\operatorname{softmax}\left(\frac{q^{\ell} K^{\ell^{T}}}{\sqrt{d}}\right) V^{\ell} \in \mathbb{R}^{d}, \ell=0, \ldots, L^{\mathrm{dec}}-1 \\
@@ -102,8 +115,11 @@ $$
    \end{array}\right.\\
    \end{aligned}
    $$
+   
 
 3. 使用query在未访问的城市中查询下一个可能要访问的城市（已访问的城市使用$\mathcal{M}_{t}$进行mask，$\odot$是Hadamard product）：
+
+   
    $$
    \begin{aligned}
    h_{t}^{\mathrm{q}, \ell+1} &=\operatorname{softmax}\left(\frac{q^{\ell} K^{\ell^{T}}}{\sqrt{d}} \odot \mathcal{M}_{t}\right) V^{\ell} \in \mathbb{R}^{d}, \ell=0, \ldots, L^{\mathrm{dec}}-1 \\
@@ -112,8 +128,11 @@ $$
    V^{\ell} &=H^{\mathrm{enc}} \tilde{W}_{V}^{\ell} \in \mathbb{R}^{t \times d}, \tilde{W}_{V}^{\ell} \in \mathbb{R}^{d \times d}
    \end{aligned}
    $$
+   
 
 4. 获得未访问城市的概率分布：
+
+   
    $$
    \begin{aligned}
    p_{t}^{\mathrm{dec}} &=\operatorname{softmax}\left(C \cdot \tanh \left(\frac{q K^{T}}{\sqrt{d}} \odot \mathcal{M}_{t}\right)\right) \in \mathbb{R}^{n} \\
@@ -125,23 +144,37 @@ $$
 
    整体的四个步骤如图2所示：
 
-   <img src="post_pic/image-20210930163814800.png" width="90%" height="60%" align=center />
+   <img src="https://z3.ax1x.com/2021/10/21/5swWid.png" width="90%" height="60%" align=center />
 
    <div align = "center">图2 decoding四个步骤示意图</div>
 
-假设TSP的解是一条路径$\operatorname{seq}_{n}=\left\{i\_{1}, i\_{2}, \ldots, i\_{n}\right\}$，那么TSP可以表示为如下的序列优化问题：
+假设TSP的解是一条路径$\operatorname{seq}_{n}=\left\{i_{1}, \ldots, i_{n}\right\}$，那么TSP可以表示为如下的序列优化问题：
+
+
 $$
 \max _{\operatorname{seq}_{n}=\left\{i_{1}, \ldots, i_{n}\right\}} P^{\mathrm{TSP}}\left(\operatorname{seq}_{n} \mid X\right)=P^{\mathrm{TSP}}\left(i_{1}, \ldots, i_{n} \mid X\right)
 $$
+
+
 通过链式法则分解可得：
+
+
 $$
 P^{\mathrm{TSP}}\left(i_{1}, \ldots, i_{n} \mid X\right)=P\left(i_{1} \mid X\right) \cdot P\left(i_{2} \mid i_{1}, X\right) \cdot P\left(i_{3} \mid i_{2}, i_{1}, X\right) \cdot \ldots \cdot P\left(i_{n} \mid i_{n-1}, i_{n-2}, \ldots, X\right)
 $$
+
+
 因此，解码的目标可以写作找到一个序列使得如下的目标最大化：
+
+
 $$
 \max _{i_{1}, \ldots, i_{n}} \Pi_{t=1}^{n} P\left(i_{t} \mid i_{t-1}, i_{t-2}, \ldots i_{1}, X\right)
 $$
+
+
 本文使用beam search来求解该问题，即保留Top-B个最高的概率乘积所对应的的序列：
+
+
 $$
 \left\{i_{1}^{b}, \ldots, i_{t}^{b}\right\}_{b=1}^{B}=\text { Top-B }\left\{\Pi_{k=1}^{t} P\left(i_{k}^{b} \mid i_{k-1}^{b}, i_{k-2}^{b}, \ldots, i_{1}^{b}, X\right)\right\}_{b=1}^{B \cdot(n-t)}
 $$
@@ -150,7 +183,7 @@ $$
 
 本文在规模为50和100的TSP问题上进行求解，结果如图3所示。其中带*的结果来自其他论文。 T Time 表示 10k TSP（并行求解）的总时间。 I Time 表示运行单个 TSP（串行求解）的推理时间。可以看到，本文的方法进一步提升了基于学习的启发式方法，在TSP50上与最优解的差距缩小为 0.004%，TSP100上与最优解的差距缩小为0.39%。
 
-![image-20210930163945843](post_pic/image-20210930163945843.png)
+![image-20210930163945843](https://z3.ax1x.com/2021/10/21/5sazhn.png)
 
 <div align = "center">图3 在规模为50和100的TSP问题上的结果</div>
 
