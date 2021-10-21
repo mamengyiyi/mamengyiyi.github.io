@@ -129,7 +129,7 @@ $$
 
    <div align = "center">图2 decoding四个步骤示意图</div>
 
-假设TSP的解是一条路径$\operatorname{seq}\_{n}=\left\{i_{1}, i_{2}, \ldots, i_{n}\right\}$，那么TSP可以表示为如下的序列优化问题：
+假设TSP的解是一条路径$\operatorname{seq}_{n}=\left\{i\_{1}, i\_{2}, \ldots, i\_{n}\right\}$，那么TSP可以表示为如下的序列优化问题：
 $$
 \max _{\operatorname{seq}_{n}=\left\{i_{1}, \ldots, i_{n}\right\}} P^{\mathrm{TSP}}\left(\operatorname{seq}_{n} \mid X\right)=P^{\mathrm{TSP}}\left(i_{1}, \ldots, i_{n} \mid X\right)
 $$
