@@ -129,7 +129,7 @@ Aviral Kumar的这篇NeurIPS 2019论文与之前Fujimoto的BCQ论文高度相关
 
 >  We identify bootstrapping error as a key source of instability in current methods. Bootstrapping error is due to bootstrapping from actions that lie outside of the training data distribution, and it accumulates via the Bellman backup operator. We theoretically analyze bootstrapping error, and demonstrate how carefully constraining action selection in the backup can mitigate it.
 
-那么这里的bootstrapping error和Fujimoto在BCQ中提到的外推误差有什么区别？我认为这两个术语都可以用来指在Q-learning过程中传播不准确的$Q$值的问题。其中外推误差是在监督学习中的一个更广泛的问题，而bootstrapping是依靠bootstrap估计进行的强化学习算法中出现的特定问题。Kumar有一篇[BAIR](https://bair.berkeley.edu/blog/2019/12/05/bear/)博客文章[10]，它对bootstrapping error如何影响静态数据上的offline Q-learning提供了很好的直觉解释。例如，图7的右图中，红色虚线表示由行为策略$\pi_{\beta} (a|s)$得到的动作分布。在测试中，我们可能访问到蓝色实线表示的行为策略动作分布之外的动作。如果$Q$认为错误地高估这些动作的$Q(s,a)$值（如红色圈中的OOD动作对应的$Q$值就非常高），那么它们就会被用于Q-learning的bootstrapping过程中，成为Q-learning更新的目标，引起bootstrapping error的累积。
+那么这里的bootstrapping error和Fujimoto在BCQ中提到的外推误差有什么区别？我认为这两个术语都可以用来指在Q-learning过程中传播不准确的$Q$值的问题。其中外推误差是在监督学习中的一个更广泛的问题，而bootstrapping是依靠bootstrap估计进行的强化学习算法中出现的特定问题。Kumar有一篇[BAIR](https://bair.berkeley.edu/blog/2019/12/05/bear/)博客文章[10]，它对bootstrapping error如何影响静态数据上的offline Q-learning提供了很好的直觉解释。例如，图7的右图中，红色虚线表示由行为策略$\pi_{\beta} (a\|s)$得到的动作分布。在测试中，我们可能访问到蓝色实线表示的行为策略动作分布之外的动作。如果$Q$认为错误地高估这些动作的$Q(s,a)$值（如红色圈中的OOD动作对应的$Q$值就非常高），那么它们就会被用于Q-learning的bootstrapping过程中，成为Q-learning更新的目标，引起bootstrapping error的累积。
 
 <img src="..\post_pic\s_03D8A88577B961181603AE5EDBD4A511CD8E828E7651B8AA640A61950DAB9783_1575540995462_problem.png" width="60%" height="60%" align=center />
 
