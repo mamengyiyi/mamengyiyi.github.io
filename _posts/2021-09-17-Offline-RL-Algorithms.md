@@ -114,7 +114,7 @@ BCQ-Discrete的整体思路和BCQ-Continuous是一致的，主要的区别是BCQ
 
 
 $$
-\mathcal{L}(\theta) = \ell_k \left(r + \gamma \cdot \Bigg( \max_{a' \; \mbox{s.t.} \; \frac{G_\omega(a'|s')}{\max \hat{a} \; G_\omega(\hat{a}|s')} > \tau} Q_{\theta'}(s',a') \Bigg) - Q_\theta(s,a) \right)
+\mathcal{L}(\theta) = \ell_k \left(r + \gamma \cdot \Bigg( \max_{a' \; \mbox{s.t.} \; \frac{G_\omega(a'\|s')}{\max \hat{a} \; G_\omega(\hat{a}\|s')} > \tau} Q_{\theta'}(s',a') \Bigg) - Q_\theta(s,a) \right)
 $$
 
 
@@ -150,7 +150,7 @@ BEAR认为BCQ要求学习到的策略与行为策略分布接近的方式（dist
 
 <div align = "center">图8 support constraint与distribution-matching constraint区别</div>
 
-在实践中，BEAR使用了最大平均差异(MMD)距离来近似衡量support divergence。对于向量$X=\left\{x_{1}, \cdots, x_{n}\right\}, Y=\left\{y_{1}, \cdots, y_{n}\right\}$，对于任意的kernel $k$，MMD的定义为：
+在实践中，BEAR使用了最大平均差异(MMD)距离来近似衡量support divergence。对于向量$X=\left\\\{x_{1}, \cdots, x_{n}\right\\\}, Y=\left\\\{y_{1}, \cdots, y_{n}\right\\\}$，对于任意的kernel $k$，MMD的定义为：
 
 
 $$
