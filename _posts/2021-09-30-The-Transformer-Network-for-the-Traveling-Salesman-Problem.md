@@ -3,7 +3,7 @@ layout:     post
 title:      The Transformer Network for the Traveling Salesman Problem
 subtitle:   
 date:       2021-09-30
-author:     LZG
+author:     MY
 header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
@@ -97,9 +97,9 @@ $$
    \sin \left(2 \pi f_{i} t\right) \text { if } i \text { is even, } \\
    \cos \left(2 \pi f_{i} t\right) \text { if } i \text { is odd, }
    \end{array} \quad \text { with } f_{i}=\frac{10,000 \frac{d}{[2 i]}}{2 \pi}\right.
-   $$
-   
-   
+$$
+
+
 2. 使用self-attention在已构建路径的上准备query：
 
    
@@ -116,7 +116,6 @@ $$
    \end{aligned}
    $$
    
-
 3. 使用query在未访问的城市中查询下一个可能要访问的城市（已访问的城市使用$\mathcal{M}_{t}$进行mask，$\odot$是Hadamard product）：
 
    
@@ -129,7 +128,6 @@ $$
    \end{aligned}
    $$
    
-
 4. 获得未访问城市的概率分布：
 
    
