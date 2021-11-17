@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Reinforcement Learning: Theory and Algorithm
+title:      Reinforcement Learning Theory and Algorithm
 subtitle:   Fundamentals
 date:       2021-11-15
 author:     MY
