@@ -56,7 +56,11 @@ $$
 >
 > 首先，由于$r(s,a) \ge 0$$，V_{M}^{\pi}(s)$显然大于等于0。
 >
+> 
+>
 > 其次，由于$\gamma \in[0,1)$，所以有：
+>
+> 
 > $$
 > \begin{equation}
 > \begin{aligned}
@@ -64,12 +68,18 @@ $$
 > \end{aligned}
 > \end{equation}
 > $$
+> 
+>
 > 其中第一行到第二行是因为$\gamma^{t}<1$，第三行到第四行是等比数列求和公式，第四行到第五行是求极限。
 
 类似的，动作值函数$Q_{M}^{\pi}: \mathcal{S} \times \mathcal{A} \rightarrow \mathbb{R}$定义为：
+
+
 $$
 Q_{M}^{\pi}(s, a)=\mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^{t} r\left(s_{t}, a_{t}\right) \mid \pi, s_{0}=s, a_{0}=a\right]
 $$
+
+
 $Q_{M}^{\pi}(s, a)$上界同样为$1 /(1-\gamma)$。
 
 
@@ -78,6 +88,12 @@ $Q_{M}^{\pi}(s, a)$上界同样为$1 /(1-\gamma)$。
 
 给定一个状态$s$，agent的目标是找到一个策略$\pi$来最大化值函数：
 
+
+$$
+\max _{\pi} V_{M}^{\pi}(s)
+$$
+
+
 其中最大值是值在所有（可能是非平稳和随机的）策略中寻找其值函数最大的策略。 接下来的章节会证明，**存在一个确定性的平稳策略，对所有的初始状态$s$都是最优的。**
 
 #### 1.1.2 Bellman Consistency Equations for Stationary Policies
@@ -85,6 +101,8 @@ $Q_{M}^{\pi}(s, a)$上界同样为$1 /(1-\gamma)$。
 平稳策略满足以下一致性条件：
 
 **Lemma 1.4**：假设$\pi$是一个平稳策略，那么$V^{\pi}$和$Q^{\pi}$满足如下贝尔曼一致性方程：对于任意的$s \in \mathcal{S}, a \in \mathcal{A}$，
+
+
 $$
 \begin{aligned}
 V^{\pi}(s) &=Q^{\pi}(s, \pi(s)) \\
@@ -93,22 +111,35 @@ Q^{\pi}(s, a) &=r(s, a)+\gamma \mathbb{E}_{a \sim \pi(\cdot \mid s), s^{\prime} 
 $$
 
 
+
 用矩阵形式来描述值函数，如将$V^{\pi}$视为长度为$|\mathcal{S}|$的向量，$Q^{\pi}$和$r$视为长度为$|\mathcal{S}|\cdot |\mathcal{A}|$的向量，则概率矩阵$P$的大小为$(|\mathcal{S}| \cdot|\mathcal{A}|) \times|\mathcal{S}|$，其中$P_{(s, a), s^{\prime}}$等于$P\left(s^{\prime} \mid s, a\right)$。则policy evaluation求解值函数可以使用如下矩阵形式表示：
+
+
 $$
 \begin{aligned}
 &Q^{\pi}=r+\gamma P V^{\pi} \\
 &Q^{\pi}=r+\gamma P^{\pi} Q^{\pi}
 \end{aligned}
 $$
+
+
 **Corollary 1.5**：假设$\pi$是一个平稳策略，则policy evaluation 值函数的解为：
+
+
 $$
 Q^{\pi}=\left(I-\gamma P^{\pi}\right)^{-1} r
 $$
+
+
 其中$I$是一个单位矩阵。
+
+
 
 要保证$Q^{\pi}$有解，还需要保证矩阵$I-\gamma P^{\pi}$是可逆的。接下来我们证明其是可逆的。要证明矩阵$I-\gamma P^{\pi}$是可逆的，只需证明其对于任意非0向量$x$，$\left(I-\gamma P^{\pi}\right) x$向量不为0，即只需证明$\left\|\left(I-\gamma P^{\pi}\right) x\right\|_{\infty} $不为0即可：
 
 > **证明：**
+>
+> 
 > $$
 > \begin{equation}
 > \begin{aligned}
@@ -120,7 +151,11 @@ $$
 > \end{equation}
 > $$
 >
+> 
+>
 > 其中第一行到第二行是范数的三角不等式性质，第二行到第三行是算子范数的相容性。
+>
+> 
 >
 > 使用上述方法证明的原因为，例如，向量$Ax$范数如果为无穷范数，则该范数为向量元素绝对值的最大值。该范数只有在$Ax$每个元素都为0的情况下才会为0。所以既然$Ax$的范数大于0，说明$Ax$一定不为零向量，所以$Ax$一定不等于0。
 
