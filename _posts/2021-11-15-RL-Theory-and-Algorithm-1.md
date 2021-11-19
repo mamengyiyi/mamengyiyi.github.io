@@ -112,7 +112,7 @@ $$
 
 
 
-用矩阵形式来描述值函数，如将$V^{\pi}$视为长度为$|\mathcal{S}|$的向量，$Q^{\pi}$和$r$视为长度为$\|\mathcal{S}\|\cdot \|\mathcal{A}\|$的向量，则概率矩阵$P$的大小为$(\|\mathcal{S}\| \cdot\|\mathcal{A}\|) \times\|\mathcal{S}\|$，其中$P_{(s, a), s^{\prime}}$等于$P\left(s^{\prime} \mid s, a\right)$。则policy evaluation求解值函数可以使用如下矩阵形式表示：
+用矩阵形式来描述值函数，如将$V^{\pi}$视为长度为$\|\mathcal{S}\|$的向量，$Q^{\pi}$和$r$视为长度为$\|\mathcal{S}\|\cdot \|\mathcal{A}\|$的向量，则概率矩阵$P$的大小为$(\|\mathcal{S}\| \cdot\|\mathcal{A}\|) \times\|\mathcal{S}\|$，其中$P_{(s, a), s^{\prime}}$等于$P\left(s^{\prime} \mid s, a\right)$。则policy evaluation求解值函数可以使用如下矩阵形式表示：
 
 
 $$
@@ -155,7 +155,7 @@ $$
 >
 > 其中第一行到第二行是范数的三角不等式性质，第二行到第三行是算子范数的相容性。
 >
-> 
+> <br>
 >
 > 使用上述方法证明的原因为，例如，向量$Ax$范数如果为无穷范数，则该范数为向量元素绝对值的最大值。该范数只有在$Ax$每个元素都为0的情况下才会为0。所以既然$Ax$的范数大于0，说明$Ax$一定不为零向量，所以$Ax$一定不等于0。
 
@@ -171,7 +171,7 @@ $$
 
 
 
-<img src="https://z3.ax1x.com/2021/10/21/5sdyNj.png" width="90%" height="60%" align=center />
+<img src="xxx" width="90%" height="60%" align=center />
 
 <div align = "center">图1 整体框架</div>
 
