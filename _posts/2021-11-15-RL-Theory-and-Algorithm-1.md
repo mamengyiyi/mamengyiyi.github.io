@@ -112,7 +112,7 @@ $$
 
 
 
-用矩阵形式来描述值函数，如将$V^{\pi}$视为长度为$|\mathcal{S}|$的向量，$Q^{\pi}$和$r$视为长度为$|\mathcal{S}|\cdot |\mathcal{A}|$的向量，则概率矩阵$P$的大小为$(|\mathcal{S}| \cdot|\mathcal{A}|) \times|\mathcal{S}|$，其中$P_{(s, a), s^{\prime}}$等于$P\left(s^{\prime} \mid s, a\right)$。则policy evaluation求解值函数可以使用如下矩阵形式表示：
+用矩阵形式来描述值函数，如将$V^{\pi}$视为长度为$|\mathcal{S}|$的向量，$Q^{\pi}$和$r$视为长度为$\|\mathcal{S}\|\cdot \|\mathcal{A}\|$的向量，则概率矩阵$P$的大小为$(\|\mathcal{S}\| \cdot\|\mathcal{A}\|) \times\|\mathcal{S}\|$，其中$P_{(s, a), s^{\prime}}$等于$P\left(s^{\prime} \mid s, a\right)$。则policy evaluation求解值函数可以使用如下矩阵形式表示：
 
 
 $$
