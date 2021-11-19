@@ -7,8 +7,7 @@ author:     MY
 header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
-    - DL
-    - Combinatorial Optimization
+    - RL
 typora-root-url: ..\post_pic
 typora-copy-images-to: ..\post_pic
 ---
@@ -161,7 +160,7 @@ $$
 
 
 
-
+持续更新中......
 
 ## 二、Sample Complexity with a Generative Model
 
