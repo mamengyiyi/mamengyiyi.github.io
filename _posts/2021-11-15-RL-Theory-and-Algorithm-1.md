@@ -16,7 +16,7 @@ typora-copy-images-to: ..\post_pic
 
 # RL Theory and Algorithm (1): Fundamentals
 
-输出倒逼输入！本系列准备硬啃Alekh Agarwal，Nan Jiang，Sham M. Kakade和Wen Sun所写的《Reinforcement Learning: Theory and Algorithm》，强化一下自己的RL理论储备。本篇主要介绍一下基础知识。
+输出倒逼输入！本系列准备硬啃Alekh Agarwal，Nan Jiang，Sham M. Kakade和Wen Sun所写的[《Reinforcement Learning: Theory and Algorithm》](https://rltheorybook.github.io/)，强化一下自己的RL理论储备。本篇主要介绍一下基础知识。
 
 ## 一、Markov Decision Process
 
