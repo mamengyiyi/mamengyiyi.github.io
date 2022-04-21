@@ -1,14 +1,14 @@
 {
-    "name": "by-blog",
-    "title": "BY Blog",
-    "author": "BY <qiubaiyingios@163.com>",
+    "name": "my-blog",
+    "title": "MY Blog",
+    "author": "MY <18222860970@163.com>",
     "version": "1.7.0",
-    "homepage": "http://qiubaiying.github.io",
+    "homepage": "http://memengyiyi.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/qiubaiying/qiubaiying.github.io"
+        "url": "https://github.com/memengyiyi/memengyiyi.github.io"
     },
-    "bugs": "https://github.com/qiubaiying/qiubaiying.github.io/issues",
+    "bugs": "https://github.com/memengyiyi/memengyiyi.github.io/issues",
     "devDependencies": {
         "grunt": "~0.4.5",
         "grunt-contrib-less": "~0.11.4",
@@ -22,7 +22,7 @@
         "watch"  : "grunt watch & npm run preview & jekyll serve -w",
         "py3wa"  : "grunt watch & npm run py3view & jekyll serve -w",
         "boil"   : "git push boilerplate boilerplate:master",
-        "push"   : "git push origin master --tag",
-        "cafe"   : "git co gitcafe-pages; git merge master; git push gitcafe gitcafe-pages:gitcafe-pages --tag; git co master;"
+        "push"   : "git push origin main --tag",
+        "cafe"   : "git co gitcafe-pages; git merge main; git push gitcafe gitcafe-pages:gitcafe-pages --tag; git co main;"
     }
 }
