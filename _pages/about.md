@@ -53,7 +53,7 @@ If you're interested in these domains, please send me your CV.
 
 ### Papers
 ---
-PS: Authors with equal contribution are marked by \*, corresponding author is marked by \^.
+PS: Authors with equal contribution are marked by \*, corresponding author is marked by ^.
 
 
 
@@ -84,7 +84,7 @@ ICLR 2026. (`CCF A`)  <br>
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='' alt="sym"></div></div>
 <div class='paper-box-text' markdown="1">
 
-Da Wang, Yi Ma\^, Ting Guo, Hongyao Tang, Wei Wei, Jiye Liang. <br>
+Da Wang, Yi Ma^, Ting Guo, Hongyao Tang, Wei Wei, Jiye Liang. <br>
 *FANS: A Flatness-Aware Network Structure for Generalization in Offline Reinforcement Learning*. <br>
 NeurIPS 2025. (`CCF A`)  <br>
 [[link]](https://neurips.cc/virtual/2025/poster/115726)
