@@ -17,11 +17,10 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Hey, I'm Yi Ma, working at Shanxi University as an associate professor. I received my PhD degree at June 2024 in <a href="http://cic.tju.edu.cn/">College of Intelligence and Computing</a> of <a href="http://www.tju.edu.cn/">Tianjin University</a>. I used to be supervised by Professor <a href="http://www.icdai.org/jianye.html">Jianye Hao</a> in his <a href="http://www.icdai.org/">research group</a>.  I have published more than 20 papers in top AI conferences. <a href='https://scholar.google.com/citations?user=TdVWzqgAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>  Besides, I'm a huge fan of basketball, snowboarding and orienteering.
+Hey, I'm Yi Ma, working as a posdoctoral researcher at Tianjin University. I received my PhD degree at June 2024 in <a href="http://cic.tju.edu.cn/">College of Intelligence and Computing</a> of <a href="http://www.tju.edu.cn/">Tianjin University</a>. I used to be supervised by Professor <a href="http://www.icdai.org/jianye.html">Jianye Hao</a> in his <a href="http://www.icdai.org/">research group</a>.  I have published more than 30 papers in top AI conferences. <a href='https://scholar.google.com/citations?user=TdVWzqgAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>  Besides, I'm a huge fan of basketball, snowboarding and orienteering.
 
 I'm interested in:
 - Reinforcement Learning
-- Offline Reinforcement Learning
 - Embodied AI
 - Application of Deep Reinforcement Learning
 
@@ -41,9 +40,44 @@ If you're interested in these domains, please send me your CV.
 
 ### Papers
 ---
-PS: Authors with equal contribution are marked by \*.
+PS: Authors with equal contribution are marked by \*, corresponding author is marked by \^.
 
 
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='thumbs/NeurIPS2024_01.png' alt="sym"></div></div>
+<div class='paper-box-text' markdown="1">
+
+Jing Liang\*, Jinyi Liu\*, **Yi Ma\***, Hongyao Tang, Yan Zheng, Shuyue Hu, Lei Bai, Jianye Hao. <br>
+*Squeeze the Soaked Sponge: Efficient Off-policy Reinforcement Finetuning for Large Language Model*. <br>
+ICLR 2026. (`CCF A`)  <br>
+[[link]](https://openreview.net/forum?id=quBjNSJMrC)
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='thumbs/NeurIPS2024_01.png' alt="sym"></div></div>
+<div class='paper-box-text' markdown="1">
+
+Zihao Wu, Hongyao Tang, Yi Ma, Jiashun Liu, Yan Zheng, Jianye Hao. <br>
+*The Rank and Gradient Lost in Non-stationarity: Sample Weight Decay for Mitigating Plasticity Loss in Reinforcement Learning*. <br>
+ICLR 2026. (`CCF A`)  <br>
+[[link]](https://openreview.net/forum?id=5DpzzTPnJZ)
+
+</div>
+</div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='thumbs/NeurIPS2024_01.png' alt="sym"></div></div>
+<div class='paper-box-text' markdown="1">
+
+Da Wang, Yi Ma\^, Ting Guo, Hongyao Tang, Wei Wei, Jiye Liang. <br>
+*FANS: A Flatness-Aware Network Structure for Generalization in Offline Reinforcement Learning*. <br>
+NeurIPS 2025. (`CCF A`)  <br>
+[[link]](https://neurips.cc/virtual/2025/poster/115726)
+
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='thumbs/NeurIPS2024_01.png' alt="sym"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -51,7 +85,7 @@ PS: Authors with equal contribution are marked by \*.
 **Yi Ma**, Jianye Hao, Xiaohan Hu, Yan Zheng,  Chenjun Xiao. <br>
 *Iteratively Refined Behavior Regularization for Offline Reinforcement Learning*. <br>
 NeurIPS 2024. (`CCF A`)  <br>
-[[link]]()
+[[link]](https://proceedings.neurips.cc/paper_files/paper/2024/file/663bce02a0050c4a11f1eb8a7f1429d3-Paper-Conference.pdf)
 
 </div>
 </div>
