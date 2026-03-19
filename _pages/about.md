@@ -34,6 +34,15 @@ If you're interested in these domains, please send me your CV.
 - *2018.09 - 2020.06*, <a href="https://www.tju.edu.cn/"><img class="svg" src="/images/tju_logo.jpg" width="20pt"></a>  Tianjin University, Master 
 - *2014.09 - 2018.06*, <a href="https://www.tju.edu.cn/"><img class="svg" src="/images/tju_logo.jpg" width="20pt"></a>  Tianjin University, Bachelor
 
+<span class='anchor' id='-gzsx'></span>
+
+# 💻 Internships
+- *2024.01-2024.07*, Qiyuan Lab, AI Foundation Team. Supervised by Chen Chen.
+- *2020.11-2023.11*, Huawei Noah’s Ark Lab, Decision and Reasoning Team. Supervised by Chenjun Xiao, Dong Li, Chen Chen and Chao Wang.
+- *2020.04-2020.10*, Huawei Noah’s Ark Lab, Enterprise Intelligence Team. Supervised by  Jiawen Lu.
+- *2019.07-2019.12*, Alibaba, Alimama Target Advertising Team.  Supervised by Junqi Jin.
+
+
 <span class='anchor' id='-ryjx'></span>
 
 # 🏅 Competitions and Honors
@@ -49,13 +58,6 @@ If you're interested in these domains, please send me your CV.
 <span class='anchor' id='-lwzl'></span>
 
 
-<span class='anchor' id='-gzsx'></span>
-
-# 💻 Internships
-- *2024.01-2024.07*, Qiyuan Lab, AI Foundation Team. Supervised by Chen Chen.
-- *2020.11-2023.11*, Huawei Noah’s Ark Lab, Decision and Reasoning Team. Supervised by Chenjun Xiao, Dong Li, Chen Chen and Chao Wang.
-- *2020.04-2020.10*, Huawei Noah’s Ark Lab, Enterprise Intelligence Team. Supervised by  Jiawen Lu.
-- *2019.07-2019.12*, Alibaba, Alimama Target Advertising Team.  Supervised by Junqi Jin.
 
 
 # 📝 Selected Publications
