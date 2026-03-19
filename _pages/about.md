@@ -285,6 +285,8 @@ ICML 2020. (`CCF A`)  <br>
 <span class='anchor' id='-ryjx'></span>
 
 # 🏅 Competitions and Honors
+- *2025.08, CCF AI and Pattern Recognition Specialized Committee Doctoral Dissertation Incentive Program (`Three Recipents Nationwide`) 
+- *2024.12*, NeurIPS 2024 Auto-Bidding Competition. `Third Prize` in 792 teams.
 - *2022.12*, NeurIPS 2022 SMARTS Autonomous Driving Competition. `First Prize` in both tracks. [[link]](https://smarts-project.github.io/archive/2022_nips_driving_smarts/competition/)  
 - *2021.06*, Huawei 2012 Central Research Institute Innovation Pioneer. `President's Award Second Prize`.
 - *2017.12*,  Intel Cup National College Students Software Innovation Competition `National Finals Third prize`  
