@@ -37,7 +37,9 @@ If you're interested in these domains, please send me your CV.
 <span class='anchor' id='-ryjx'></span>
 
 # 🏅 Competitions and Honors
-- *2025.08*, CCF AI and Pattern Recognition Specialized Committee Doctoral Dissertation Incentive Program (`Three Recipents Nationwide`) 
+
+- *2026.02*, 微分智飞领航学者 (`全国10名`) 
+- *2025.08*, CCF人工智能与模式识别专委会博士论文激励计划 (`全国3名`) 
 - *2024.12*, NeurIPS 2024 Auto-Bidding Competition. `Third Prize` in 792 teams worldwide.
 - *2022.12*, NeurIPS 2022 SMARTS Autonomous Driving Competition. `First Prize` in both tracks. [[link]](https://smarts-project.github.io/archive/2022_nips_driving_smarts/competition/)  
 - *2021.06*, Huawei 2012 Central Research Institute Innovation Pioneer. `President's Award Second Prize`.
