@@ -32,10 +32,7 @@ If you're interested in these domains, please send me your CV.
 # 🎓 Education
 - *2020.09 - 2024.06*, <a href="https://www.tju.edu.cn/"><img class="svg" src="/images/tju_logo.jpg" width="20pt"></a> Tianjin University, PhD 
 - *2018.09 - 2020.06*, <a href="https://www.tju.edu.cn/"><img class="svg" src="/images/tju_logo.jpg" width="20pt"></a>  Tianjin University, Master 
-- *2014.09 - 2018.06*, <a href="https://www.tju.edu.cn/"><img class="svg" src="/images/tju_logo.jpg" width="20pt"></a>  Tianjin University, Bachelor 
-
-<span class='anchor' id='-lwzl'></span>
-
+- *2014.09 - 2018.06*, <a href="https://www.tju.edu.cn/"><img class="svg" src="/images/tju_logo.jpg" width="20pt"></a>  Tianjin University, Bachelor
 
 <span class='anchor' id='-ryjx'></span>
 
@@ -45,6 +42,11 @@ If you're interested in these domains, please send me your CV.
 - *2022.12*, NeurIPS 2022 SMARTS Autonomous Driving Competition. `First Prize` in both tracks. [[link]](https://smarts-project.github.io/archive/2022_nips_driving_smarts/competition/)  
 - *2021.06*, Huawei 2012 Central Research Institute Innovation Pioneer. `President's Award Second Prize`.
 - *2017.12*,  Intel Cup National College Students Software Innovation Competition `National Finals Third prize`  
+
+
+<span class='anchor' id='-lwzl'></span>
+
+
 
 
 # 📝 Selected Publications
