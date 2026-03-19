@@ -56,7 +56,7 @@ ICLR 2026. (`CCF A`)  <br>
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='thumbs/NeurIPS2024_01.png' alt="sym"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='' alt="sym"></div></div>
 <div class='paper-box-text' markdown="1">
 
 Zihao Wu, Hongyao Tang, Yi Ma, Jiashun Liu, Yan Zheng, Jianye Hao. <br>
@@ -68,7 +68,7 @@ ICLR 2026. (`CCF A`)  <br>
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='thumbs/NeurIPS2024_01.png' alt="sym"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='' alt="sym"></div></div>
 <div class='paper-box-text' markdown="1">
 
 Da Wang, Yi Ma\^, Ting Guo, Hongyao Tang, Wei Wei, Jiye Liang. <br>
@@ -79,7 +79,7 @@ NeurIPS 2025. (`CCF A`)  <br>
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='thumbs/NeurIPS2024_01.png' alt="sym"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='thumbs/NeurIPS2024_01.png' alt="sym"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Yi Ma**, Jianye Hao, Xiaohan Hu, Yan Zheng,  Chenjun Xiao. <br>
